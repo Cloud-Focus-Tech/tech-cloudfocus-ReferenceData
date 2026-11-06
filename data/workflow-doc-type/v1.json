@@ -1,0 +1,206 @@
+{
+  "APPLICATION": {
+    "name": "Application",
+    "category": "REQUEST",
+    "description": "Formal application for a service, benefit, or program.",
+    "sortOrder": 10
+  },
+  "REQUEST_FORM": {
+    "name": "Request Form",
+    "category": "REQUEST",
+    "description": "Document initiating a business request or workflow.",
+    "sortOrder": 20
+  },
+  "CHANGE_REQUEST": {
+    "name": "Change Request",
+    "category": "REQUEST",
+    "description": "Formal request to modify an existing service, process, or system.",
+    "sortOrder": 30
+  },
+  "BUSINESS_CASE": {
+    "name": "Business Case",
+    "category": "PLANNING",
+    "description": "Justification for a proposed investment, initiative, or decision.",
+    "sortOrder": 40
+  },
+  "PROPOSAL": {
+    "name": "Proposal",
+    "category": "PLANNING",
+    "description": "Document describing a proposed solution or course of action.",
+    "sortOrder": 50
+  },
+  "REQUIREMENTS_DOCUMENT": {
+    "name": "Requirements Document",
+    "category": "PLANNING",
+    "description": "Specification of business or technical requirements.",
+    "sortOrder": 60
+  },
+  "APPROVAL_FORM": {
+    "name": "Approval Form",
+    "category": "APPROVAL",
+    "description": "Document requesting or recording formal approval.",
+    "sortOrder": 70
+  },
+  "DECISION_RECORD": {
+    "name": "Decision Record",
+    "category": "APPROVAL",
+    "description": "Record of a decision, its rationale, and responsible parties.",
+    "sortOrder": 80
+  },
+  "AUTHORIZATION_LETTER": {
+    "name": "Authorization Letter",
+    "category": "APPROVAL",
+    "description": "Written authorization permitting a specific action.",
+    "sortOrder": 90
+  },
+  "CONTRACT": {
+    "name": "Contract",
+    "category": "LEGAL",
+    "description": "Legally binding agreement between parties.",
+    "sortOrder": 100
+  },
+  "NON_DISCLOSURE_AGREEMENT": {
+    "name": "Non-Disclosure Agreement",
+    "category": "LEGAL",
+    "description": "Agreement governing the protection of confidential information.",
+    "sortOrder": 110
+  },
+  "AMENDMENT": {
+    "name": "Amendment",
+    "category": "LEGAL",
+    "description": "Document modifying an existing agreement.",
+    "sortOrder": 120
+  },
+  "CONSENT_FORM": {
+    "name": "Consent Form",
+    "category": "LEGAL",
+    "description": "Document recording consent or permission.",
+    "sortOrder": 130
+  },
+  "EMPLOYMENT_AGREEMENT": {
+    "name": "Employment Agreement",
+    "category": "HUMAN_RESOURCES",
+    "description": "Agreement defining terms of employment.",
+    "sortOrder": 140
+  },
+  "OFFER_LETTER": {
+    "name": "Offer Letter",
+    "category": "HUMAN_RESOURCES",
+    "description": "Formal offer of employment or engagement.",
+    "sortOrder": 150
+  },
+  "PERFORMANCE_REVIEW": {
+    "name": "Performance Review",
+    "category": "HUMAN_RESOURCES",
+    "description": "Evaluation of employee performance.",
+    "sortOrder": 160
+  },
+  "INVOICE": {
+    "name": "Invoice",
+    "category": "FINANCE",
+    "description": "Document requesting payment for goods or services.",
+    "sortOrder": 170
+  },
+  "RECEIPT": {
+    "name": "Receipt",
+    "category": "FINANCE",
+    "description": "Record confirming a payment or transaction.",
+    "sortOrder": 180
+  },
+  "EXPENSE_REPORT": {
+    "name": "Expense Report",
+    "category": "FINANCE",
+    "description": "Itemized record of business expenses.",
+    "sortOrder": 190
+  },
+  "PURCHASE_ORDER": {
+    "name": "Purchase Order",
+    "category": "PROCUREMENT",
+    "description": "Formal authorization to purchase goods or services.",
+    "sortOrder": 200
+  },
+  "REQUEST_FOR_PROPOSAL": {
+    "name": "Request for Proposal",
+    "category": "PROCUREMENT",
+    "description": "Solicitation requesting proposals from potential suppliers.",
+    "sortOrder": 210
+  },
+  "STATEMENT_OF_WORK": {
+    "name": "Statement of Work",
+    "category": "PROCUREMENT",
+    "description": "Definition of deliverables, scope, and responsibilities.",
+    "sortOrder": 220
+  },
+  "RISK_ASSESSMENT": {
+    "name": "Risk Assessment",
+    "category": "COMPLIANCE",
+    "description": "Evaluation of identified risks and their potential impact.",
+    "sortOrder": 230
+  },
+  "AUDIT_REPORT": {
+    "name": "Audit Report",
+    "category": "COMPLIANCE",
+    "description": "Document containing audit findings and recommendations.",
+    "sortOrder": 240
+  },
+  "POLICY_DOCUMENT": {
+    "name": "Policy Document",
+    "category": "COMPLIANCE",
+    "description": "Formal organizational policy or governing requirements.",
+    "sortOrder": 250
+  },
+  "CERTIFICATION": {
+    "name": "Certification",
+    "category": "COMPLIANCE",
+    "description": "Document attesting to compliance, qualification, or completion.",
+    "sortOrder": 260
+  },
+  "STANDARD_OPERATING_PROCEDURE": {
+    "name": "Standard Operating Procedure",
+    "category": "OPERATIONS",
+    "description": "Instructions for executing a repeatable business process.",
+    "sortOrder": 270
+  },
+  "INCIDENT_REPORT": {
+    "name": "Incident Report",
+    "category": "OPERATIONS",
+    "description": "Record of an operational, security, or safety incident.",
+    "sortOrder": 280
+  },
+  "STATUS_REPORT": {
+    "name": "Status Report",
+    "category": "OPERATIONS",
+    "description": "Summary of progress, issues, and current activities.",
+    "sortOrder": 290
+  },
+  "MEETING_MINUTES": {
+    "name": "Meeting Minutes",
+    "category": "OPERATIONS",
+    "description": "Record of meeting discussions, decisions, and action items.",
+    "sortOrder": 300
+  },
+  "SUPPORTING_EVIDENCE": {
+    "name": "Supporting Evidence",
+    "category": "SUPPORTING",
+    "description": "Documentation substantiating a request, claim, or decision.",
+    "sortOrder": 310
+  },
+  "IDENTIFICATION_DOCUMENT": {
+    "name": "Identification Document",
+    "category": "SUPPORTING",
+    "description": "Document used to establish or verify identity.",
+    "sortOrder": 320
+  },
+  "CORRESPONDENCE": {
+    "name": "Correspondence",
+    "category": "SUPPORTING",
+    "description": "Written communication associated with a business workflow.",
+    "sortOrder": 330
+  },
+  "OTHER": {
+    "name": "Other",
+    "category": "GENERAL",
+    "description": "Document not covered by another classification.",
+    "sortOrder": 999
+  }
+}

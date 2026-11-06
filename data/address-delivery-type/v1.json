@@ -1,0 +1,20 @@
+{
+  "STREET": {
+    "name": "Street Address"
+  },
+  "PO_BOX": {
+    "name": "PO Box"
+  },
+  "RURAL_ROUTE": {
+    "name": "Rural Route"
+  },
+  "HIGHWAY_CONTRACT_ROUTE": {
+    "name": "Highway Contract Route"
+  },
+  "GENERAL_DELIVERY": {
+    "name": "General Delivery"
+  },
+  "MILITARY": {
+    "name": "Military or Diplomatic Mail"
+  }
+}

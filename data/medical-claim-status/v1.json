@@ -1,0 +1,14 @@
+{
+  "DRAFT": {"name": "Draft"},
+  "SUBMITTED": {"name": "Submitted"},
+  "RECEIVED": {"name": "Received"},
+  "REJECTED": {"name": "Rejected"},
+  "IN_PROCESS": {"name": "In Process"},
+  "PENDING_INFORMATION": {"name": "Pending Information"},
+  "ADJUDICATED": {"name": "Adjudicated"},
+  "DENIED": {"name": "Denied"},
+  "PARTIALLY_PAID": {"name": "Partially Paid"},
+  "PAID": {"name": "Paid"},
+  "CANCELLED": {"name": "Cancelled"},
+  "VOIDED": {"name": "Voided"}
+}

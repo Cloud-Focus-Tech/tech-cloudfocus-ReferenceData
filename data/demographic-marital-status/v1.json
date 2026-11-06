@@ -1,0 +1,17 @@
+{
+  "NEVER_MARRIED": {
+    "name": "Never Married"
+  },
+  "MARRIED": {
+    "name": "Married"
+  },
+  "SEPARATED": {
+    "name": "Separated"
+  },
+  "DIVORCED": {
+    "name": "Divorced"
+  },
+  "WIDOWED": {
+    "name": "Widowed"
+  }
+}

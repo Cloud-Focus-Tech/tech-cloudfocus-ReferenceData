@@ -1,0 +1,75 @@
+{
+    "schemaVersion": 1,
+    "collections": [
+        {
+            "name": "countries",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "address-countries/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ],
+            "hasSortOrder": false
+        },
+        {
+            "name": "timezones",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "timezones/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ],
+            "hasSortOrder": false
+        },
+        {
+            "name": "languages",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "languages/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ],
+            "hasSortOrder": false
+        },
+        {
+            "name": "currencies",
+            "kind": "set",
+            "version": "v1",
+            "blob": "currencies/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ],
+            "hasSortOrder": false
+        },
+        {
+            "name": "workflow-priority",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "workflow-priority/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ],
+            "hasSortOrder": true
+        },
+        {
+            "name": "workflow-status",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "workflow-status/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ],
+            "hasSortOrder": true
+        },
+        {
+            "name": "workflow-doc-type",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "workflow-doc-type/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ],
+            "hasSortOrder": true
+        }
+    ]
+}

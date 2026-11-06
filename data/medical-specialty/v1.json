@@ -1,0 +1,197 @@
+{
+  "ADDICTION_MEDICINE": {
+    "name": "Addiction Medicine"
+  },
+  "ADOLESCENT_MEDICINE": {
+    "name": "Adolescent Medicine"
+  },
+  "ALLERGY_AND_IMMUNOLOGY": {
+    "name": "Allergy and Immunology"
+  },
+  "ANESTHESIOLOGY": {
+    "name": "Anesthesiology"
+  },
+  "CARDIOLOGY": {
+    "name": "Cardiology"
+  },
+  "CHILD_AND_ADOLESCENT_PSYCHIATRY": {
+    "name": "Child and Adolescent Psychiatry"
+  },
+  "CLINICAL_CARDIAC_ELECTROPHYSIOLOGY": {
+    "name": "Clinical Cardiac Electrophysiology"
+  },
+  "COLON_AND_RECTAL_SURGERY": {
+    "name": "Colon and Rectal Surgery"
+  },
+  "CRITICAL_CARE_MEDICINE": {
+    "name": "Critical Care Medicine"
+  },
+  "DERMATOLOGY": {
+    "name": "Dermatology"
+  },
+  "DIAGNOSTIC_RADIOLOGY": {
+    "name": "Diagnostic Radiology"
+  },
+  "EMERGENCY_MEDICINE": {
+    "name": "Emergency Medicine"
+  },
+  "ENDOCRINOLOGY_DIABETES_AND_METABOLISM": {
+    "name": "Endocrinology, Diabetes and Metabolism"
+  },
+  "FAMILY_MEDICINE": {
+    "name": "Family Medicine"
+  },
+  "GASTROENTEROLOGY": {
+    "name": "Gastroenterology"
+  },
+  "GENERAL_SURGERY": {
+    "name": "General Surgery"
+  },
+  "GERIATRIC_MEDICINE": {
+    "name": "Geriatric Medicine"
+  },
+  "GYNECOLOGIC_ONCOLOGY": {
+    "name": "Gynecologic Oncology"
+  },
+  "HEMATOLOGY": {
+    "name": "Hematology"
+  },
+  "HOSPICE_AND_PALLIATIVE_MEDICINE": {
+    "name": "Hospice and Palliative Medicine"
+  },
+  "INFECTIOUS_DISEASE": {
+    "name": "Infectious Disease"
+  },
+  "INTERNAL_MEDICINE": {
+    "name": "Internal Medicine"
+  },
+  "INTERVENTIONAL_CARDIOLOGY": {
+    "name": "Interventional Cardiology"
+  },
+  "INTERVENTIONAL_RADIOLOGY": {
+    "name": "Interventional Radiology"
+  },
+  "MATERNAL_FETAL_MEDICINE": {
+    "name": "Maternal-Fetal Medicine"
+  },
+  "MEDICAL_GENETICS_AND_GENOMICS": {
+    "name": "Medical Genetics and Genomics"
+  },
+  "MEDICAL_ONCOLOGY": {
+    "name": "Medical Oncology"
+  },
+  "NEONATAL_PERINATAL_MEDICINE": {
+    "name": "Neonatal-Perinatal Medicine"
+  },
+  "NEPHROLOGY": {
+    "name": "Nephrology"
+  },
+  "NEUROLOGICAL_SURGERY": {
+    "name": "Neurological Surgery"
+  },
+  "NEUROLOGY": {
+    "name": "Neurology"
+  },
+  "NUCLEAR_MEDICINE": {
+    "name": "Nuclear Medicine"
+  },
+  "OBSTETRICS_AND_GYNECOLOGY": {
+    "name": "Obstetrics and Gynecology"
+  },
+  "OCCUPATIONAL_AND_ENVIRONMENTAL_MEDICINE": {
+    "name": "Occupational and Environmental Medicine"
+  },
+  "OPHTHALMOLOGY": {
+    "name": "Ophthalmology"
+  },
+  "ORTHOPEDIC_SURGERY": {
+    "name": "Orthopedic Surgery"
+  },
+  "OTOLARYNGOLOGY_HEAD_AND_NECK_SURGERY": {
+    "name": "Otolaryngology - Head and Neck Surgery"
+  },
+  "PAIN_MEDICINE": {
+    "name": "Pain Medicine"
+  },
+  "PATHOLOGY": {
+    "name": "Pathology"
+  },
+  "PEDIATRIC_CARDIOLOGY": {
+    "name": "Pediatric Cardiology"
+  },
+  "PEDIATRIC_CRITICAL_CARE_MEDICINE": {
+    "name": "Pediatric Critical Care Medicine"
+  },
+  "PEDIATRIC_DERMATOLOGY": {
+    "name": "Pediatric Dermatology"
+  },
+  "PEDIATRIC_EMERGENCY_MEDICINE": {
+    "name": "Pediatric Emergency Medicine"
+  },
+  "PEDIATRIC_ENDOCRINOLOGY": {
+    "name": "Pediatric Endocrinology"
+  },
+  "PEDIATRIC_GASTROENTEROLOGY": {
+    "name": "Pediatric Gastroenterology"
+  },
+  "PEDIATRIC_HEMATOLOGY_ONCOLOGY": {
+    "name": "Pediatric Hematology-Oncology"
+  },
+  "PEDIATRIC_INFECTIOUS_DISEASES": {
+    "name": "Pediatric Infectious Diseases"
+  },
+  "PEDIATRIC_NEPHROLOGY": {
+    "name": "Pediatric Nephrology"
+  },
+  "PEDIATRIC_PULMONOLOGY": {
+    "name": "Pediatric Pulmonology"
+  },
+  "PEDIATRIC_RHEUMATOLOGY": {
+    "name": "Pediatric Rheumatology"
+  },
+  "PEDIATRIC_SURGERY": {
+    "name": "Pediatric Surgery"
+  },
+  "PEDIATRICS": {
+    "name": "Pediatrics"
+  },
+  "PHYSICAL_MEDICINE_AND_REHABILITATION": {
+    "name": "Physical Medicine and Rehabilitation"
+  },
+  "PLASTIC_SURGERY": {
+    "name": "Plastic Surgery"
+  },
+  "PREVENTIVE_MEDICINE": {
+    "name": "Preventive Medicine"
+  },
+  "PSYCHIATRY": {
+    "name": "Psychiatry"
+  },
+  "PULMONOLOGY": {
+    "name": "Pulmonology"
+  },
+  "RADIATION_ONCOLOGY": {
+    "name": "Radiation Oncology"
+  },
+  "REPRODUCTIVE_ENDOCRINOLOGY_AND_INFERTILITY": {
+    "name": "Reproductive Endocrinology and Infertility"
+  },
+  "RHEUMATOLOGY": {
+    "name": "Rheumatology"
+  },
+  "SLEEP_MEDICINE": {
+    "name": "Sleep Medicine"
+  },
+  "SPORTS_MEDICINE": {
+    "name": "Sports Medicine"
+  },
+  "THORACIC_AND_CARDIAC_SURGERY": {
+    "name": "Thoracic and Cardiac Surgery"
+  },
+  "UROLOGY": {
+    "name": "Urology"
+  },
+  "VASCULAR_SURGERY": {
+    "name": "Vascular Surgery"
+  }
+}

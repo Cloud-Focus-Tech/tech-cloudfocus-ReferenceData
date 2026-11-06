@@ -1,0 +1,7 @@
+{
+  "EPO": {"name": "Exclusive Provider Organization"},
+  "HMO": {"name": "Health Maintenance Organization"},
+  "INDEMNITY": {"name": "Traditional Indemnity (Fee-for-Service)"},
+  "POS": {"name": "Point of Service"},
+  "PPO": {"name": "Preferred Provider Organization"}
+}

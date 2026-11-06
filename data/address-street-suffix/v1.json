@@ -1,0 +1,1562 @@
+{
+  "ALY": {
+    "name": "Alley",
+    "aliases": [
+      "ALLEY",
+      "ALLEE",
+      "ALY",
+      "ALLY"
+    ]
+  },
+  "ANX": {
+    "name": "Anex",
+    "aliases": [
+      "ANEX",
+      "ANX",
+      "ANNEX",
+      "ANNX"
+    ]
+  },
+  "ARC": {
+    "name": "Arcade",
+    "aliases": [
+      "ARCADE",
+      "ARC"
+    ]
+  },
+  "AVE": {
+    "name": "Avenue",
+    "aliases": [
+      "AVENUE",
+      "AV",
+      "AVE",
+      "AVEN",
+      "AVENU",
+      "AVN",
+      "AVNUE"
+    ]
+  },
+  "BCH": {
+    "name": "Beach",
+    "aliases": [
+      "BEACH",
+      "BCH"
+    ]
+  },
+  "BG": {
+    "name": "Burg",
+    "aliases": [
+      "BURG",
+      "BG"
+    ]
+  },
+  "BGS": {
+    "name": "Burgs",
+    "aliases": [
+      "BURGS",
+      "BGS"
+    ]
+  },
+  "BLF": {
+    "name": "Bluff",
+    "aliases": [
+      "BLUFF",
+      "BLF",
+      "BLUF"
+    ]
+  },
+  "BLFS": {
+    "name": "Bluffs",
+    "aliases": [
+      "BLUFFS",
+      "BLFS"
+    ]
+  },
+  "BLVD": {
+    "name": "Boulevard",
+    "aliases": [
+      "BOULEVARD",
+      "BLVD",
+      "BOUL",
+      "BOULV"
+    ]
+  },
+  "BND": {
+    "name": "Bend",
+    "aliases": [
+      "BEND",
+      "BND"
+    ]
+  },
+  "BR": {
+    "name": "Branch",
+    "aliases": [
+      "BRANCH",
+      "BR",
+      "BRNCH"
+    ]
+  },
+  "BRG": {
+    "name": "Bridge",
+    "aliases": [
+      "BRIDGE",
+      "BRDGE",
+      "BRG"
+    ]
+  },
+  "BRK": {
+    "name": "Brook",
+    "aliases": [
+      "BROOK",
+      "BRK"
+    ]
+  },
+  "BRKS": {
+    "name": "Brooks",
+    "aliases": [
+      "BROOKS",
+      "BRKS"
+    ]
+  },
+  "BTM": {
+    "name": "Bottom",
+    "aliases": [
+      "BOTTOM",
+      "BOT",
+      "BTM",
+      "BOTTM"
+    ]
+  },
+  "BYP": {
+    "name": "Bypass",
+    "aliases": [
+      "BYPASS",
+      "BYP",
+      "BYPA",
+      "BYPAS",
+      "BYPS"
+    ]
+  },
+  "BYU": {
+    "name": "Bayou",
+    "aliases": [
+      "BAYOU",
+      "BAYOO",
+      "BYU"
+    ]
+  },
+  "CIR": {
+    "name": "Circle",
+    "aliases": [
+      "CIRCLE",
+      "CIR",
+      "CIRC",
+      "CIRCL",
+      "CRCL",
+      "CRCLE"
+    ]
+  },
+  "CIRS": {
+    "name": "Circles",
+    "aliases": [
+      "CIRCLES",
+      "CIRS"
+    ]
+  },
+  "CLB": {
+    "name": "Club",
+    "aliases": [
+      "CLUB",
+      "CLB"
+    ]
+  },
+  "CLF": {
+    "name": "Cliff",
+    "aliases": [
+      "CLIFF",
+      "CLF"
+    ]
+  },
+  "CLFS": {
+    "name": "Cliffs",
+    "aliases": [
+      "CLIFFS",
+      "CLFS"
+    ]
+  },
+  "CMN": {
+    "name": "Common",
+    "aliases": [
+      "COMMON",
+      "CMN"
+    ]
+  },
+  "CMNS": {
+    "name": "Commons",
+    "aliases": [
+      "COMMONS",
+      "CMNS"
+    ]
+  },
+  "COR": {
+    "name": "Corner",
+    "aliases": [
+      "CORNER",
+      "COR"
+    ]
+  },
+  "CORS": {
+    "name": "Corners",
+    "aliases": [
+      "CORNERS",
+      "CORS"
+    ]
+  },
+  "CP": {
+    "name": "Camp",
+    "aliases": [
+      "CAMP",
+      "CP",
+      "CMP"
+    ]
+  },
+  "CPE": {
+    "name": "Cape",
+    "aliases": [
+      "CAPE",
+      "CPE"
+    ]
+  },
+  "CRES": {
+    "name": "Crescent",
+    "aliases": [
+      "CRESCENT",
+      "CRES",
+      "CRSENT",
+      "CRSNT"
+    ]
+  },
+  "CRK": {
+    "name": "Creek",
+    "aliases": [
+      "CREEK",
+      "CRK"
+    ]
+  },
+  "CRSE": {
+    "name": "Course",
+    "aliases": [
+      "COURSE",
+      "CRSE"
+    ]
+  },
+  "CRST": {
+    "name": "Crest",
+    "aliases": [
+      "CREST",
+      "CRST"
+    ]
+  },
+  "CSWY": {
+    "name": "Causeway",
+    "aliases": [
+      "CAUSEWAY",
+      "CSWY",
+      "CAUSWA"
+    ]
+  },
+  "CT": {
+    "name": "Court",
+    "aliases": [
+      "COURT",
+      "CT"
+    ]
+  },
+  "CTR": {
+    "name": "Center",
+    "aliases": [
+      "CENTER",
+      "CEN",
+      "CTR",
+      "CENT",
+      "CENTR",
+      "CENTRE",
+      "CNTER",
+      "CNTR"
+    ]
+  },
+  "CTRS": {
+    "name": "Centers",
+    "aliases": [
+      "CENTERS",
+      "CTRS"
+    ]
+  },
+  "CTS": {
+    "name": "Courts",
+    "aliases": [
+      "COURTS",
+      "CTS"
+    ]
+  },
+  "CURV": {
+    "name": "Curve",
+    "aliases": [
+      "CURVE",
+      "CURV"
+    ]
+  },
+  "CV": {
+    "name": "Cove",
+    "aliases": [
+      "COVE",
+      "CV"
+    ]
+  },
+  "CVS": {
+    "name": "Coves",
+    "aliases": [
+      "COVES",
+      "CVS"
+    ]
+  },
+  "CYN": {
+    "name": "Canyon",
+    "aliases": [
+      "CANYON",
+      "CANYN",
+      "CYN",
+      "CNYN"
+    ]
+  },
+  "DL": {
+    "name": "Dale",
+    "aliases": [
+      "DALE",
+      "DL"
+    ]
+  },
+  "DM": {
+    "name": "Dam",
+    "aliases": [
+      "DAM",
+      "DM"
+    ]
+  },
+  "DR": {
+    "name": "Drive",
+    "aliases": [
+      "DRIVE",
+      "DR",
+      "DRIV",
+      "DRV"
+    ]
+  },
+  "DRS": {
+    "name": "Drives",
+    "aliases": [
+      "DRIVES",
+      "DRS"
+    ]
+  },
+  "DV": {
+    "name": "Divide",
+    "aliases": [
+      "DIVIDE",
+      "DIV",
+      "DV",
+      "DVD"
+    ]
+  },
+  "EST": {
+    "name": "Estate",
+    "aliases": [
+      "ESTATE",
+      "EST"
+    ]
+  },
+  "ESTS": {
+    "name": "Estates",
+    "aliases": [
+      "ESTATES",
+      "ESTS"
+    ]
+  },
+  "EXPY": {
+    "name": "Expressway",
+    "aliases": [
+      "EXPRESSWAY",
+      "EXP",
+      "EXPY",
+      "EXPR",
+      "EXPRESS",
+      "EXPW"
+    ]
+  },
+  "EXT": {
+    "name": "Extension",
+    "aliases": [
+      "EXTENSION",
+      "EXT",
+      "EXTN",
+      "EXTNSN"
+    ]
+  },
+  "EXTS": {
+    "name": "Extensions",
+    "aliases": [
+      "EXTENSIONS",
+      "EXTS"
+    ]
+  },
+  "FALL": {
+    "name": "Fall",
+    "aliases": [
+      "FALL"
+    ]
+  },
+  "FLD": {
+    "name": "Field",
+    "aliases": [
+      "FIELD",
+      "FLD"
+    ]
+  },
+  "FLDS": {
+    "name": "Fields",
+    "aliases": [
+      "FIELDS",
+      "FLDS"
+    ]
+  },
+  "FLS": {
+    "name": "Falls",
+    "aliases": [
+      "FALLS",
+      "FLS"
+    ]
+  },
+  "FLT": {
+    "name": "Flat",
+    "aliases": [
+      "FLAT",
+      "FLT"
+    ]
+  },
+  "FLTS": {
+    "name": "Flats",
+    "aliases": [
+      "FLATS",
+      "FLTS"
+    ]
+  },
+  "FRD": {
+    "name": "Ford",
+    "aliases": [
+      "FORD",
+      "FRD"
+    ]
+  },
+  "FRDS": {
+    "name": "Fords",
+    "aliases": [
+      "FORDS",
+      "FRDS"
+    ]
+  },
+  "FRG": {
+    "name": "Forge",
+    "aliases": [
+      "FORGE",
+      "FORG",
+      "FRG"
+    ]
+  },
+  "FRGS": {
+    "name": "Forges",
+    "aliases": [
+      "FORGES",
+      "FRGS"
+    ]
+  },
+  "FRK": {
+    "name": "Fork",
+    "aliases": [
+      "FORK",
+      "FRK"
+    ]
+  },
+  "FRKS": {
+    "name": "Forks",
+    "aliases": [
+      "FORKS",
+      "FRKS"
+    ]
+  },
+  "FRST": {
+    "name": "Forest",
+    "aliases": [
+      "FOREST",
+      "FRST",
+      "FORESTS"
+    ]
+  },
+  "FRY": {
+    "name": "Ferry",
+    "aliases": [
+      "FERRY",
+      "FRY",
+      "FRRY"
+    ]
+  },
+  "FT": {
+    "name": "Fort",
+    "aliases": [
+      "FORT",
+      "FT",
+      "FRT"
+    ]
+  },
+  "FWY": {
+    "name": "Freeway",
+    "aliases": [
+      "FREEWAY",
+      "FWY",
+      "FREEWY",
+      "FRWAY",
+      "FRWY"
+    ]
+  },
+  "GDN": {
+    "name": "Garden",
+    "aliases": [
+      "GARDEN",
+      "GDN",
+      "GARDN",
+      "GRDEN",
+      "GRDN"
+    ]
+  },
+  "GDNS": {
+    "name": "Gardens",
+    "aliases": [
+      "GARDENS",
+      "GDNS",
+      "GRDNS"
+    ]
+  },
+  "GLN": {
+    "name": "Glen",
+    "aliases": [
+      "GLEN",
+      "GLN"
+    ]
+  },
+  "GLNS": {
+    "name": "Glens",
+    "aliases": [
+      "GLENS",
+      "GLNS"
+    ]
+  },
+  "GRN": {
+    "name": "Green",
+    "aliases": [
+      "GREEN",
+      "GRN"
+    ]
+  },
+  "GRNS": {
+    "name": "Greens",
+    "aliases": [
+      "GREENS",
+      "GRNS"
+    ]
+  },
+  "GRV": {
+    "name": "Grove",
+    "aliases": [
+      "GROVE",
+      "GROV",
+      "GRV"
+    ]
+  },
+  "GRVS": {
+    "name": "Groves",
+    "aliases": [
+      "GROVES",
+      "GRVS"
+    ]
+  },
+  "GTWY": {
+    "name": "Gateway",
+    "aliases": [
+      "GATEWAY",
+      "GTWY",
+      "GATEWY",
+      "GATWAY",
+      "GTWAY"
+    ]
+  },
+  "HBR": {
+    "name": "Harbor",
+    "aliases": [
+      "HARBOR",
+      "HARB",
+      "HBR",
+      "HARBR",
+      "HRBOR"
+    ]
+  },
+  "HBRS": {
+    "name": "Harbors",
+    "aliases": [
+      "HARBORS",
+      "HBRS"
+    ]
+  },
+  "HL": {
+    "name": "Hill",
+    "aliases": [
+      "HILL",
+      "HL"
+    ]
+  },
+  "HLS": {
+    "name": "Hills",
+    "aliases": [
+      "HILLS",
+      "HLS"
+    ]
+  },
+  "HOLW": {
+    "name": "Hollow",
+    "aliases": [
+      "HOLLOW",
+      "HLLW",
+      "HOLW",
+      "HOLLOWS",
+      "HOLWS"
+    ]
+  },
+  "HTS": {
+    "name": "Heights",
+    "aliases": [
+      "HEIGHTS",
+      "HT",
+      "HTS"
+    ]
+  },
+  "HVN": {
+    "name": "Haven",
+    "aliases": [
+      "HAVEN",
+      "HVN"
+    ]
+  },
+  "HWY": {
+    "name": "Highway",
+    "aliases": [
+      "HIGHWAY",
+      "HWY",
+      "HIGHWY",
+      "HIWAY",
+      "HIWY",
+      "HWAY"
+    ]
+  },
+  "INLT": {
+    "name": "Inlet",
+    "aliases": [
+      "INLET",
+      "INLT"
+    ]
+  },
+  "IS": {
+    "name": "Island",
+    "aliases": [
+      "ISLAND",
+      "IS",
+      "ISLND"
+    ]
+  },
+  "ISLE": {
+    "name": "Isle",
+    "aliases": [
+      "ISLE",
+      "ISLES"
+    ]
+  },
+  "ISS": {
+    "name": "Islands",
+    "aliases": [
+      "ISLANDS",
+      "ISS",
+      "ISLNDS"
+    ]
+  },
+  "JCT": {
+    "name": "Junction",
+    "aliases": [
+      "JUNCTION",
+      "JCT",
+      "JCTION",
+      "JCTN",
+      "JUNCTN",
+      "JUNCTON"
+    ]
+  },
+  "JCTS": {
+    "name": "Junctions",
+    "aliases": [
+      "JUNCTIONS",
+      "JCTNS",
+      "JCTS"
+    ]
+  },
+  "KNL": {
+    "name": "Knoll",
+    "aliases": [
+      "KNOLL",
+      "KNL",
+      "KNOL"
+    ]
+  },
+  "KNLS": {
+    "name": "Knolls",
+    "aliases": [
+      "KNOLLS",
+      "KNLS"
+    ]
+  },
+  "KY": {
+    "name": "Key",
+    "aliases": [
+      "KEY",
+      "KY"
+    ]
+  },
+  "KYS": {
+    "name": "Keys",
+    "aliases": [
+      "KEYS",
+      "KYS"
+    ]
+  },
+  "LAND": {
+    "name": "Land",
+    "aliases": [
+      "LAND"
+    ]
+  },
+  "LCK": {
+    "name": "Lock",
+    "aliases": [
+      "LOCK",
+      "LCK"
+    ]
+  },
+  "LCKS": {
+    "name": "Locks",
+    "aliases": [
+      "LOCKS",
+      "LCKS"
+    ]
+  },
+  "LDG": {
+    "name": "Lodge",
+    "aliases": [
+      "LODGE",
+      "LDG",
+      "LDGE",
+      "LODG"
+    ]
+  },
+  "LF": {
+    "name": "Loaf",
+    "aliases": [
+      "LOAF",
+      "LF"
+    ]
+  },
+  "LGT": {
+    "name": "Light",
+    "aliases": [
+      "LIGHT",
+      "LGT"
+    ]
+  },
+  "LGTS": {
+    "name": "Lights",
+    "aliases": [
+      "LIGHTS",
+      "LGTS"
+    ]
+  },
+  "LK": {
+    "name": "Lake",
+    "aliases": [
+      "LAKE",
+      "LK"
+    ]
+  },
+  "LKS": {
+    "name": "Lakes",
+    "aliases": [
+      "LAKES",
+      "LKS"
+    ]
+  },
+  "LN": {
+    "name": "Lane",
+    "aliases": [
+      "LANE",
+      "LN"
+    ]
+  },
+  "LNDG": {
+    "name": "Landing",
+    "aliases": [
+      "LANDING",
+      "LNDG",
+      "LNDNG"
+    ]
+  },
+  "LOOP": {
+    "name": "Loop",
+    "aliases": [
+      "LOOP",
+      "LOOPS"
+    ]
+  },
+  "MALL": {
+    "name": "Mall",
+    "aliases": [
+      "MALL"
+    ]
+  },
+  "MDW": {
+    "name": "Meadow",
+    "aliases": [
+      "MEADOW",
+      "MDW"
+    ]
+  },
+  "MDWS": {
+    "name": "Meadows",
+    "aliases": [
+      "MEADOWS",
+      "MDW",
+      "MDWS",
+      "MEDOWS"
+    ]
+  },
+  "MEWS": {
+    "name": "Mews",
+    "aliases": [
+      "MEWS"
+    ]
+  },
+  "ML": {
+    "name": "Mill",
+    "aliases": [
+      "MILL",
+      "ML"
+    ]
+  },
+  "MLS": {
+    "name": "Mills",
+    "aliases": [
+      "MILLS",
+      "MLS"
+    ]
+  },
+  "MNR": {
+    "name": "Manor",
+    "aliases": [
+      "MANOR",
+      "MNR"
+    ]
+  },
+  "MNRS": {
+    "name": "Manors",
+    "aliases": [
+      "MANORS",
+      "MNRS"
+    ]
+  },
+  "MSN": {
+    "name": "Mission",
+    "aliases": [
+      "MISSION",
+      "MISSN",
+      "MSN",
+      "MSSN"
+    ]
+  },
+  "MT": {
+    "name": "Mount",
+    "aliases": [
+      "MOUNT",
+      "MNT",
+      "MT"
+    ]
+  },
+  "MTN": {
+    "name": "Mountain",
+    "aliases": [
+      "MOUNTAIN",
+      "MNTAIN",
+      "MTN",
+      "MNTN",
+      "MOUNTIN",
+      "MTIN"
+    ]
+  },
+  "MTNS": {
+    "name": "Mountains",
+    "aliases": [
+      "MOUNTAINS",
+      "MNTNS",
+      "MTNS"
+    ]
+  },
+  "MTWY": {
+    "name": "Motorway",
+    "aliases": [
+      "MOTORWAY",
+      "MTWY"
+    ]
+  },
+  "NCK": {
+    "name": "Neck",
+    "aliases": [
+      "NECK",
+      "NCK"
+    ]
+  },
+  "OPAS": {
+    "name": "Overpass",
+    "aliases": [
+      "OVERPASS",
+      "OPAS"
+    ]
+  },
+  "ORCH": {
+    "name": "Orchard",
+    "aliases": [
+      "ORCHARD",
+      "ORCH",
+      "ORCHRD"
+    ]
+  },
+  "OVAL": {
+    "name": "Oval",
+    "aliases": [
+      "OVAL",
+      "OVL"
+    ]
+  },
+  "PARK": {
+    "name": "Park",
+    "aliases": [
+      "PARK",
+      "PRK",
+      "PARKS"
+    ]
+  },
+  "PASS": {
+    "name": "Pass",
+    "aliases": [
+      "PASS"
+    ]
+  },
+  "PATH": {
+    "name": "Path",
+    "aliases": [
+      "PATH",
+      "PATHS"
+    ]
+  },
+  "PIKE": {
+    "name": "Pike",
+    "aliases": [
+      "PIKE",
+      "PIKES"
+    ]
+  },
+  "PKWY": {
+    "name": "Parkway",
+    "aliases": [
+      "PARKWAY",
+      "PKWY",
+      "PARKWY",
+      "PKWAY",
+      "PKY",
+      "PARKWAYS",
+      "PKWYS"
+    ]
+  },
+  "PL": {
+    "name": "Place",
+    "aliases": [
+      "PLACE",
+      "PL"
+    ]
+  },
+  "PLN": {
+    "name": "Plain",
+    "aliases": [
+      "PLAIN",
+      "PLN"
+    ]
+  },
+  "PLNS": {
+    "name": "Plains",
+    "aliases": [
+      "PLAINS",
+      "PLNS"
+    ]
+  },
+  "PLZ": {
+    "name": "Plaza",
+    "aliases": [
+      "PLAZA",
+      "PLZ",
+      "PLZA"
+    ]
+  },
+  "PNE": {
+    "name": "Pine",
+    "aliases": [
+      "PINE",
+      "PNE"
+    ]
+  },
+  "PNES": {
+    "name": "Pines",
+    "aliases": [
+      "PINES",
+      "PNES"
+    ]
+  },
+  "PR": {
+    "name": "Prairie",
+    "aliases": [
+      "PRAIRIE",
+      "PR",
+      "PRR"
+    ]
+  },
+  "PRT": {
+    "name": "Port",
+    "aliases": [
+      "PORT",
+      "PRT"
+    ]
+  },
+  "PRTS": {
+    "name": "Ports",
+    "aliases": [
+      "PORTS",
+      "PRTS"
+    ]
+  },
+  "PSGE": {
+    "name": "Passage",
+    "aliases": [
+      "PASSAGE",
+      "PSGE"
+    ]
+  },
+  "PT": {
+    "name": "Point",
+    "aliases": [
+      "POINT",
+      "PT"
+    ]
+  },
+  "PTS": {
+    "name": "Points",
+    "aliases": [
+      "POINTS",
+      "PTS"
+    ]
+  },
+  "RADL": {
+    "name": "Radial",
+    "aliases": [
+      "RADIAL",
+      "RAD",
+      "RADL",
+      "RADIEL"
+    ]
+  },
+  "RAMP": {
+    "name": "Ramp",
+    "aliases": [
+      "RAMP"
+    ]
+  },
+  "RD": {
+    "name": "Road",
+    "aliases": [
+      "ROAD",
+      "RD"
+    ]
+  },
+  "RDG": {
+    "name": "Ridge",
+    "aliases": [
+      "RIDGE",
+      "RDG",
+      "RDGE"
+    ]
+  },
+  "RDGS": {
+    "name": "Ridges",
+    "aliases": [
+      "RIDGES",
+      "RDGS"
+    ]
+  },
+  "RDS": {
+    "name": "Roads",
+    "aliases": [
+      "ROADS",
+      "RDS"
+    ]
+  },
+  "RIV": {
+    "name": "River",
+    "aliases": [
+      "RIVER",
+      "RIV",
+      "RVR",
+      "RIVR"
+    ]
+  },
+  "RNCH": {
+    "name": "Ranch",
+    "aliases": [
+      "RANCH",
+      "RNCH",
+      "RANCHES",
+      "RNCHS"
+    ]
+  },
+  "ROW": {
+    "name": "Row",
+    "aliases": [
+      "ROW"
+    ]
+  },
+  "RPD": {
+    "name": "Rapid",
+    "aliases": [
+      "RAPID",
+      "RPD"
+    ]
+  },
+  "RPDS": {
+    "name": "Rapids",
+    "aliases": [
+      "RAPIDS",
+      "RPDS"
+    ]
+  },
+  "RST": {
+    "name": "Rest",
+    "aliases": [
+      "REST",
+      "RST"
+    ]
+  },
+  "RTE": {
+    "name": "Route",
+    "aliases": [
+      "ROUTE",
+      "RTE"
+    ]
+  },
+  "RUE": {
+    "name": "Rue",
+    "aliases": [
+      "RUE"
+    ]
+  },
+  "RUN": {
+    "name": "Run",
+    "aliases": [
+      "RUN"
+    ]
+  },
+  "SHL": {
+    "name": "Shoal",
+    "aliases": [
+      "SHOAL",
+      "SHL"
+    ]
+  },
+  "SHLS": {
+    "name": "Shoals",
+    "aliases": [
+      "SHOALS",
+      "SHLS"
+    ]
+  },
+  "SHR": {
+    "name": "Shore",
+    "aliases": [
+      "SHORE",
+      "SHOAR",
+      "SHR"
+    ]
+  },
+  "SHRS": {
+    "name": "Shores",
+    "aliases": [
+      "SHORES",
+      "SHOARS",
+      "SHRS"
+    ]
+  },
+  "SKWY": {
+    "name": "Skyway",
+    "aliases": [
+      "SKYWAY",
+      "SKWY"
+    ]
+  },
+  "SMT": {
+    "name": "Summit",
+    "aliases": [
+      "SUMMIT",
+      "SMT",
+      "SUMIT",
+      "SUMITT"
+    ]
+  },
+  "SPG": {
+    "name": "Spring",
+    "aliases": [
+      "SPRING",
+      "SPG",
+      "SPNG",
+      "SPRNG"
+    ]
+  },
+  "SPGS": {
+    "name": "Springs",
+    "aliases": [
+      "SPRINGS",
+      "SPGS",
+      "SPNGS",
+      "SPRNGS"
+    ]
+  },
+  "SPUR": {
+    "name": "Spur",
+    "aliases": [
+      "SPUR",
+      "SPURS"
+    ]
+  },
+  "SQ": {
+    "name": "Square",
+    "aliases": [
+      "SQUARE",
+      "SQ",
+      "SQR",
+      "SQRE",
+      "SQU"
+    ]
+  },
+  "SQS": {
+    "name": "Squares",
+    "aliases": [
+      "SQUARES",
+      "SQRS",
+      "SQS"
+    ]
+  },
+  "ST": {
+    "name": "Street",
+    "aliases": [
+      "STREET",
+      "ST",
+      "STRT",
+      "STR"
+    ]
+  },
+  "STA": {
+    "name": "Station",
+    "aliases": [
+      "STATION",
+      "STA",
+      "STATN",
+      "STN"
+    ]
+  },
+  "STRA": {
+    "name": "Stravenue",
+    "aliases": [
+      "STRAVENUE",
+      "STRA",
+      "STRAV",
+      "STRAVEN",
+      "STRAVN",
+      "STRVN",
+      "STRVNUE"
+    ]
+  },
+  "STRM": {
+    "name": "Stream",
+    "aliases": [
+      "STREAM",
+      "STRM",
+      "STREME"
+    ]
+  },
+  "STS": {
+    "name": "Streets",
+    "aliases": [
+      "STREETS",
+      "STS"
+    ]
+  },
+  "TER": {
+    "name": "Terrace",
+    "aliases": [
+      "TERRACE",
+      "TER",
+      "TERR"
+    ]
+  },
+  "TPKE": {
+    "name": "Turnpike",
+    "aliases": [
+      "TURNPIKE",
+      "TRNPK",
+      "TPKE",
+      "TURNPK"
+    ]
+  },
+  "TRAK": {
+    "name": "Track",
+    "aliases": [
+      "TRACK",
+      "TRAK",
+      "TRACKS",
+      "TRK",
+      "TRKS"
+    ]
+  },
+  "TRCE": {
+    "name": "Trace",
+    "aliases": [
+      "TRACE",
+      "TRCE",
+      "TRACES"
+    ]
+  },
+  "TRFY": {
+    "name": "Trafficway",
+    "aliases": [
+      "TRAFFICWAY",
+      "TRFY"
+    ]
+  },
+  "TRL": {
+    "name": "Trail",
+    "aliases": [
+      "TRAIL",
+      "TRL",
+      "TRAILS",
+      "TRLS"
+    ]
+  },
+  "TRLR": {
+    "name": "Trailer",
+    "aliases": [
+      "TRAILER",
+      "TRLR",
+      "TRLRS"
+    ]
+  },
+  "TRWY": {
+    "name": "Throughway",
+    "aliases": [
+      "THROUGHWAY",
+      "TRWY"
+    ]
+  },
+  "TUNL": {
+    "name": "Tunnel",
+    "aliases": [
+      "TUNNEL",
+      "TUNEL",
+      "TUNL",
+      "TUNLS",
+      "TUNNELS",
+      "TUNNL"
+    ]
+  },
+  "UN": {
+    "name": "Union",
+    "aliases": [
+      "UNION",
+      "UN"
+    ]
+  },
+  "UNS": {
+    "name": "Unions",
+    "aliases": [
+      "UNIONS",
+      "UNS"
+    ]
+  },
+  "UPAS": {
+    "name": "Underpass",
+    "aliases": [
+      "UNDERPASS",
+      "UPAS"
+    ]
+  },
+  "VIA": {
+    "name": "Viaduct",
+    "aliases": [
+      "VIADUCT",
+      "VDCT",
+      "VIA",
+      "VIADCT"
+    ]
+  },
+  "VIS": {
+    "name": "Vista",
+    "aliases": [
+      "VISTA",
+      "VIS",
+      "VIST",
+      "VST",
+      "VSTA"
+    ]
+  },
+  "VL": {
+    "name": "Ville",
+    "aliases": [
+      "VILLE",
+      "VL"
+    ]
+  },
+  "VLG": {
+    "name": "Village",
+    "aliases": [
+      "VILLAGE",
+      "VILL",
+      "VLG",
+      "VILLAG",
+      "VILLG",
+      "VILLIAGE"
+    ]
+  },
+  "VLGS": {
+    "name": "Villages",
+    "aliases": [
+      "VILLAGES",
+      "VLGS"
+    ]
+  },
+  "VLY": {
+    "name": "Valley",
+    "aliases": [
+      "VALLEY",
+      "VLY",
+      "VALLY",
+      "VLLY"
+    ]
+  },
+  "VLYS": {
+    "name": "Valleys",
+    "aliases": [
+      "VALLEYS",
+      "VLYS"
+    ]
+  },
+  "VW": {
+    "name": "View",
+    "aliases": [
+      "VIEW",
+      "VW"
+    ]
+  },
+  "VWS": {
+    "name": "Views",
+    "aliases": [
+      "VIEWS",
+      "VWS"
+    ]
+  },
+  "WALK": {
+    "name": "Walk",
+    "aliases": [
+      "WALK",
+      "WALKS"
+    ]
+  },
+  "WALL": {
+    "name": "Wall",
+    "aliases": [
+      "WALL"
+    ]
+  },
+  "WAY": {
+    "name": "Way",
+    "aliases": [
+      "WAY",
+      "WY"
+    ]
+  },
+  "WAYS": {
+    "name": "Ways",
+    "aliases": [
+      "WAYS"
+    ]
+  },
+  "WL": {
+    "name": "Well",
+    "aliases": [
+      "WELL",
+      "WL"
+    ]
+  },
+  "WLS": {
+    "name": "Wells",
+    "aliases": [
+      "WELLS",
+      "WLS"
+    ]
+  },
+  "XING": {
+    "name": "Crossing",
+    "aliases": [
+      "CROSSING",
+      "XING",
+      "CRSSNG"
+    ]
+  },
+  "XRD": {
+    "name": "Crossroad",
+    "aliases": [
+      "CROSSROAD",
+      "XRD"
+    ]
+  },
+  "XRDS": {
+    "name": "Crossroads",
+    "aliases": [
+      "CROSSROADS",
+      "XRDS"
+    ]
+  }
+}

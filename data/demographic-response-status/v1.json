@@ -1,0 +1,17 @@
+{
+  "ANSWERED": {
+    "name": "Answered"
+  },
+  "UNKNOWN": {
+    "name": "Unknown"
+  },
+  "PREFER_NOT_TO_SAY": {
+    "name": "Prefer Not to Say"
+  },
+  "NOT_ASKED": {
+    "name": "Not Asked"
+  },
+  "NOT_APPLICABLE": {
+    "name": "Not Applicable"
+  }
+}

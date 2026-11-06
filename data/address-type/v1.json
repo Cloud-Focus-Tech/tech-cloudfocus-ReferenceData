@@ -1,0 +1,20 @@
+{
+  "HOME": {
+    "name": "Home"
+  },
+  "WORK": {
+    "name": "Work"
+  },
+  "MAILING": {
+    "name": "Mailing"
+  },
+  "BILLING": {
+    "name": "Billing"
+  },
+  "SHIPPING": {
+    "name": "Shipping"
+  },
+  "OTHER": {
+    "name": "Other"
+  }
+}

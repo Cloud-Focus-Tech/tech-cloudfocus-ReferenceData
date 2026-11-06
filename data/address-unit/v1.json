@@ -1,0 +1,98 @@
+{
+  "APT": {
+    "name": "Apartment",
+    "requiresIdentifier": true
+  },
+  "BLDG": {
+    "name": "Building",
+    "requiresIdentifier": true
+  },
+  "BSMT": {
+    "name": "Basement",
+    "requiresIdentifier": false
+  },
+  "DEPT": {
+    "name": "Department",
+    "requiresIdentifier": true
+  },
+  "FL": {
+    "name": "Floor",
+    "requiresIdentifier": true
+  },
+  "FRNT": {
+    "name": "Front",
+    "requiresIdentifier": false
+  },
+  "HNGR": {
+    "name": "Hanger",
+    "requiresIdentifier": true
+  },
+  "KEY": {
+    "name": "Key",
+    "requiresIdentifier": true
+  },
+  "LBBY": {
+    "name": "Lobby",
+    "requiresIdentifier": false
+  },
+  "LOT": {
+    "name": "Lot",
+    "requiresIdentifier": true
+  },
+  "LOWR": {
+    "name": "Lower",
+    "requiresIdentifier": false
+  },
+  "OFC": {
+    "name": "Office",
+    "requiresIdentifier": false
+  },
+  "PH": {
+    "name": "Penthouse",
+    "requiresIdentifier": false
+  },
+  "PIER": {
+    "name": "Pier",
+    "requiresIdentifier": true
+  },
+  "REAR": {
+    "name": "Rear",
+    "requiresIdentifier": false
+  },
+  "RM": {
+    "name": "Room",
+    "requiresIdentifier": true
+  },
+  "SIDE": {
+    "name": "Side",
+    "requiresIdentifier": false
+  },
+  "SLIP": {
+    "name": "Slip",
+    "requiresIdentifier": true
+  },
+  "SPC": {
+    "name": "Space",
+    "requiresIdentifier": true
+  },
+  "STE": {
+    "name": "Suite",
+    "requiresIdentifier": true
+  },
+  "STOP": {
+    "name": "Stop",
+    "requiresIdentifier": true
+  },
+  "TRLR": {
+    "name": "Trailer",
+    "requiresIdentifier": true
+  },
+  "UNIT": {
+    "name": "Unit",
+    "requiresIdentifier": true
+  },
+  "UPPR": {
+    "name": "Upper",
+    "requiresIdentifier": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "AS": {
+    "name": "American Samoa"
+  },
+  "GU": {
+    "name": "Guam"
+  },
+  "MP": {
+    "name": "Northern Mariana Islands"
+  },
+  "PR": {
+    "name": "Puerto Rico"
+  },
+  "VI": {
+    "name": "Virgin Islands"
+  }
+}

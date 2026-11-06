@@ -1,0 +1,32 @@
+{
+  "EMPLOYED_FULL_TIME": {
+    "name": "Employed Full-Time"
+  },
+  "EMPLOYED_PART_TIME": {
+    "name": "Employed Part-Time"
+  },
+  "SELF_EMPLOYED": {
+    "name": "Self-Employed"
+  },
+  "UNEMPLOYED_SEEKING_WORK": {
+    "name": "Unemployed - Seeking Work"
+  },
+  "NOT_EMPLOYED_NOT_SEEKING_WORK": {
+    "name": "Not Employed - Not Seeking Work"
+  },
+  "STUDENT": {
+    "name": "Student"
+  },
+  "RETIRED": {
+    "name": "Retired"
+  },
+  "HOMEMAKER_OR_UNPAID_CAREGIVER": {
+    "name": "Homemaker or Unpaid Caregiver"
+  },
+  "UNABLE_TO_WORK": {
+    "name": "Unable to Work"
+  },
+  "OTHER": {
+    "name": "Other"
+  }
+}

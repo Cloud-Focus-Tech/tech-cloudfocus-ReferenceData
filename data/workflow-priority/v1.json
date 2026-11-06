@@ -1,0 +1,38 @@
+{
+  "CRITICAL": {
+    "name": "Critical",
+    "description": "Requires immediate attention due to severe business impact, safety concerns, or a major service disruption.",
+    "level": 1,
+    "sortOrder": 10
+  },
+  "HIGH": {
+    "name": "High",
+    "description": "Requires prompt attention due to significant business impact or an approaching deadline.",
+    "level": 2,
+    "sortOrder": 20
+  },
+  "MEDIUM": {
+    "name": "Medium",
+    "description": "Normal business priority requiring attention within standard processing timelines.",
+    "level": 3,
+    "sortOrder": 30
+  },
+  "LOW": {
+    "name": "Low",
+    "description": "Minor business impact with flexible processing timelines.",
+    "level": 4,
+    "sortOrder": 40
+  },
+  "VERY_LOW": {
+    "name": "Very Low",
+    "description": "Minimal business impact and no immediate processing requirement.",
+    "level": 5,
+    "sortOrder": 50
+  },
+  "NONE": {
+    "name": "None",
+    "description": "No priority has been assigned or prioritization is not applicable.",
+    "level": 6,
+    "sortOrder": 60
+  }
+}

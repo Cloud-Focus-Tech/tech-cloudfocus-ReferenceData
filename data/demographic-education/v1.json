@@ -1,0 +1,32 @@
+{
+  "NO_FORMAL_SCHOOLING": {
+    "name": "No Formal Schooling"
+  },
+  "LESS_THAN_HIGH_SCHOOL": {
+    "name": "Some Schooling Below High School Completion"
+  },
+  "HIGH_SCHOOL_OR_EQUIVALENT": {
+    "name": "High School Diploma or Equivalent"
+  },
+  "SOME_COLLEGE_NO_DEGREE": {
+    "name": "Some College - No Degree"
+  },
+  "POSTSECONDARY_CERTIFICATE": {
+    "name": "Postsecondary Certificate or Diploma"
+  },
+  "ASSOCIATE_DEGREE": {
+    "name": "Associate Degree"
+  },
+  "BACHELOR_DEGREE": {
+    "name": "Bachelor's Degree"
+  },
+  "MASTER_DEGREE": {
+    "name": "Master's Degree"
+  },
+  "PROFESSIONAL_DEGREE": {
+    "name": "Professional Degree"
+  },
+  "DOCTORAL_DEGREE": {
+    "name": "Doctoral Degree"
+  }
+}

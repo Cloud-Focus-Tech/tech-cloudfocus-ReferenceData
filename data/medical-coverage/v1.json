@@ -1,0 +1,10 @@
+{
+  "IFB": {"name": "Individual & Family"},
+  "SMALL_GROUP": {"name": "Small Employer Group"},
+  "LARGE_GROUP": {"name": "Large Employer Group"},
+  "MEDICARE": {"name": "Medicare"},
+  "MEDICAID": {"name": "Medicaid"},
+  "CHIP": {"name": "Children's Health Insurance Program"},
+  "TRICARE": {"name": "TRICARE"},
+  "FEHB": {"name": "Federal Employees Health Benefits"}
+}

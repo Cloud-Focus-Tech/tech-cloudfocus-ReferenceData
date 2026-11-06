@@ -1,0 +1,23 @@
+{
+  "AMERICAN_INDIAN_OR_ALASKA_NATIVE": {
+    "name": "American Indian or Alaska Native"
+  },
+  "ASIAN": {
+    "name": "Asian"
+  },
+  "BLACK_OR_AFRICAN_AMERICAN": {
+    "name": "Black or African American"
+  },
+  "HISPANIC_OR_LATINO": {
+    "name": "Hispanic or Latino"
+  },
+  "MIDDLE_EASTERN_OR_NORTH_AFRICAN": {
+    "name": "Middle Eastern or North African"
+  },
+  "NATIVE_HAWAIIAN_OR_PACIFIC_ISLANDER": {
+    "name": "Native Hawaiian or Pacific Islander"
+  },
+  "WHITE": {
+    "name": "White"
+  }
+}

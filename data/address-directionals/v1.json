@@ -1,0 +1,26 @@
+{
+  "N": {
+    "name": "North"
+  },
+  "S": {
+    "name": "South"
+  },
+  "E": {
+    "name": "East"
+  },
+  "W": {
+    "name": "West"
+  },
+  "NE": {
+    "name": "Northeast"
+  },
+  "NW": {
+    "name": "Northwest"
+  },
+  "SE": {
+    "name": "Southeast"
+  },
+  "SW": {
+    "name": "Southwest"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "DRAFT": {
+    "name": "Draft",
+    "category": "INITIAL",
+    "isTerminal": false,
+    "sortOrder": 10
+  },
+  "SUBMITTED": {
+    "name": "Submitted",
+    "category": "INITIAL",
+    "isTerminal": false,
+    "sortOrder": 20
+  },
+  "PENDING": {
+    "name": "Pending",
+    "category": "INITIAL",
+    "isTerminal": false,
+    "sortOrder": 30
+  },
+  "IN_REVIEW": {
+    "name": "In Review",
+    "category": "REVIEW",
+    "isTerminal": false,
+    "sortOrder": 40
+  },
+  "AWAITING_INFORMATION": {
+    "name": "Awaiting Information",
+    "category": "REVIEW",
+    "isTerminal": false,
+    "sortOrder": 50
+  },
+  "ESCALATED": {
+    "name": "Escalated",
+    "category": "REVIEW",
+    "isTerminal": false,
+    "sortOrder": 60
+  },
+  "IN_PROGRESS": {
+    "name": "In Progress",
+    "category": "EXECUTION",
+    "isTerminal": false,
+    "sortOrder": 70
+  },
+  "ON_HOLD": {
+    "name": "On Hold",
+    "category": "EXECUTION",
+    "isTerminal": false,
+    "sortOrder": 80
+  },
+  "APPROVED": {
+    "name": "Approved",
+    "category": "DECISION",
+    "isTerminal": false,
+    "sortOrder": 90
+  },
+  "CONDITIONALLY_APPROVED": {
+    "name": "Conditionally Approved",
+    "category": "DECISION",
+    "isTerminal": false,
+    "sortOrder": 100
+  },
+  "REJECTED": {
+    "name": "Rejected",
+    "category": "DECISION",
+    "isTerminal": true,
+    "sortOrder": 110
+  },
+  "COMPLETED": {
+    "name": "Completed",
+    "category": "TERMINAL",
+    "isTerminal": true,
+    "sortOrder": 120
+  },
+  "FAILED": {
+    "name": "Failed",
+    "category": "TERMINAL",
+    "isTerminal": true,
+    "sortOrder": 130
+  },
+  "CANCELLED": {
+    "name": "Cancelled",
+    "category": "TERMINAL",
+    "isTerminal": true,
+    "sortOrder": 140
+  },
+  "EXPIRED": {
+    "name": "Expired",
+    "category": "TERMINAL",
+    "isTerminal": true,
+    "sortOrder": 150
+  },
+  "WITHDRAWN": {
+    "name": "Withdrawn",
+    "category": "TERMINAL",
+    "isTerminal": true,
+    "sortOrder": 160
+  },
+  "REOPENED": {
+    "name": "Reopened",
+    "category": "REENTRY",
+    "isTerminal": false,
+    "sortOrder": 170
+  }
+}

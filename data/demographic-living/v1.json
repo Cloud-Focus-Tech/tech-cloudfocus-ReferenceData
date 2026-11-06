@@ -1,0 +1,26 @@
+{
+  "ALONE": {
+    "name": "Lives Alone"
+  },
+  "WITH_SPOUSE_OR_PARTNER": {
+    "name": "Lives With Spouse or Partner"
+  },
+  "WITH_CHILDREN": {
+    "name": "Lives With Children"
+  },
+  "WITH_PARENTS_OR_GUARDIANS": {
+    "name": "Lives With Parents or Guardians"
+  },
+  "WITH_OTHER_RELATIVES": {
+    "name": "Lives With Other Relatives"
+  },
+  "WITH_ROOMMATES_OR_OTHER_NONRELATIVES": {
+    "name": "Lives With Roommates or Other Nonrelatives"
+  },
+  "GROUP_OR_INSTITUTIONAL_SETTING": {
+    "name": "Group or Institutional Living Setting"
+  },
+  "OTHER": {
+    "name": "Other"
+  }
+}

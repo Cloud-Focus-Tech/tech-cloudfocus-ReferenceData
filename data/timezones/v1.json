@@ -1,0 +1,2987 @@
+{
+  "Africa/Abidjan": {
+    "name": "Africa/Abidjan",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Accra": {
+    "name": "Africa/Accra",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Addis_Ababa": {
+    "name": "Africa/Addis Ababa",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Algiers": {
+    "name": "Africa/Algiers",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Asmara": {
+    "name": "Africa/Asmara",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Asmera": {
+    "name": "Africa/Asmera",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Bamako": {
+    "name": "Africa/Bamako",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Bangui": {
+    "name": "Africa/Bangui",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Banjul": {
+    "name": "Africa/Banjul",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Bissau": {
+    "name": "Africa/Bissau",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Blantyre": {
+    "name": "Africa/Blantyre",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Brazzaville": {
+    "name": "Africa/Brazzaville",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Bujumbura": {
+    "name": "Africa/Bujumbura",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Cairo": {
+    "name": "Africa/Cairo",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Casablanca": {
+    "name": "Africa/Casablanca",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Ceuta": {
+    "name": "Africa/Ceuta",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Conakry": {
+    "name": "Africa/Conakry",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Dakar": {
+    "name": "Africa/Dakar",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Dar_es_Salaam": {
+    "name": "Africa/Dar es Salaam",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Djibouti": {
+    "name": "Africa/Djibouti",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Douala": {
+    "name": "Africa/Douala",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/El_Aaiun": {
+    "name": "Africa/El Aaiun",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Freetown": {
+    "name": "Africa/Freetown",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Gaborone": {
+    "name": "Africa/Gaborone",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Harare": {
+    "name": "Africa/Harare",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Johannesburg": {
+    "name": "Africa/Johannesburg",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Juba": {
+    "name": "Africa/Juba",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Kampala": {
+    "name": "Africa/Kampala",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Khartoum": {
+    "name": "Africa/Khartoum",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Kigali": {
+    "name": "Africa/Kigali",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Kinshasa": {
+    "name": "Africa/Kinshasa",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Lagos": {
+    "name": "Africa/Lagos",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Libreville": {
+    "name": "Africa/Libreville",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Lome": {
+    "name": "Africa/Lome",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Luanda": {
+    "name": "Africa/Luanda",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Lubumbashi": {
+    "name": "Africa/Lubumbashi",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Lusaka": {
+    "name": "Africa/Lusaka",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Malabo": {
+    "name": "Africa/Malabo",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Maputo": {
+    "name": "Africa/Maputo",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Maseru": {
+    "name": "Africa/Maseru",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Mbabane": {
+    "name": "Africa/Mbabane",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Mogadishu": {
+    "name": "Africa/Mogadishu",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Monrovia": {
+    "name": "Africa/Monrovia",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Nairobi": {
+    "name": "Africa/Nairobi",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Ndjamena": {
+    "name": "Africa/Ndjamena",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Niamey": {
+    "name": "Africa/Niamey",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Nouakchott": {
+    "name": "Africa/Nouakchott",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Ouagadougou": {
+    "name": "Africa/Ouagadougou",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Porto-Novo": {
+    "name": "Africa/Porto-Novo",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Sao_Tome": {
+    "name": "Africa/Sao Tome",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Timbuktu": {
+    "name": "Africa/Timbuktu",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Tripoli": {
+    "name": "Africa/Tripoli",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Tunis": {
+    "name": "Africa/Tunis",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Africa/Windhoek": {
+    "name": "Africa/Windhoek",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Adak": {
+    "name": "America/Adak",
+    "utcOffset": "-09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Anchorage": {
+    "name": "America/Anchorage",
+    "utcOffset": "-08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Anguilla": {
+    "name": "America/Anguilla",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Antigua": {
+    "name": "America/Antigua",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Araguaina": {
+    "name": "America/Araguaina",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Argentina/Buenos_Aires": {
+    "name": "America/Argentina/Buenos Aires",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Argentina/Catamarca": {
+    "name": "America/Argentina/Catamarca",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Argentina/ComodRivadavia": {
+    "name": "America/Argentina/ComodRivadavia",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Argentina/Cordoba": {
+    "name": "America/Argentina/Cordoba",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Argentina/Jujuy": {
+    "name": "America/Argentina/Jujuy",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Argentina/La_Rioja": {
+    "name": "America/Argentina/La Rioja",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Argentina/Mendoza": {
+    "name": "America/Argentina/Mendoza",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Argentina/Rio_Gallegos": {
+    "name": "America/Argentina/Rio Gallegos",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Argentina/Salta": {
+    "name": "America/Argentina/Salta",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Argentina/San_Juan": {
+    "name": "America/Argentina/San Juan",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Argentina/San_Luis": {
+    "name": "America/Argentina/San Luis",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Argentina/Tucuman": {
+    "name": "America/Argentina/Tucuman",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Argentina/Ushuaia": {
+    "name": "America/Argentina/Ushuaia",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Aruba": {
+    "name": "America/Aruba",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Asuncion": {
+    "name": "America/Asuncion",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Atikokan": {
+    "name": "America/Atikokan",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Atka": {
+    "name": "America/Atka",
+    "utcOffset": "-09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Bahia": {
+    "name": "America/Bahia",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Bahia_Banderas": {
+    "name": "America/Bahia Banderas",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Barbados": {
+    "name": "America/Barbados",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Belem": {
+    "name": "America/Belem",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Belize": {
+    "name": "America/Belize",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Blanc-Sablon": {
+    "name": "America/Blanc-Sablon",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Boa_Vista": {
+    "name": "America/Boa Vista",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Bogota": {
+    "name": "America/Bogota",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Boise": {
+    "name": "America/Boise",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Buenos_Aires": {
+    "name": "America/Buenos Aires",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Cambridge_Bay": {
+    "name": "America/Cambridge Bay",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Campo_Grande": {
+    "name": "America/Campo Grande",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Cancun": {
+    "name": "America/Cancun",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Caracas": {
+    "name": "America/Caracas",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Catamarca": {
+    "name": "America/Catamarca",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Cayenne": {
+    "name": "America/Cayenne",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Cayman": {
+    "name": "America/Cayman",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Chicago": {
+    "name": "America/Chicago",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Chihuahua": {
+    "name": "America/Chihuahua",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Ciudad_Juarez": {
+    "name": "America/Ciudad Juarez",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Coral_Harbour": {
+    "name": "America/Coral Harbour",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Cordoba": {
+    "name": "America/Cordoba",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Costa_Rica": {
+    "name": "America/Costa Rica",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Coyhaique": {
+    "name": "America/Coyhaique",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Creston": {
+    "name": "America/Creston",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Cuiaba": {
+    "name": "America/Cuiaba",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Curacao": {
+    "name": "America/Curacao",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Danmarkshavn": {
+    "name": "America/Danmarkshavn",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Dawson": {
+    "name": "America/Dawson",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Dawson_Creek": {
+    "name": "America/Dawson Creek",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Denver": {
+    "name": "America/Denver",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Detroit": {
+    "name": "America/Detroit",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Dominica": {
+    "name": "America/Dominica",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Edmonton": {
+    "name": "America/Edmonton",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Eirunepe": {
+    "name": "America/Eirunepe",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/El_Salvador": {
+    "name": "America/El Salvador",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Ensenada": {
+    "name": "America/Ensenada",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Fort_Nelson": {
+    "name": "America/Fort Nelson",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Fort_Wayne": {
+    "name": "America/Fort Wayne",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Fortaleza": {
+    "name": "America/Fortaleza",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Glace_Bay": {
+    "name": "America/Glace Bay",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Godthab": {
+    "name": "America/Godthab",
+    "utcOffset": "-01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Goose_Bay": {
+    "name": "America/Goose Bay",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Grand_Turk": {
+    "name": "America/Grand Turk",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Grenada": {
+    "name": "America/Grenada",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Guadeloupe": {
+    "name": "America/Guadeloupe",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Guatemala": {
+    "name": "America/Guatemala",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Guayaquil": {
+    "name": "America/Guayaquil",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Guyana": {
+    "name": "America/Guyana",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Halifax": {
+    "name": "America/Halifax",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Havana": {
+    "name": "America/Havana",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Hermosillo": {
+    "name": "America/Hermosillo",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Indiana/Indianapolis": {
+    "name": "America/Indiana/Indianapolis",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Indiana/Knox": {
+    "name": "America/Indiana/Knox",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Indiana/Marengo": {
+    "name": "America/Indiana/Marengo",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Indiana/Petersburg": {
+    "name": "America/Indiana/Petersburg",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Indiana/Tell_City": {
+    "name": "America/Indiana/Tell City",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Indiana/Vevay": {
+    "name": "America/Indiana/Vevay",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Indiana/Vincennes": {
+    "name": "America/Indiana/Vincennes",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Indiana/Winamac": {
+    "name": "America/Indiana/Winamac",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Indianapolis": {
+    "name": "America/Indianapolis",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Inuvik": {
+    "name": "America/Inuvik",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Iqaluit": {
+    "name": "America/Iqaluit",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Jamaica": {
+    "name": "America/Jamaica",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Jujuy": {
+    "name": "America/Jujuy",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Juneau": {
+    "name": "America/Juneau",
+    "utcOffset": "-08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Kentucky/Louisville": {
+    "name": "America/Kentucky/Louisville",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Kentucky/Monticello": {
+    "name": "America/Kentucky/Monticello",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Knox_IN": {
+    "name": "America/Knox IN",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Kralendijk": {
+    "name": "America/Kralendijk",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/La_Paz": {
+    "name": "America/La Paz",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Lima": {
+    "name": "America/Lima",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Los_Angeles": {
+    "name": "America/Los Angeles",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Louisville": {
+    "name": "America/Louisville",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Lower_Princes": {
+    "name": "America/Lower Princes",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Maceio": {
+    "name": "America/Maceio",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Managua": {
+    "name": "America/Managua",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Manaus": {
+    "name": "America/Manaus",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Marigot": {
+    "name": "America/Marigot",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Martinique": {
+    "name": "America/Martinique",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Matamoros": {
+    "name": "America/Matamoros",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Mazatlan": {
+    "name": "America/Mazatlan",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Mendoza": {
+    "name": "America/Mendoza",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Menominee": {
+    "name": "America/Menominee",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Merida": {
+    "name": "America/Merida",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Metlakatla": {
+    "name": "America/Metlakatla",
+    "utcOffset": "-08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Mexico_City": {
+    "name": "America/Mexico City",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Miquelon": {
+    "name": "America/Miquelon",
+    "utcOffset": "-02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Moncton": {
+    "name": "America/Moncton",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Monterrey": {
+    "name": "America/Monterrey",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Montevideo": {
+    "name": "America/Montevideo",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Montreal": {
+    "name": "America/Montreal",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Montserrat": {
+    "name": "America/Montserrat",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Nassau": {
+    "name": "America/Nassau",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/New_York": {
+    "name": "America/New York",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Nipigon": {
+    "name": "America/Nipigon",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Nome": {
+    "name": "America/Nome",
+    "utcOffset": "-08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Noronha": {
+    "name": "America/Noronha",
+    "utcOffset": "-02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/North_Dakota/Beulah": {
+    "name": "America/North Dakota/Beulah",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/North_Dakota/Center": {
+    "name": "America/North Dakota/Center",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/North_Dakota/New_Salem": {
+    "name": "America/North Dakota/New Salem",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Nuuk": {
+    "name": "America/Nuuk",
+    "utcOffset": "-01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Ojinaga": {
+    "name": "America/Ojinaga",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Panama": {
+    "name": "America/Panama",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Pangnirtung": {
+    "name": "America/Pangnirtung",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Paramaribo": {
+    "name": "America/Paramaribo",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Phoenix": {
+    "name": "America/Phoenix",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Port_of_Spain": {
+    "name": "America/Port of Spain",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Port-au-Prince": {
+    "name": "America/Port-au-Prince",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Porto_Acre": {
+    "name": "America/Porto Acre",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Porto_Velho": {
+    "name": "America/Porto Velho",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Puerto_Rico": {
+    "name": "America/Puerto Rico",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Punta_Arenas": {
+    "name": "America/Punta Arenas",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Rainy_River": {
+    "name": "America/Rainy River",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Rankin_Inlet": {
+    "name": "America/Rankin Inlet",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Recife": {
+    "name": "America/Recife",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Regina": {
+    "name": "America/Regina",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Resolute": {
+    "name": "America/Resolute",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Rio_Branco": {
+    "name": "America/Rio Branco",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Rosario": {
+    "name": "America/Rosario",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Santa_Isabel": {
+    "name": "America/Santa Isabel",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Santarem": {
+    "name": "America/Santarem",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Santiago": {
+    "name": "America/Santiago",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Santo_Domingo": {
+    "name": "America/Santo Domingo",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Sao_Paulo": {
+    "name": "America/Sao Paulo",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Scoresbysund": {
+    "name": "America/Scoresbysund",
+    "utcOffset": "-01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Shiprock": {
+    "name": "America/Shiprock",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Sitka": {
+    "name": "America/Sitka",
+    "utcOffset": "-08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/St_Barthelemy": {
+    "name": "America/St Barthelemy",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/St_Johns": {
+    "name": "America/St Johns",
+    "utcOffset": "-02:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/St_Kitts": {
+    "name": "America/St Kitts",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/St_Lucia": {
+    "name": "America/St Lucia",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/St_Thomas": {
+    "name": "America/St Thomas",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/St_Vincent": {
+    "name": "America/St Vincent",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Swift_Current": {
+    "name": "America/Swift Current",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Tegucigalpa": {
+    "name": "America/Tegucigalpa",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Thule": {
+    "name": "America/Thule",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Thunder_Bay": {
+    "name": "America/Thunder Bay",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Tijuana": {
+    "name": "America/Tijuana",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Toronto": {
+    "name": "America/Toronto",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Tortola": {
+    "name": "America/Tortola",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Vancouver": {
+    "name": "America/Vancouver",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Virgin": {
+    "name": "America/Virgin",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Whitehorse": {
+    "name": "America/Whitehorse",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Winnipeg": {
+    "name": "America/Winnipeg",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Yakutat": {
+    "name": "America/Yakutat",
+    "utcOffset": "-08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "America/Yellowknife": {
+    "name": "America/Yellowknife",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Antarctica/Casey": {
+    "name": "Antarctica/Casey",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Antarctica/Davis": {
+    "name": "Antarctica/Davis",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Antarctica/DumontDUrville": {
+    "name": "Antarctica/DumontDUrville",
+    "utcOffset": "+10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Antarctica/Macquarie": {
+    "name": "Antarctica/Macquarie",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Antarctica/Mawson": {
+    "name": "Antarctica/Mawson",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Antarctica/McMurdo": {
+    "name": "Antarctica/McMurdo",
+    "utcOffset": "+13:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Antarctica/Palmer": {
+    "name": "Antarctica/Palmer",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Antarctica/Rothera": {
+    "name": "Antarctica/Rothera",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Antarctica/South_Pole": {
+    "name": "Antarctica/South Pole",
+    "utcOffset": "+13:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Antarctica/Syowa": {
+    "name": "Antarctica/Syowa",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Antarctica/Troll": {
+    "name": "Antarctica/Troll",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Antarctica/Vostok": {
+    "name": "Antarctica/Vostok",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Arctic/Longyearbyen": {
+    "name": "Arctic/Longyearbyen",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Aden": {
+    "name": "Asia/Aden",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Almaty": {
+    "name": "Asia/Almaty",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Amman": {
+    "name": "Asia/Amman",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Anadyr": {
+    "name": "Asia/Anadyr",
+    "utcOffset": "+12:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Aqtau": {
+    "name": "Asia/Aqtau",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Aqtobe": {
+    "name": "Asia/Aqtobe",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Ashgabat": {
+    "name": "Asia/Ashgabat",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Ashkhabad": {
+    "name": "Asia/Ashkhabad",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Atyrau": {
+    "name": "Asia/Atyrau",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Baghdad": {
+    "name": "Asia/Baghdad",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Bahrain": {
+    "name": "Asia/Bahrain",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Baku": {
+    "name": "Asia/Baku",
+    "utcOffset": "+04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Bangkok": {
+    "name": "Asia/Bangkok",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Barnaul": {
+    "name": "Asia/Barnaul",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Beirut": {
+    "name": "Asia/Beirut",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Bishkek": {
+    "name": "Asia/Bishkek",
+    "utcOffset": "+06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Brunei": {
+    "name": "Asia/Brunei",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Calcutta": {
+    "name": "Asia/Calcutta",
+    "utcOffset": "+05:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Chita": {
+    "name": "Asia/Chita",
+    "utcOffset": "+09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Choibalsan": {
+    "name": "Asia/Choibalsan",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Chongqing": {
+    "name": "Asia/Chongqing",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Chungking": {
+    "name": "Asia/Chungking",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Colombo": {
+    "name": "Asia/Colombo",
+    "utcOffset": "+05:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Dacca": {
+    "name": "Asia/Dacca",
+    "utcOffset": "+06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Damascus": {
+    "name": "Asia/Damascus",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Dhaka": {
+    "name": "Asia/Dhaka",
+    "utcOffset": "+06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Dili": {
+    "name": "Asia/Dili",
+    "utcOffset": "+09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Dubai": {
+    "name": "Asia/Dubai",
+    "utcOffset": "+04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Dushanbe": {
+    "name": "Asia/Dushanbe",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Famagusta": {
+    "name": "Asia/Famagusta",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Gaza": {
+    "name": "Asia/Gaza",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Harbin": {
+    "name": "Asia/Harbin",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Hebron": {
+    "name": "Asia/Hebron",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Ho_Chi_Minh": {
+    "name": "Asia/Ho Chi Minh",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Hong_Kong": {
+    "name": "Asia/Hong Kong",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Hovd": {
+    "name": "Asia/Hovd",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Irkutsk": {
+    "name": "Asia/Irkutsk",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Istanbul": {
+    "name": "Asia/Istanbul",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Jakarta": {
+    "name": "Asia/Jakarta",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Jayapura": {
+    "name": "Asia/Jayapura",
+    "utcOffset": "+09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Jerusalem": {
+    "name": "Asia/Jerusalem",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Kabul": {
+    "name": "Asia/Kabul",
+    "utcOffset": "+04:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Kamchatka": {
+    "name": "Asia/Kamchatka",
+    "utcOffset": "+12:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Karachi": {
+    "name": "Asia/Karachi",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Kashgar": {
+    "name": "Asia/Kashgar",
+    "utcOffset": "+06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Kathmandu": {
+    "name": "Asia/Kathmandu",
+    "utcOffset": "+05:45",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Katmandu": {
+    "name": "Asia/Katmandu",
+    "utcOffset": "+05:45",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Khandyga": {
+    "name": "Asia/Khandyga",
+    "utcOffset": "+09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Kolkata": {
+    "name": "Asia/Kolkata",
+    "utcOffset": "+05:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Krasnoyarsk": {
+    "name": "Asia/Krasnoyarsk",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Kuala_Lumpur": {
+    "name": "Asia/Kuala Lumpur",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Kuching": {
+    "name": "Asia/Kuching",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Kuwait": {
+    "name": "Asia/Kuwait",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Macao": {
+    "name": "Asia/Macao",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Macau": {
+    "name": "Asia/Macau",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Magadan": {
+    "name": "Asia/Magadan",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Makassar": {
+    "name": "Asia/Makassar",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Manila": {
+    "name": "Asia/Manila",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Muscat": {
+    "name": "Asia/Muscat",
+    "utcOffset": "+04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Nicosia": {
+    "name": "Asia/Nicosia",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Novokuznetsk": {
+    "name": "Asia/Novokuznetsk",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Novosibirsk": {
+    "name": "Asia/Novosibirsk",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Omsk": {
+    "name": "Asia/Omsk",
+    "utcOffset": "+06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Oral": {
+    "name": "Asia/Oral",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Phnom_Penh": {
+    "name": "Asia/Phnom Penh",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Pontianak": {
+    "name": "Asia/Pontianak",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Pyongyang": {
+    "name": "Asia/Pyongyang",
+    "utcOffset": "+09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Qatar": {
+    "name": "Asia/Qatar",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Qostanay": {
+    "name": "Asia/Qostanay",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Qyzylorda": {
+    "name": "Asia/Qyzylorda",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Rangoon": {
+    "name": "Asia/Rangoon",
+    "utcOffset": "+06:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Riyadh": {
+    "name": "Asia/Riyadh",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Saigon": {
+    "name": "Asia/Saigon",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Sakhalin": {
+    "name": "Asia/Sakhalin",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Samarkand": {
+    "name": "Asia/Samarkand",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Seoul": {
+    "name": "Asia/Seoul",
+    "utcOffset": "+09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Shanghai": {
+    "name": "Asia/Shanghai",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Singapore": {
+    "name": "Asia/Singapore",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Srednekolymsk": {
+    "name": "Asia/Srednekolymsk",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Taipei": {
+    "name": "Asia/Taipei",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Tashkent": {
+    "name": "Asia/Tashkent",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Tbilisi": {
+    "name": "Asia/Tbilisi",
+    "utcOffset": "+04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Tehran": {
+    "name": "Asia/Tehran",
+    "utcOffset": "+03:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Tel_Aviv": {
+    "name": "Asia/Tel Aviv",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Thimbu": {
+    "name": "Asia/Thimbu",
+    "utcOffset": "+06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Thimphu": {
+    "name": "Asia/Thimphu",
+    "utcOffset": "+06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Tokyo": {
+    "name": "Asia/Tokyo",
+    "utcOffset": "+09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Tomsk": {
+    "name": "Asia/Tomsk",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Ujung_Pandang": {
+    "name": "Asia/Ujung Pandang",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Ulaanbaatar": {
+    "name": "Asia/Ulaanbaatar",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Ulan_Bator": {
+    "name": "Asia/Ulan Bator",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Urumqi": {
+    "name": "Asia/Urumqi",
+    "utcOffset": "+06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Ust-Nera": {
+    "name": "Asia/Ust-Nera",
+    "utcOffset": "+10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Vientiane": {
+    "name": "Asia/Vientiane",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Vladivostok": {
+    "name": "Asia/Vladivostok",
+    "utcOffset": "+10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Yakutsk": {
+    "name": "Asia/Yakutsk",
+    "utcOffset": "+09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Yangon": {
+    "name": "Asia/Yangon",
+    "utcOffset": "+06:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Yekaterinburg": {
+    "name": "Asia/Yekaterinburg",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Asia/Yerevan": {
+    "name": "Asia/Yerevan",
+    "utcOffset": "+04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Atlantic/Azores": {
+    "name": "Atlantic/Azores",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Atlantic/Bermuda": {
+    "name": "Atlantic/Bermuda",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Atlantic/Canary": {
+    "name": "Atlantic/Canary",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Atlantic/Cape_Verde": {
+    "name": "Atlantic/Cape Verde",
+    "utcOffset": "-01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Atlantic/Faeroe": {
+    "name": "Atlantic/Faeroe",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Atlantic/Faroe": {
+    "name": "Atlantic/Faroe",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Atlantic/Jan_Mayen": {
+    "name": "Atlantic/Jan Mayen",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Atlantic/Madeira": {
+    "name": "Atlantic/Madeira",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Atlantic/Reykjavik": {
+    "name": "Atlantic/Reykjavik",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Atlantic/South_Georgia": {
+    "name": "Atlantic/South Georgia",
+    "utcOffset": "-02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Atlantic/St_Helena": {
+    "name": "Atlantic/St Helena",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Atlantic/Stanley": {
+    "name": "Atlantic/Stanley",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/ACT": {
+    "name": "Australia/ACT",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Adelaide": {
+    "name": "Australia/Adelaide",
+    "utcOffset": "+10:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Brisbane": {
+    "name": "Australia/Brisbane",
+    "utcOffset": "+10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Broken_Hill": {
+    "name": "Australia/Broken Hill",
+    "utcOffset": "+10:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Canberra": {
+    "name": "Australia/Canberra",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Currie": {
+    "name": "Australia/Currie",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Darwin": {
+    "name": "Australia/Darwin",
+    "utcOffset": "+09:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Eucla": {
+    "name": "Australia/Eucla",
+    "utcOffset": "+08:45",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Hobart": {
+    "name": "Australia/Hobart",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/LHI": {
+    "name": "Australia/LHI",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Lindeman": {
+    "name": "Australia/Lindeman",
+    "utcOffset": "+10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Lord_Howe": {
+    "name": "Australia/Lord Howe",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Melbourne": {
+    "name": "Australia/Melbourne",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/North": {
+    "name": "Australia/North",
+    "utcOffset": "+09:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/NSW": {
+    "name": "Australia/NSW",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Perth": {
+    "name": "Australia/Perth",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Queensland": {
+    "name": "Australia/Queensland",
+    "utcOffset": "+10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/South": {
+    "name": "Australia/South",
+    "utcOffset": "+10:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Sydney": {
+    "name": "Australia/Sydney",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Tasmania": {
+    "name": "Australia/Tasmania",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Victoria": {
+    "name": "Australia/Victoria",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/West": {
+    "name": "Australia/West",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Australia/Yancowinna": {
+    "name": "Australia/Yancowinna",
+    "utcOffset": "+10:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Brazil/Acre": {
+    "name": "Brazil/Acre",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Brazil/DeNoronha": {
+    "name": "Brazil/DeNoronha",
+    "utcOffset": "-02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Brazil/East": {
+    "name": "Brazil/East",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Brazil/West": {
+    "name": "Brazil/West",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Canada/Atlantic": {
+    "name": "Canada/Atlantic",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Canada/Central": {
+    "name": "Canada/Central",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Canada/Eastern": {
+    "name": "Canada/Eastern",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Canada/Mountain": {
+    "name": "Canada/Mountain",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Canada/Newfoundland": {
+    "name": "Canada/Newfoundland",
+    "utcOffset": "-02:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Canada/Pacific": {
+    "name": "Canada/Pacific",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Canada/Saskatchewan": {
+    "name": "Canada/Saskatchewan",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Canada/Yukon": {
+    "name": "Canada/Yukon",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "CET": {
+    "name": "CET",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Chile/Continental": {
+    "name": "Chile/Continental",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Chile/EasterIsland": {
+    "name": "Chile/EasterIsland",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "CST6CDT": {
+    "name": "CST6CDT",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Cuba": {
+    "name": "Cuba",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "EET": {
+    "name": "EET",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Egypt": {
+    "name": "Egypt",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Eire": {
+    "name": "Eire",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "EST": {
+    "name": "EST",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "EST5EDT": {
+    "name": "EST5EDT",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT": {
+    "name": "Etc/GMT",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-0": {
+    "name": "Etc/GMT-0",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-1": {
+    "name": "Etc/GMT-1",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-10": {
+    "name": "Etc/GMT-10",
+    "utcOffset": "+10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-11": {
+    "name": "Etc/GMT-11",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-12": {
+    "name": "Etc/GMT-12",
+    "utcOffset": "+12:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-13": {
+    "name": "Etc/GMT-13",
+    "utcOffset": "+13:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-14": {
+    "name": "Etc/GMT-14",
+    "utcOffset": "+14:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-2": {
+    "name": "Etc/GMT-2",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-3": {
+    "name": "Etc/GMT-3",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-4": {
+    "name": "Etc/GMT-4",
+    "utcOffset": "+04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-5": {
+    "name": "Etc/GMT-5",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-6": {
+    "name": "Etc/GMT-6",
+    "utcOffset": "+06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-7": {
+    "name": "Etc/GMT-7",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-8": {
+    "name": "Etc/GMT-8",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT-9": {
+    "name": "Etc/GMT-9",
+    "utcOffset": "+09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT+0": {
+    "name": "Etc/GMT+0",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT+1": {
+    "name": "Etc/GMT+1",
+    "utcOffset": "-01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT+10": {
+    "name": "Etc/GMT+10",
+    "utcOffset": "-10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT+11": {
+    "name": "Etc/GMT+11",
+    "utcOffset": "-11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT+12": {
+    "name": "Etc/GMT+12",
+    "utcOffset": "-12:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT+2": {
+    "name": "Etc/GMT+2",
+    "utcOffset": "-02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT+3": {
+    "name": "Etc/GMT+3",
+    "utcOffset": "-03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT+4": {
+    "name": "Etc/GMT+4",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT+5": {
+    "name": "Etc/GMT+5",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT+6": {
+    "name": "Etc/GMT+6",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT+7": {
+    "name": "Etc/GMT+7",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT+8": {
+    "name": "Etc/GMT+8",
+    "utcOffset": "-08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT+9": {
+    "name": "Etc/GMT+9",
+    "utcOffset": "-09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/GMT0": {
+    "name": "Etc/GMT0",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/Greenwich": {
+    "name": "Etc/Greenwich",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/UCT": {
+    "name": "Etc/UCT",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/Universal": {
+    "name": "Etc/Universal",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/UTC": {
+    "name": "Etc/UTC",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Etc/Zulu": {
+    "name": "Etc/Zulu",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Amsterdam": {
+    "name": "Europe/Amsterdam",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Andorra": {
+    "name": "Europe/Andorra",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Astrakhan": {
+    "name": "Europe/Astrakhan",
+    "utcOffset": "+04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Athens": {
+    "name": "Europe/Athens",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Belfast": {
+    "name": "Europe/Belfast",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Belgrade": {
+    "name": "Europe/Belgrade",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Berlin": {
+    "name": "Europe/Berlin",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Bratislava": {
+    "name": "Europe/Bratislava",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Brussels": {
+    "name": "Europe/Brussels",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Bucharest": {
+    "name": "Europe/Bucharest",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Budapest": {
+    "name": "Europe/Budapest",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Busingen": {
+    "name": "Europe/Busingen",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Chisinau": {
+    "name": "Europe/Chisinau",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Copenhagen": {
+    "name": "Europe/Copenhagen",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Dublin": {
+    "name": "Europe/Dublin",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Gibraltar": {
+    "name": "Europe/Gibraltar",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Guernsey": {
+    "name": "Europe/Guernsey",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Helsinki": {
+    "name": "Europe/Helsinki",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Isle_of_Man": {
+    "name": "Europe/Isle of Man",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Istanbul": {
+    "name": "Europe/Istanbul",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Jersey": {
+    "name": "Europe/Jersey",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Kaliningrad": {
+    "name": "Europe/Kaliningrad",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Kiev": {
+    "name": "Europe/Kiev",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Kirov": {
+    "name": "Europe/Kirov",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Kyiv": {
+    "name": "Europe/Kyiv",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Lisbon": {
+    "name": "Europe/Lisbon",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Ljubljana": {
+    "name": "Europe/Ljubljana",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/London": {
+    "name": "Europe/London",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Luxembourg": {
+    "name": "Europe/Luxembourg",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Madrid": {
+    "name": "Europe/Madrid",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Malta": {
+    "name": "Europe/Malta",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Mariehamn": {
+    "name": "Europe/Mariehamn",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Minsk": {
+    "name": "Europe/Minsk",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Monaco": {
+    "name": "Europe/Monaco",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Moscow": {
+    "name": "Europe/Moscow",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Nicosia": {
+    "name": "Europe/Nicosia",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Oslo": {
+    "name": "Europe/Oslo",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Paris": {
+    "name": "Europe/Paris",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Podgorica": {
+    "name": "Europe/Podgorica",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Prague": {
+    "name": "Europe/Prague",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Riga": {
+    "name": "Europe/Riga",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Rome": {
+    "name": "Europe/Rome",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Samara": {
+    "name": "Europe/Samara",
+    "utcOffset": "+04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/San_Marino": {
+    "name": "Europe/San Marino",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Sarajevo": {
+    "name": "Europe/Sarajevo",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Saratov": {
+    "name": "Europe/Saratov",
+    "utcOffset": "+04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Simferopol": {
+    "name": "Europe/Simferopol",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Skopje": {
+    "name": "Europe/Skopje",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Sofia": {
+    "name": "Europe/Sofia",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Stockholm": {
+    "name": "Europe/Stockholm",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Tallinn": {
+    "name": "Europe/Tallinn",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Tirane": {
+    "name": "Europe/Tirane",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Tiraspol": {
+    "name": "Europe/Tiraspol",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Ulyanovsk": {
+    "name": "Europe/Ulyanovsk",
+    "utcOffset": "+04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Uzhgorod": {
+    "name": "Europe/Uzhgorod",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Vaduz": {
+    "name": "Europe/Vaduz",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Vatican": {
+    "name": "Europe/Vatican",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Vienna": {
+    "name": "Europe/Vienna",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Vilnius": {
+    "name": "Europe/Vilnius",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Volgograd": {
+    "name": "Europe/Volgograd",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Warsaw": {
+    "name": "Europe/Warsaw",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Zagreb": {
+    "name": "Europe/Zagreb",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Zaporozhye": {
+    "name": "Europe/Zaporozhye",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Europe/Zurich": {
+    "name": "Europe/Zurich",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "GB": {
+    "name": "GB",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "GB-Eire": {
+    "name": "GB-Eire",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "GMT": {
+    "name": "GMT",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "GMT-0": {
+    "name": "GMT-0",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "GMT+0": {
+    "name": "GMT+0",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "GMT0": {
+    "name": "GMT0",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Greenwich": {
+    "name": "Greenwich",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Hongkong": {
+    "name": "Hongkong",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "HST": {
+    "name": "HST",
+    "utcOffset": "-10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Iceland": {
+    "name": "Iceland",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Indian/Antananarivo": {
+    "name": "Indian/Antananarivo",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Indian/Chagos": {
+    "name": "Indian/Chagos",
+    "utcOffset": "+06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Indian/Christmas": {
+    "name": "Indian/Christmas",
+    "utcOffset": "+07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Indian/Cocos": {
+    "name": "Indian/Cocos",
+    "utcOffset": "+06:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Indian/Comoro": {
+    "name": "Indian/Comoro",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Indian/Kerguelen": {
+    "name": "Indian/Kerguelen",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Indian/Mahe": {
+    "name": "Indian/Mahe",
+    "utcOffset": "+04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Indian/Maldives": {
+    "name": "Indian/Maldives",
+    "utcOffset": "+05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Indian/Mauritius": {
+    "name": "Indian/Mauritius",
+    "utcOffset": "+04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Indian/Mayotte": {
+    "name": "Indian/Mayotte",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Indian/Reunion": {
+    "name": "Indian/Reunion",
+    "utcOffset": "+04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Iran": {
+    "name": "Iran",
+    "utcOffset": "+03:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Israel": {
+    "name": "Israel",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Jamaica": {
+    "name": "Jamaica",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Japan": {
+    "name": "Japan",
+    "utcOffset": "+09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Kwajalein": {
+    "name": "Kwajalein",
+    "utcOffset": "+12:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Libya": {
+    "name": "Libya",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "MET": {
+    "name": "MET",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Mexico/BajaNorte": {
+    "name": "Mexico/BajaNorte",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Mexico/BajaSur": {
+    "name": "Mexico/BajaSur",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Mexico/General": {
+    "name": "Mexico/General",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "MST": {
+    "name": "MST",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "MST7MDT": {
+    "name": "MST7MDT",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Navajo": {
+    "name": "Navajo",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "NZ": {
+    "name": "NZ",
+    "utcOffset": "+13:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "NZ-CHAT": {
+    "name": "NZ-CHAT",
+    "utcOffset": "+13:45",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Apia": {
+    "name": "Pacific/Apia",
+    "utcOffset": "+13:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Auckland": {
+    "name": "Pacific/Auckland",
+    "utcOffset": "+13:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Bougainville": {
+    "name": "Pacific/Bougainville",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Chatham": {
+    "name": "Pacific/Chatham",
+    "utcOffset": "+13:45",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Chuuk": {
+    "name": "Pacific/Chuuk",
+    "utcOffset": "+10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Easter": {
+    "name": "Pacific/Easter",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Efate": {
+    "name": "Pacific/Efate",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Enderbury": {
+    "name": "Pacific/Enderbury",
+    "utcOffset": "+13:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Fakaofo": {
+    "name": "Pacific/Fakaofo",
+    "utcOffset": "+13:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Fiji": {
+    "name": "Pacific/Fiji",
+    "utcOffset": "+12:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Funafuti": {
+    "name": "Pacific/Funafuti",
+    "utcOffset": "+12:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Galapagos": {
+    "name": "Pacific/Galapagos",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Gambier": {
+    "name": "Pacific/Gambier",
+    "utcOffset": "-09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Guadalcanal": {
+    "name": "Pacific/Guadalcanal",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Guam": {
+    "name": "Pacific/Guam",
+    "utcOffset": "+10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Honolulu": {
+    "name": "Pacific/Honolulu",
+    "utcOffset": "-10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Johnston": {
+    "name": "Pacific/Johnston",
+    "utcOffset": "-10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Kanton": {
+    "name": "Pacific/Kanton",
+    "utcOffset": "+13:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Kiritimati": {
+    "name": "Pacific/Kiritimati",
+    "utcOffset": "+14:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Kosrae": {
+    "name": "Pacific/Kosrae",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Kwajalein": {
+    "name": "Pacific/Kwajalein",
+    "utcOffset": "+12:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Majuro": {
+    "name": "Pacific/Majuro",
+    "utcOffset": "+12:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Marquesas": {
+    "name": "Pacific/Marquesas",
+    "utcOffset": "-09:30",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Midway": {
+    "name": "Pacific/Midway",
+    "utcOffset": "-11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Nauru": {
+    "name": "Pacific/Nauru",
+    "utcOffset": "+12:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Niue": {
+    "name": "Pacific/Niue",
+    "utcOffset": "-11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Norfolk": {
+    "name": "Pacific/Norfolk",
+    "utcOffset": "+12:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Noumea": {
+    "name": "Pacific/Noumea",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Pago_Pago": {
+    "name": "Pacific/Pago Pago",
+    "utcOffset": "-11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Palau": {
+    "name": "Pacific/Palau",
+    "utcOffset": "+09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Pitcairn": {
+    "name": "Pacific/Pitcairn",
+    "utcOffset": "-08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Pohnpei": {
+    "name": "Pacific/Pohnpei",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Ponape": {
+    "name": "Pacific/Ponape",
+    "utcOffset": "+11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Port_Moresby": {
+    "name": "Pacific/Port Moresby",
+    "utcOffset": "+10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Rarotonga": {
+    "name": "Pacific/Rarotonga",
+    "utcOffset": "-10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Saipan": {
+    "name": "Pacific/Saipan",
+    "utcOffset": "+10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Samoa": {
+    "name": "Pacific/Samoa",
+    "utcOffset": "-11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Tahiti": {
+    "name": "Pacific/Tahiti",
+    "utcOffset": "-10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Tarawa": {
+    "name": "Pacific/Tarawa",
+    "utcOffset": "+12:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Tongatapu": {
+    "name": "Pacific/Tongatapu",
+    "utcOffset": "+13:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Truk": {
+    "name": "Pacific/Truk",
+    "utcOffset": "+10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Wake": {
+    "name": "Pacific/Wake",
+    "utcOffset": "+12:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Wallis": {
+    "name": "Pacific/Wallis",
+    "utcOffset": "+12:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Pacific/Yap": {
+    "name": "Pacific/Yap",
+    "utcOffset": "+10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Poland": {
+    "name": "Poland",
+    "utcOffset": "+02:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Portugal": {
+    "name": "Portugal",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "PRC": {
+    "name": "PRC",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "PST8PDT": {
+    "name": "PST8PDT",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "ROC": {
+    "name": "ROC",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "ROK": {
+    "name": "ROK",
+    "utcOffset": "+09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Singapore": {
+    "name": "Singapore",
+    "utcOffset": "+08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Turkey": {
+    "name": "Turkey",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "UCT": {
+    "name": "UCT",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Universal": {
+    "name": "Universal",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "US/Alaska": {
+    "name": "US/Alaska",
+    "utcOffset": "-08:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "US/Aleutian": {
+    "name": "US/Aleutian",
+    "utcOffset": "-09:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "US/Arizona": {
+    "name": "US/Arizona",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "US/Central": {
+    "name": "US/Central",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "US/East-Indiana": {
+    "name": "US/East-Indiana",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "US/Eastern": {
+    "name": "US/Eastern",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "US/Hawaii": {
+    "name": "US/Hawaii",
+    "utcOffset": "-10:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "US/Indiana-Starke": {
+    "name": "US/Indiana-Starke",
+    "utcOffset": "-05:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "US/Michigan": {
+    "name": "US/Michigan",
+    "utcOffset": "-04:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "US/Mountain": {
+    "name": "US/Mountain",
+    "utcOffset": "-06:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "US/Pacific": {
+    "name": "US/Pacific",
+    "utcOffset": "-07:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "US/Samoa": {
+    "name": "US/Samoa",
+    "utcOffset": "-11:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "UTC": {
+    "name": "UTC",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "W-SU": {
+    "name": "W-SU",
+    "utcOffset": "+03:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "WET": {
+    "name": "WET",
+    "utcOffset": "+01:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  },
+  "Zulu": {
+    "name": "Zulu",
+    "utcOffset": "+00:00",
+    "utcOffsetAsOf": "2026-10-20T12:00:00Z"
+  }
+}

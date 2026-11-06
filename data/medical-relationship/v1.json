@@ -1,0 +1,17 @@
+{
+  "SELF": { "name": "Self" },
+  "SPOUSE": { "name": "Spouse" },
+  "DOMESTIC_PARTNER": { "name": "Domestic Partner" },
+  "CHILD": { "name": "Child" },
+  "STEPCHILD": { "name": "Stepchild" },
+  "FOSTER_CHILD": { "name": "Foster Child" },
+  "WARD": { "name": "Ward" },
+  "PARENT": { "name": "Parent" },
+  "STEPPARENT": { "name": "Stepparent" },
+  "SIBLING": { "name": "Sibling" },
+  "GRANDCHILD": { "name": "Grandchild" },
+  "GRANDPARENT": { "name": "Grandparent" },
+  "OTHER_RELATIVE": { "name": "Other Relative" },
+  "OTHER": { "name": "Other" },
+  "UNKNOWN": { "name": "Unknown" }
+}
