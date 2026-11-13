@@ -60,4 +60,7 @@ public class collections {
     public Map<String, String> getCollectionItems(@PathVariable String id) {
         return Map.of("message", "Items of collection " + id);
     }
+
+
+    
 }
