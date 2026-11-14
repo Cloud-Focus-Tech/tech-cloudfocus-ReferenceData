@@ -1,73 +1,44 @@
 # Current HTTP API
 
-Source: [controller/collections.java](../src/main/java/tech/cloudfocus/ReferenceData/controller/collections.java). All mappings are GET routes under the controller's `/api` prefix. The examples below describe source behavior; they were not verified against a running server during this review.
+Updated 2026-11-14. All routes use the `/api` prefix. Responses come from the in-memory snapshot, with no per-request Azure calls.
 
-| Route | Successful response | Implementation |
-| --- | --- | --- |
-| `/api/health/live` | `200`, `{"status":"UP"}` | Constant map |
-| `/api/health/ready` | `200`, `{"status":"UP"}` | Constant map |
-| `/api/collections` | `200`, array of four collection summaries | Controller -> service -> repository |
-| `/api/collection/{id}` | `200`, message containing the ID | Placeholder map |
-| `/api/collection/{id}/items` | `200`, message containing the ID | Placeholder map |
+| GET route | Behavior |
+| --- | --- |
+| `/api/health/live` | 200 with `{"status":"UP"}` |
+| `/api/health/ready` | 200 with `{"status":"UP"}` once a snapshot is loaded; otherwise 503 |
+| `/api/collections` | Array of collection summaries in index order |
+| `/api/collection/{id}` | One collection summary; 404 for an unknown name |
+| `/api/collection/{id}/items` | The dataset JSON object or string array; 404 for an unknown name |
 
-Responses are serialized as JSON through Spring MVC. JSON object member order is not part of the contract. There are no declared request bodies, query parameters, paging controls, filters, or version selectors.
+Names are case-sensitive. The list uses plural `collections`; detail and items use singular `collection`. There are no query filters, paging, version selection, or request bodies.
 
-## Collection list
-
-`GET /api/collections` returns the following entries in this order:
+Example detail for `/api/collection/currencies` with the sample catalog:
 
 ```json
-[
-  {"name":"currencies","kind":"set","version":"v1","count":3},
-  {"name":"languages","kind":"keyValue","version":"v1","count":7927},
-  {"name":"timezones","kind":"keyValue","version":"v1","count":597},
-  {"name":"countries","kind":"keyValue","version":"v1","count":249}
-]
+{"name":"currencies","kind":"set","version":"v1","count":3}
 ```
 
-These values are literals in [CollectionRepository.findAll()](../src/main/java/tech/cloudfocus/ReferenceData/repository/CollectionRepository.java). Counts happen to match those four dataset files at review time, but the application does not calculate them. Editing a JSON file or the index will not change this response.
-
-| Field | Java type | Current meaning |
-| --- | --- | --- |
-| `name` | `String` | Collection name |
-| `kind` | `String` | Literal `set` or `keyValue`; not an enum |
-| `version` | `String` | Literal `v1`; no runtime version lookup |
-| `count` | `int` | Hard-coded number of items |
-
-## Placeholder detail and items
-
-`GET /api/collection/currencies`:
+Items for the same collection:
 
 ```json
-{"message":"Details of collection currencies"}
+["USD","CAD","EUR"]
 ```
 
-`GET /api/collection/currencies/items`:
+Key/value collections preserve the keyed-object structure, for example:
 
 ```json
-{"message":"Items of collection currencies"}
+{"AK":{"name":"Alaska"}}
 ```
 
-An arbitrary ID such as `does-not-exist` also produces the corresponding message with status 200 when it matches the route. There is no lookup, dataset serialization, custom 404 behavior, or invalid-ID validation in these handlers. The collection ID's case is simply reflected in the message.
+`count` is computed from the actual loaded dataset. The cloud index determines list membership, order, kind and version. The local sample index would produce seven collection summaries.
 
-## Health and error semantics
-
-Both health routes return the same constant `UP` value. Readiness does not establish that data files exist or can be read. These are application-controller endpoints, not Actuator endpoints.
-
-There are no custom exception handlers or error DTOs. Requests outside these mappings and framework-level errors use framework behavior; no stable application-specific error schema is defined. The controller's documentation comments mention a 500 response but do not implement an error policy.
-
-No application authentication or role checks are implemented. `ReferenceData.Reader` appears only in the unused catalog metadata; it is not an access requirement enforced by these routes.
+Startup fails if initial loading fails. Failed periodic refreshes retain the previous complete snapshot, including its collection list and counts; readiness remains UP while serving that snapshot. Unknown IDs use Spring `ResponseStatusException`; no custom stable error body is defined. No application authentication or role enforcement exists, including for catalog `allowedRoles`.
 
 ## Manual checks after starting the application
 
-PowerShell:
-
 ```powershell
-Invoke-RestMethod http://localhost:8080/api/health/live
 Invoke-RestMethod http://localhost:8080/api/health/ready
 Invoke-RestMethod http://localhost:8080/api/collections
 Invoke-RestMethod http://localhost:8080/api/collection/currencies
 Invoke-RestMethod http://localhost:8080/api/collection/currencies/items
 ```
-
-Use these as manual smoke checks, not as a substitute for endpoint tests when changing API behavior.

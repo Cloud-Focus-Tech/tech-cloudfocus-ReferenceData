@@ -5,6 +5,9 @@ import java.util.List;
 import tech.cloudfocus.ReferenceData.model.Collection;
 import org.springframework.web.bind.annotation.*;
 import tech.cloudfocus.ReferenceData.service.CollectionService;
+import tools.jackson.databind.JsonNode;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
 // ENDPOINT:  /health/live
 // ENDPOINT:  /health/ready
@@ -29,6 +32,9 @@ public class collections {
 
     @GetMapping("/health/ready")
     public Map<String, String> readyEndpoint() {
+        if (!collectionService.isReady()) {
+            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Collections have not loaded");
+        }
         return Map.of("status", "UP");
     }
 
@@ -52,15 +58,15 @@ public class collections {
     }
 
     @GetMapping("/collection/{id}")
-    public Map<String, String> getCollectionById(@PathVariable String id) {
-        return Map.of("message", "Details of collection " + id);
+    public Collection getCollectionById(@PathVariable String id) {
+        return collectionService.getCollection(id);
     }
 
     @GetMapping("/collection/{id}/items")
-    public Map<String, String> getCollectionItems(@PathVariable String id) {
-        return Map.of("message", "Items of collection " + id);
+    public JsonNode getCollectionItems(@PathVariable String id) {
+        return collectionService.getItems(id);
     }
 
 
-    
+
 }

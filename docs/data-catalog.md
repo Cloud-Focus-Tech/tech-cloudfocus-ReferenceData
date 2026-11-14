@@ -1,6 +1,6 @@
 # Reference-data files and catalog
 
-All counts and shapes below were obtained by parsing the checked-in JSON on 2026-11-13. The directory contains **28 `v1.json` dataset files plus `index.json`**. No Java code currently reads them.
+All counts and shapes below were obtained by parsing the checked-in JSON on 2026-11-13. The directory contains **28 `v1.json` dataset files plus `index.json`**. These are local fixtures; production loads the same format from Azure, and tests load these files through an in-memory provider.
 
 ## Catalog format
 
@@ -22,17 +22,17 @@ All counts and shapes below were obtained by parsing the checked-in JSON on 2026
 | `name` | Logical collection name; can differ from the directory name |
 | `kind` | `set` for currencies; `keyValue` for the other six indexed collections |
 | `version` | `v1` for every entry |
-| `blob` | Path that resolves relative to `data/` in this checkout |
+| `blob` | Container-relative path in production; relative to `data/` for local fixtures |
 | `allowedRoles` | Always `["ReferenceData.Reader"]`; unused by the application |
 | `hasSortOrder` | True for the three workflow collections; false for the other four |
 
 The indexed names, in index order, are `countries`, `timezones`, `languages`, `currencies`, `workflow-priority`, `workflow-status`, and `workflow-doc-type`. All seven referenced files exist. There is no `count` field in the index.
 
-The word `blob` and role metadata could support a future storage/access design, but the repository does not establish a cloud provider, blob client, role enforcement mechanism, or loader. Do not assume one is implemented.
+The Azure provider reads root `index.json` and follows each `blob` path. The loader validates schema version, unique names, supported kinds, paths, and payload shapes, then publishes a complete in-memory snapshot. Role metadata is not enforced. See [architecture](architecture.md) for ETag-based polling and refresh failure behavior.
 
 ## Dataset inventory
 
-Each dataset path is `data/<directory>/v1.json`. `Indexed` means it appears in `index.json`, not that it is served by the API. Counts are top-level object keys or array elements. All object datasets have a `name` field in their records; the last column lists additional observed fields.
+Each local dataset path is `data/<directory>/v1.json`. `Indexed` means it appears in the sample index; those seven datasets would be served if that catalog is uploaded to the configured container. Production membership is determined by the cloud index. Counts are top-level object keys or array elements. All object datasets have a `name` field in their records; the last column lists additional observed fields.
 
 | Directory | Entries | Shape | Indexed | Additional fields |
 | --- | ---: | --- | --- | --- |
@@ -65,7 +65,7 @@ Each dataset path is `data/<directory>/v1.json`. `Indexed` means it appears in `
 | `workflow-priority` | 6 | Object | Yes | `description`, `level`, `sortOrder` |
 | `workflow-status` | 17 | Object | Yes | `category`, `isTerminal`, `sortOrder` |
 
-The 21 unindexed datasets are not discoverable through the index. The three indexed workflow datasets are also absent from the runtime's hard-coded collection list.
+The 21 unindexed datasets are not discoverable through the sample index. The loader includes all seven indexed datasets, including the three workflow datasets; no hard-coded list remains.
 
 ## Record shapes and handling details
 
@@ -98,12 +98,6 @@ Timezone offsets are stored snapshots with `utcOffsetAsOf` values of `2026-10-20
 
 Every entry in the three indexed workflow files has `sortOrder`. Sorting by it is a possible consumer behavior, not a runtime feature today. Workflow status categories and terminal flags are lookup metadata; there is no state-transition engine in this service.
 
-## Guidance for future data integration
+## Publishing updates
 
-These are design considerations for future work, not existing application behavior:
-
-1. Decide whether discovery should follow the index or include all dataset directories; they currently differ.
-2. Choose a file delivery strategy: classpath resources, an external directory, or remote storage. Root `data/` is not configured as a Maven resource.
-3. Support both array and keyed-object payloads and retain dataset-specific fields; the Java `Collection` summary cannot represent item data.
-4. Define version selection, item/detail schemas, sort behavior, access rules, and missing-file/unknown-ID errors before presenting these as API guarantees.
-5. Validate catalog paths, metadata, JSON shape, and counts when implementing loading. Keep the hard-coded list and these docs in sync until it is replaced.
+Upload datasets under their catalog paths, and publish `index.json` at the container root. Prefer immutable versioned paths and publish the index last for coordinated releases. Only indexed datasets are loaded. Polling checks both the index and each referenced file's ETag; unchanged files are not downloaded. Invalid initial data fails startup; invalid refreshed data retains the complete previous snapshot and is retried next interval. Root `data/` is not packaged as a production fallback. See [development settings](development.md#local-connection-configuration).

@@ -1,6 +1,9 @@
 package tech.cloudfocus.ReferenceData.service;
 
 import java.util.List;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
+import tools.jackson.databind.JsonNode;
 
 import org.springframework.stereotype.Service;
 
@@ -19,4 +22,16 @@ public class CollectionService {
     public List<Collection> getCollections() {
         return collectionRepository.findAll();
     }
+
+    public Collection getCollection(String id) {
+        return collectionRepository.findByName(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Collection not found"));
+    }
+
+    public JsonNode getItems(String id) {
+        return collectionRepository.findItems(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Collection not found"));
+    }
+
+    public boolean isReady() { return collectionRepository.isLoaded(); }
 }

@@ -1,68 +1,50 @@
 # Architecture and implementation
 
-## Purpose and current scope
-
-The repository appears intended to expose versioned lookup collections for addresses, languages, currencies, timezones, demographics, medical workflows, and general workflows. That purpose is inferred from the dataset names, catalog metadata, and endpoint names. The implemented runtime is much smaller: five GET handlers, a pass-through service, and an in-memory repository containing four collection summaries.
-
-There is no database, file loader, external storage client, scheduled refresh, write API, or application-level caching implementation.
-
-## Repository map
-
-| Path | Responsibility |
-| --- | --- |
-| `pom.xml` | Maven coordinates, Java/dependency versions, Spring Boot and GraalVM build plugins |
-| `src/main/java/tech/cloudfocus/ReferenceData/ReferenceDataApplication.java` | `@SpringBootApplication` entry point |
-| `src/main/java/tech/cloudfocus/ReferenceData/controller/collections.java` | REST controller; the class name is literally lowercase `collections` |
-| `src/main/java/tech/cloudfocus/ReferenceData/service/CollectionService.java` | Delegates collection listing to the repository |
-| `src/main/java/tech/cloudfocus/ReferenceData/repository/CollectionRepository.java` | Constructs the hard-coded collection list |
-| `src/main/java/tech/cloudfocus/ReferenceData/model/Collection.java` | Collection summary JavaBean |
-| `src/main/resources/application.properties` | Only `spring.application.name=ReferenceData` |
-| `src/test/java/tech/cloudfocus/ReferenceData/ReferenceDataApplicationTests.java` | Single context-load test |
-| `data/index.json` | Seven-entry metadata catalog, currently unused at runtime |
-| `data/<dataset>/v1.json` | 28 dataset files outside the application resources directory |
-| `.mvn/wrapper/maven-wrapper.properties`, `mvnw`, `mvnw.cmd` | Maven wrapper configuration and launchers |
-| `docs/` | Project knowledge for future agents |
-
-At review time, `.github/` and `deploy/` are empty working-tree directories; there are no tracked CI workflows, Dockerfiles, or deployment manifests. Local `.vscode/` settings are ignored by Git. The local launch configuration points at the application main class and uses the repository as the working directory.
-
-## Request flow
+Updated 2026-11-14. The service uses a storage adapter boundary and an in-memory repository that owns loading and refresh. Controllers and services depend on the repository; Azure classes remain in `storage/`.
 
 ```mermaid
 flowchart LR
-    A[GET /api/collections] --> B[collections controller]
-    B --> C[CollectionService.getCollections]
-    C --> D[CollectionRepository.findAll]
-    D --> E[Four hard-coded Collection objects]
-    F[Other four GET routes] --> G[Controller returns a constant or placeholder Map]
+    API[Controller] --> Service[CollectionService]
+    Service --> Repo[CollectionRepository: in-memory snapshot]
+    Repo --> Port[StorageProvider]
+    Port --> Azure[AzureBlobStorageProvider]
+    Azure --> Container[Azure container: index.json and dataset blobs]
 ```
 
-Spring discovers the controller, service, and repository below the application's base package, `tech.cloudfocus.ReferenceData`. The controller and service use constructor injection. `CollectionRepository` is a regular `@Repository` class, not a Spring Data repository interface.
+## Source map
 
-`findAll()` creates a `List.of(...)` on each call. The list structure is unmodifiable; each `Collection` object is mutable through setters. No persistent state is maintained between calls.
-
-`Collection` contains `String name`, `String kind`, `String version`, and `int count`, with a no-argument constructor, a full constructor, and getters/setters. It represents collection metadata, not an item record. It has no `blob`, `allowedRoles`, or `hasSortOrder` fields and no validation annotations. Be careful about its name collision with `java.util.Collection` when adding imports.
-
-## Dependencies and runtime configuration
-
-The [POM](../pom.xml) declares:
-
-| Setting | Value |
+| Class/path | Responsibility |
 | --- | --- |
-| Coordinates | `tech.cloudfocus:ReferenceData:0.0.1-SNAPSHOT` |
-| Parent | `org.springframework.boot:spring-boot-starter-parent:4.1.2` |
-| Java | `25` |
-| Application dependency | `spring-boot-starter-webmvc` |
-| Test dependency | `spring-boot-starter-webmvc-test` |
-| Build plugins | `native-maven-plugin`, `spring-boot-maven-plugin` |
+| `ReferenceDataApplication` | Spring Boot application entry point |
+| `storage/StorageProvider` | `getETag(path)` and `read(path, expectedETag)` contract; storage-relative paths |
+| `storage/AzureBlobStorageProvider` | Blob properties requests and conditional downloads, with 30-second per-operation timeout |
+| `storage/StorageConfiguration` | Connection-string/container client construction, required-setting validation, scheduling enablement |
+| `repository/CollectionRepository` | Startup load, validation, ETag cache, scheduled refresh, atomic publication and queries |
+| `service/CollectionService` | Query delegation and unknown-ID 404 errors |
+| `controller/collections` | Five GET routes under `/api`; class name remains lowercase |
+| `model/Collection` | Summary JavaBean: name, kind, version, count |
+| `application.properties` | Optional `.env` import, Azure connection/container and refresh mappings |
 
-There is no explicit port, context path, profile, credentials configuration, or data-directory setting. The run examples use the normal Spring Boot HTTP default of port 8080; environment variables or command-line arguments can override runtime configuration. The application name is the only checked-in property.
+The POM pins Java 25, Spring Boot 4.1.2, `azure-storage-blob` 12.36.0 and `azure-identity` 1.19.0. Runtime uses the connection string; Azure Identity is available but unused. Spring Web MVC and its test starter are included. No database, Spring Security, Actuator, OpenAPI generator, deployment manifests, or CI workflows are configured.
 
-The POM does not declare Spring Security, OAuth resource-server support, Actuator, Spring Data, or an OpenAPI documentation library. No application code configures authentication, authorization, CORS policy, exception advice, or custom error bodies. The comment tags above `getCollections()` are comments, not a generated API specification.
+## Load lifecycle
 
-## Data boundary and incomplete behavior
+`CollectionRepository.afterPropertiesSet()` runs the initial load during bean initialization, before startup completes. Exceptions propagate and abort startup. There is no empty-cache fallback. Configuration requires a connection string and nonempty container name; refresh milliseconds must be positive.
 
-The repository does not read `data/index.json` or any dataset. The POM does not add the root `data/` directory as a packaged resource. Any future loader must deliberately choose how files are located and delivered with the application.
+Loading reads root `index.json` and checks `schemaVersion == 1` and a `collections` array. Each entry requires a nonempty `name`, `kind`, `version`, and `blob`. Names must be unique; kinds must be `set` or `keyValue`. Paths must be relative, cannot point to the index itself, and cannot contain traversal segments, empty segments, colons, or backslashes.
 
-The detail and item handlers do not call the service or repository and do not validate the supplied ID. Health handlers do not inspect the repository, catalog, or downstream dependencies. The [API](api.md) documents the actual responses, and the [data catalog](data-catalog.md) documents the separate file inventory.
+Set datasets are arrays of strings. Key/value datasets are objects whose nonblank keys map to objects with a nonblank `name`. If `hasSortOrder` is true, every record must have integer `sortOrder`. Duplicate JSON object keys and trailing JSON tokens are rejected. Counts come from the actual loaded JSON size. Item identifiers, leading zeroes and Unicode are preserved.
 
-Potential future work includes connecting the catalog to the repository, defining item/detail response models, deciding missing-ID/version behavior, and implementing any required access control. These are observations about gaps, not an agreed implementation plan.
+On refresh, the repository checks every referenced document's ETag and downloads only changed documents. Azure downloads use an `If-Match` condition matching the checked ETag. A second metadata pass rejects batches changed during staging. The full new map/list replaces a volatile snapshot in one publication only after all loading and validation succeeds. Removed catalog entries disappear on successful publication. Changed blob paths/versions are honored. Failed batches do not advance cached ETags, so the next poll retries.
+
+Reload is synchronized to prevent overlapping batches. Requests keep reading the old snapshot during network I/O. Returned summaries are new JavaBeans and item JSON is deep-copied, protecting the internal cache from callers. Cache reads do not hit storage.
+
+Polling uses Spring `@Scheduled` fixed delay, with the same interval for initial delay. Changing `.env` requires restart. Refresh errors retain the last successful snapshot and log only the exception type; raw SDK messages/connection details are not logged by the refresh handler. Readiness means a complete snapshot exists, not that the most recent Azure check succeeded.
+
+## Provider extension and publishing
+
+To add another provider, implement `StorageProvider` and supply its Spring bean in place of the Azure bean; the loader and API remain unchanged. The conditional Azure bean is a fallback when no alternative provider bean is defined. `read` must fail if the requested ETag no longer matches the object. Azure is the only production implementation today.
+
+Azure does not offer a transaction across these blobs. The ETag checks detect updates during staging but cannot establish an application-level release boundary across separate uploads. Publish immutable versioned dataset paths first, then publish the index last when coordinated multi-file releases are needed.
+
+Catalog `allowedRoles`, categories and terminal flags remain data rather than enforcement or workflow logic. Sort metadata is validated where declared but JSON is returned in its stored shape; no explicit sorting/filtering/paging API is implemented. Root `data/` is not configured as a packaged resource or production fallback.
