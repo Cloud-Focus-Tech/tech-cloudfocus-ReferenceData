@@ -25,7 +25,7 @@ flowchart LR
 | `model/Collection` | Summary JavaBean: name, kind, version, count |
 | `application.properties` | Optional `.env` import, Azure connection/container and refresh mappings |
 
-The POM pins Java 25, Spring Boot 4.1.2, `azure-storage-blob` 12.36.0 and `azure-identity` 1.19.0. Runtime uses the connection string; Azure Identity is available but unused. Spring Web MVC and its test starter are included. No database, Spring Security, Actuator, OpenAPI generator, deployment manifests, or CI workflows are configured.
+The POM pins Java 25, Spring Boot 4.1.2, `azure-storage-blob` 12.36.0 and `azure-identity` 1.19.0. Runtime uses the connection string; Azure Identity is available but unused. Spring Web MVC and its test starter are included. No database, Spring Security, Actuator, or OpenAPI generator is configured. The [deployment pipeline](deployment.md) builds a GraalVM native container, publishes to private GHCR, and deploys through a self-hosted Windows runner into `reference-data-2` behind the Cilium Gateway.
 
 ## Load lifecycle
 

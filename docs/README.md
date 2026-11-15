@@ -2,7 +2,7 @@
 
 Updated 2026-11-14. ReferenceData is a Java 25 / Spring Boot 4.1.2 REST service that loads versioned JSON collections from Azure Blob Storage into memory.
 
-Read [architecture](architecture.md), [API](api.md), [data catalog](data-catalog.md), and [development setup](development.md).
+Read [architecture](architecture.md), [API](api.md), [data catalog](data-catalog.md), [development setup](development.md), and [native packaging/deployment](deployment.md).
 
 ## Current behavior
 

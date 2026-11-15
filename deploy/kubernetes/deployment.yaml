@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reference-data
+  namespace: reference-data-2
+spec:
+  replicas: 2
+  revisionHistoryLimit: 3
+  progressDeadlineSeconds: 600
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: reference-data
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: reference-data
+    spec:
+      automountServiceAccountToken: false
+      imagePullSecrets:
+        - name: ghcr-pull
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65532
+        runAsGroup: 65532
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: reference-data
+          # Replaced with an immutable GHCR digest by Deploy.ps1.
+          image: ghcr.io/cloudfocused/tech-cloudfocus-referencedata:unconfigured
+          ports:
+            - name: http
+              containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: reference-data
+          env:
+            - name: STORAGE_CONNECTION_STRING
+              valueFrom:
+                secretKeyRef:
+                  name: azure-blob-credentials
+                  key: STORAGE_CONNECTION_STRING
+          startupProbe:
+            httpGet:
+              path: /api/health/ready
+              port: http
+            periodSeconds: 5
+            failureThreshold: 60
+          readinessProbe:
+            httpGet:
+              path: /api/health/ready
+              port: http
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /api/health/live
+              port: http
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: "1"
+              memory: 512Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: [ALL]
+          volumeMounts:
+            - name: temporary
+              mountPath: /tmp
+      volumes:
+        - name: temporary
+          emptyDir:
+            sizeLimit: 64Mi

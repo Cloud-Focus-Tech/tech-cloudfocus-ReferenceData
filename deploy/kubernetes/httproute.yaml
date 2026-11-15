@@ -1,0 +1,49 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: reference-data
+  namespace: reference-data-2
+spec:
+  parentRefs:
+    - name: lab-gateway
+      namespace: default
+      sectionName: https-api
+  hostnames:
+    - api.lab.cloudfocus.tech
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /rds
+      filters:
+        - type: URLRewrite
+          urlRewrite:
+            path:
+              type: ReplacePrefixMatch
+              replacePrefixMatch: /api
+      backendRefs:
+        - name: reference-data
+          port: 80
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: reference-data-https-redirect
+  namespace: reference-data-2
+spec:
+  parentRefs:
+    - name: lab-gateway
+      namespace: default
+      sectionName: http-api
+  hostnames:
+    - api.lab.cloudfocus.tech
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /rds
+      filters:
+        - type: RequestRedirect
+          requestRedirect:
+            scheme: https
+            statusCode: 301
