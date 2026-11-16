@@ -68,21 +68,21 @@ jobs:
             org.opencontainers.image.revision=${{ github.sha }}
           cache-from: type=gha
 
-  deploy:
-    needs: package
-    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request' && (github.event_name != 'workflow_dispatch' || inputs.deploy)
-    runs-on: [self-hosted, windows, x64, reference-data-2]
-    environment: lab
-    timeout-minutes: 15
-    concurrency:
-      group: reference-data-2-deployment
-      cancel-in-progress: false
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          persist-credentials: false
-      - name: Deploy the published digest through the existing lab context
-        shell: pwsh
-        env:
-          IMAGE: ghcr.io/cloud-focus-tech/tech-cloudfocus-referencedata@${{ needs.package.outputs.digest }}
-        run: ./scripts/Deploy.ps1 -Image $env:IMAGE
+  # deploy:
+  #   needs: package
+  #   if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request' && (github.event_name != 'workflow_dispatch' || inputs.deploy)
+  #   runs-on: [self-hosted, windows, x64, reference-data-2]
+  #   environment: lab
+  #   timeout-minutes: 15
+  #   concurrency:
+  #     group: reference-data-2-deployment
+  #     cancel-in-progress: false
+  #   steps:
+  #     - uses: actions/checkout@v6
+  #       with:
+  #         persist-credentials: false
+  #     - name: Deploy the published digest through the existing lab context
+  #       shell: pwsh
+  #       env:
+  #         IMAGE: ghcr.io/cloud-focus-tech/tech-cloudfocus-referencedata@${{ needs.package.outputs.digest }}
+  #       run: ./scripts/Deploy.ps1 -Image $env:IMAGE
