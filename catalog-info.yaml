@@ -22,7 +22,7 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: group:default/cloud-focus-tech
+  owner: group:default/cloud-focus
   providesApis:
     - reference-data-api
 ---
@@ -37,6 +37,6 @@ metadata:
 spec:
   type: openapi
   lifecycle: experimental
-  owner: group:default/cloud-focus-tech
+  owner: group:default/cloud-focus
   definition:
     $text: https://api.lab.cloudfocus.tech/rds/backstage/openapi.json
