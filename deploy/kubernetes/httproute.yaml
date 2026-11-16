@@ -11,6 +11,18 @@ spec:
   hostnames:
     - api.lab.cloudfocus.tech
   rules:
+    # Keep the UI welcome redirect on the external prefix rather than leaking /api.
+    - matches:
+        - path:
+            type: Exact
+            value: /rds/swagger-ui.html
+      filters:
+        - type: RequestRedirect
+          requestRedirect:
+            path:
+              type: ReplaceFullPath
+              replaceFullPath: /rds/swagger-ui/index.html
+            statusCode: 302
     - matches:
         - path:
             type: PathPrefix

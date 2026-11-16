@@ -4,7 +4,7 @@ metadata:
   name: reference-data
   namespace: reference-data-2
 spec:
-  replicas: 2
+  replicas: 3
   revisionHistoryLimit: 3
   progressDeadlineSeconds: 600
   strategy:
@@ -32,7 +32,7 @@ spec:
       containers:
         - name: reference-data
           # Replaced with an immutable GHCR digest by Deploy.ps1.
-          image: ghcr.io/cloud-focus-tech/tech-cloudfocus-referencedata:unconfigured
+          image: ghcr.io/cloud-focus-tech/tech-cloudfocus-referencedata:latest
           ports:
             - name: http
               containerPort: 8080
@@ -63,7 +63,7 @@ spec:
             periodSeconds: 20
           resources:
             requests:
-              cpu: 100m
+              cpu: 400m
               memory: 128Mi
             limits:
               cpu: "1"
