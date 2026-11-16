@@ -2,6 +2,7 @@
 !Dockerfile
 !mvnw
 !pom.xml
+!catalog-info.yaml
 !.mvn/
 !.mvn/**
 !src/

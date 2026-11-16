@@ -65,6 +65,19 @@
 	</dependencies>
 
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<!-- Publish the root catalog file without maintaining a second copy. -->
+			<resource>
+				<directory>${project.basedir}</directory>
+				<targetPath>static/api</targetPath>
+				<includes>
+					<include>catalog-info.yaml</include>
+				</includes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.graalvm.buildtools</groupId>

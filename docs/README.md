@@ -4,6 +4,8 @@ Updated 2026-11-14. ReferenceData is a Java 25 / Spring Boot 4.1.2 REST service 
 
 Read [architecture](architecture.md), [API](api.md), [data catalog](data-catalog.md), [development setup](development.md), and [native packaging/deployment](deployment.md).
 
+For Backstage, use the root [catalog-info.yaml](../catalog-info.yaml) and [registration instructions](backstage.md). After deploying this change, the descriptor is hosted at `/rds/catalog-info.yaml` and registers the service plus its OpenAPI API entity.
+
 ## Current behavior
 
 - `StorageProvider` is the provider-neutral boundary; `AzureBlobStorageProvider` is the single production adapter.

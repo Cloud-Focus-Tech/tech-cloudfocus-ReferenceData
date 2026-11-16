@@ -67,7 +67,16 @@ try {
     $null = Invoke-WebRequest "$base/swagger-ui/swagger-ui-bundle.js"
     $initializer = Invoke-WebRequest "$base/swagger-ui/swagger-initializer.js"
     if (-not $initializer.Content.Contains('../v3/api-docs/swagger-config')) { throw 'Native Swagger config URL is incorrect.' }
-    Write-Output "Native smoke test passed: $($collections.Count) collections, readiness, OpenAPI and Swagger UI assets."
+    $catalogResponse = Invoke-WebRequest "$base/catalog-info.yaml"
+    $catalogText = if ($catalogResponse.Content -is [byte[]]) { [Text.Encoding]::UTF8.GetString($catalogResponse.Content) } else { [string]$catalogResponse.Content }
+    if ($catalogText -ne [IO.File]::ReadAllText((Join-Path $root 'catalog-info.yaml'))) { throw 'Native catalog differs from the root catalog-info.yaml.' }
+    $backstageSpec = Invoke-RestMethod "$base/backstage/openapi.json"
+    if ($backstageSpec.servers[0].url -ne 'https://api.lab.cloudfocus.tech/rds' -or -not $backstageSpec.paths.'/collections'.get) {
+        throw 'Native Backstage API definition is invalid.'
+    }
+    $spec = Invoke-RestMethod "$base/v3/api-docs"
+    if ($spec.servers[0].url -ne '..') { throw 'Backstage rendering changed the normal OpenAPI definition.' }
+    Write-Output "Native smoke test passed: $($collections.Count) collections, OpenAPI, Swagger UI and Backstage catalog."
 } catch {
     if ($appCreated) { docker logs $app }
     if ($fixtureCreated) { docker logs $fixture }

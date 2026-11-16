@@ -20,6 +20,10 @@ The gateway redirects the UI welcome URL to `/rds/swagger-ui/index.html`; all as
 
 These endpoints do not add authentication; they document the existing public GET handlers. Responses containing dataset-specific item properties retain their dynamic JSON shape rather than a fixed per-dataset schema.
 
+## Backstage catalog
+
+Backstage ingestion also has `GET /api/catalog-info.yaml` (the canonical root catalog descriptor) and `GET /api/backstage/openapi.json` (the generated definition with an absolute public server URL). External URLs use `/rds` instead of `/api`. See [Backstage registration](backstage.md). These ingestion endpoints are not included among the documented business API operations.
+
 ## Collection and health endpoints
 
 | GET route | Behavior |

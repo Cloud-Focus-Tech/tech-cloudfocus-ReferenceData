@@ -3,7 +3,7 @@ FROM ghcr.io/graalvm/native-image-community:25 AS build
 WORKDIR /workspace
 COPY --chmod=755 mvnw ./mvnw
 COPY .mvn ./.mvn
-COPY pom.xml ./pom.xml
+COPY pom.xml catalog-info.yaml ./
 COPY src ./src
 # Test fixtures are used by the JVM tests, not copied into the runtime image.
 COPY data ./data

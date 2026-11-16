@@ -1,0 +1,42 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: reference-data
+  title: Reference Data Service
+  description: Versioned reference-data collections loaded from Azure Blob Storage into memory.
+  annotations:
+    github.com/project-slug: Cloud-Focus-Tech/tech-cloudfocus-ReferenceData
+    backstage.io/source-location: url:https://github.com/Cloud-Focus-Tech/tech-cloudfocus-ReferenceData/tree/master/
+  tags:
+    - java
+    - spring-boot
+    - graalvm
+    - azure
+  links:
+    - url: https://api.lab.cloudfocus.tech/rds/swagger-ui.html
+      title: Swagger UI
+      icon: docs
+    - url: https://api.lab.cloudfocus.tech/rds/collections
+      title: Collections
+      icon: web
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:default/cloud-focus-tech
+  providesApis:
+    - reference-data-api
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: reference-data-api
+  title: Reference Data API
+  description: Read-only API for collection discovery and versioned reference values.
+  annotations:
+    github.com/project-slug: Cloud-Focus-Tech/tech-cloudfocus-ReferenceData
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: group:default/cloud-focus-tech
+  definition:
+    $text: https://api.lab.cloudfocus.tech/rds/backstage/openapi.json

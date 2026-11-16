@@ -29,6 +29,10 @@ The POM pins Java 25, Spring Boot 4.1.2, `azure-storage-blob` 12.36.0, `azure-id
 
 `config/OpenApiConfiguration` supplies the API title, relative server URL and operation-path customizer for Springdoc. Documentation and UI assets live under `/api`; relative Swagger URLs and API paths support the gateway's `/rds` prefix replacement. The Gateway has an exact-match redirect for `/rds/swagger-ui.html` to prevent Springdoc's internal welcome redirect from leaking `/api` to external browsers. See [OpenAPI endpoints](api.md#openapi-and-swagger-ui).
 
+## Backstage catalog
+
+The root `catalog-info.yaml` is a Backstage Component/API descriptor, packaged into `static/api` by an explicit Maven resource include and served at `/api/catalog-info.yaml`. `catalog/BackstageOpenApiController` exposes the same generated API at `/api/backstage/openapi.json` with an absolute server URL for embedded Backstage rendering. It uses a separate JSON tree so the normal relative-server document remains unchanged. See [Backstage setup](backstage.md).
+
 ## Load lifecycle
 
 `CollectionRepository.afterPropertiesSet()` runs the initial load during bean initialization, before startup completes. Exceptions propagate and abort startup. There is no empty-cache fallback. Configuration requires a connection string and nonempty container name; refresh milliseconds must be positive.

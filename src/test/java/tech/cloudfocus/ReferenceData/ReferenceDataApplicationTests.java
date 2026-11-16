@@ -28,6 +28,26 @@ class ReferenceDataApplicationTests {
     MockMvc mvc;
 
     @Test
+    void servesCanonicalBackstageCatalogAndStandaloneDefinition() throws Exception {
+        byte[] catalog = java.nio.file.Files.readAllBytes(java.nio.file.Path.of("catalog-info.yaml"));
+        mvc.perform(get("/api/catalog-info.yaml")).andExpect(status().isOk())
+                .andExpect(content().bytes(catalog));
+        java.util.List<java.util.Map<String, Object>> entities = new java.util.ArrayList<>();
+        for (Object entity : new org.yaml.snakeyaml.Yaml().loadAll(new String(catalog, java.nio.charset.StandardCharsets.UTF_8))) {
+            @SuppressWarnings("unchecked")
+            var parsed = (java.util.Map<String, Object>) entity;
+            entities.add(parsed);
+        }
+        assertEquals(java.util.List.of("Component", "API"), entities.stream().map(e -> e.get("kind")).toList());
+        mvc.perform(get("/api/backstage/openapi.json")).andExpect(status().isOk())
+                .andExpect(jsonPath("$.servers[0].url").value("https://api.lab.cloudfocus.tech/rds"))
+                .andExpect(jsonPath("$.paths['/collections'].get").exists())
+                .andExpect(jsonPath("$.paths['/backstage/openapi.json']").doesNotExist());
+        mvc.perform(get("/api/v3/api-docs")).andExpect(status().isOk())
+                .andExpect(jsonPath("$.servers[0].url").value(".."));
+    }
+
+    @Test
     void exposesOpenApiWithRelativeServerAndAllApplicationPaths() throws Exception {
         mvc.perform(get("/api/v3/api-docs")).andExpect(status().isOk())
                 .andExpect(jsonPath("$.info.title").value("ReferenceData API"))
