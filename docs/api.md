@@ -1,6 +1,26 @@
 # Current HTTP API
 
-Updated 2026-11-14. All routes use the `/api` prefix. Responses come from the in-memory snapshot, with no per-request Azure calls.
+Updated 2026-11-15. All routes use the `/api` prefix. Collection responses come from the in-memory snapshot, with no per-request Azure calls.
+
+## OpenAPI and Swagger UI
+
+Springdoc 3.2.0 generates OpenAPI 3.1 documentation from the controllers. Local URLs:
+
+- Swagger UI: `http://localhost:8080/api/swagger-ui.html` (or `/api/swagger-ui/index.html` directly).
+- OpenAPI JSON: `http://localhost:8080/api/v3/api-docs`.
+- OpenAPI YAML: `http://localhost:8080/api/v3/api-docs.yaml`.
+
+After publishing and deploying the Springdoc image and updated route manifest:
+
+- Swagger UI: `https://api.lab.cloudfocus.tech/rds/swagger-ui.html`.
+- OpenAPI JSON: `https://api.lab.cloudfocus.tech/rds/v3/api-docs`.
+- OpenAPI YAML: `https://api.lab.cloudfocus.tech/rds/v3/api-docs.yaml`.
+
+The gateway redirects the UI welcome URL to `/rds/swagger-ui/index.html`; all assets and documentation endpoints remain under its `/rds` route. Swagger configuration/spec URLs are relative. `OpenApiConfiguration` describes a relative server (`..`, resolved against the spec URL) and removes the internal `/api` prefix from documented operation paths. This allows the same document and "Try it out" requests to work locally under `/api` and externally under `/rds` without hardcoding a hostname. See [Springdoc setup](https://springdoc.org/getting-started.html) and [OpenAPI relative server URLs](https://swagger.io/docs/specification/v3_0/api-host-and-base-path/#relative-urls).
+
+These endpoints do not add authentication; they document the existing public GET handlers. Responses containing dataset-specific item properties retain their dynamic JSON shape rather than a fixed per-dataset schema.
+
+## Collection and health endpoints
 
 | GET route | Behavior |
 | --- | --- |

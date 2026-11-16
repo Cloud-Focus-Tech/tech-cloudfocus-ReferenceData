@@ -1,14 +1,23 @@
-[CmdletBinding()]
+[CmdletBinding(DefaultParameterSetName = 'Tag')]
 param(
-    [Parameter(Mandatory)][string]$Image,
+    [Parameter(Mandatory, ParameterSetName = 'Digest')][string]$Image,
+    [Parameter(ParameterSetName = 'Tag')][string]$Tag = 'latest',
     [string]$ExpectedContext = 'admin@cloudfocus-lab'
 )
 $ErrorActionPreference = 'Stop'
 $PSNativeCommandUseErrorActionPreference = $true
+if ((kubectl config current-context) -ne $ExpectedContext) { throw "Select Kubernetes context $ExpectedContext first." }
+if ($PSCmdlet.ParameterSetName -eq 'Tag') {
+    if ($Tag -notmatch '^[A-Za-z0-9_][A-Za-z0-9_.-]{0,127}$') { throw 'Invalid container image tag.' }
+    $repository = 'ghcr.io/cloud-focus-tech/tech-cloudfocus-referencedata'
+    $digest = docker buildx imagetools inspect "${repository}:$Tag" --format '{{.Manifest.Digest}}'
+    if ($digest -notmatch '^sha256:[a-f0-9]{64}$') { throw 'Could not resolve the published image digest.' }
+    $Image = "${repository}@$digest"
+    Write-Output "Resolved tag '$Tag' to $Image"
+}
 if ($Image -notmatch '^ghcr\.io/cloud-focus-tech/tech-cloudfocus-referencedata@sha256:[a-f0-9]{64}$') {
     throw 'Image must be an immutable digest in ghcr.io/cloud-focus-tech/tech-cloudfocus-referencedata.'
 }
-if ((kubectl config current-context) -ne $ExpectedContext) { throw "Select Kubernetes context $ExpectedContext first." }
 $root = Split-Path $PSScriptRoot -Parent
 kubectl get namespace reference-data-2 -o name | Out-Null
 kubectl get secret azure-blob-credentials ghcr-pull -n reference-data-2 -o name | Out-Null

@@ -54,7 +54,20 @@ try {
     Start-Sleep -Seconds 2
     $detail = Invoke-RestMethod "$base/collection/currencies"
     if ($detail.count -ne 3) { throw 'Native collection detail/refresh check failed.' }
-    Write-Output "Native smoke test passed: $($collections.Count) collections, JSON responses and readiness."
+    $spec = Invoke-RestMethod "$base/v3/api-docs"
+    if (-not $spec.paths.'/collections'.get -or $spec.servers[0].url -ne '..') {
+        throw 'Native OpenAPI paths or relative server URL are incorrect.'
+    }
+    $yaml = Invoke-WebRequest "$base/v3/api-docs.yaml"
+    $yamlText = if ($yaml.Content -is [byte[]]) { [Text.Encoding]::UTF8.GetString($yaml.Content) } else { [string]$yaml.Content }
+    if (-not $yamlText.Contains('openapi:')) { throw 'Native OpenAPI YAML is unavailable.' }
+    $swaggerConfig = Invoke-RestMethod "$base/v3/api-docs/swagger-config"
+    if ($swaggerConfig.url -ne '../v3/api-docs') { throw 'Native Swagger spec URL must remain relative.' }
+    $null = Invoke-WebRequest "$base/swagger-ui/index.html"
+    $null = Invoke-WebRequest "$base/swagger-ui/swagger-ui-bundle.js"
+    $initializer = Invoke-WebRequest "$base/swagger-ui/swagger-initializer.js"
+    if (-not $initializer.Content.Contains('../v3/api-docs/swagger-config')) { throw 'Native Swagger config URL is incorrect.' }
+    Write-Output "Native smoke test passed: $($collections.Count) collections, readiness, OpenAPI and Swagger UI assets."
 } catch {
     if ($appCreated) { docker logs $app }
     if ($fixtureCreated) { docker logs $fixture }

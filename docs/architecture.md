@@ -25,7 +25,9 @@ flowchart LR
 | `model/Collection` | Summary JavaBean: name, kind, version, count |
 | `application.properties` | Optional `.env` import, Azure connection/container and refresh mappings |
 
-The POM pins Java 25, Spring Boot 4.1.2, `azure-storage-blob` 12.36.0 and `azure-identity` 1.19.0. Runtime uses the connection string; Azure Identity is available but unused. Spring Web MVC and its test starter are included. No database, Spring Security, Actuator, or OpenAPI generator is configured. The [deployment pipeline](deployment.md) builds a GraalVM native container, publishes to private GHCR, and deploys through a self-hosted Windows runner into `reference-data-2` behind the Cilium Gateway.
+The POM pins Java 25, Spring Boot 4.1.2, `azure-storage-blob` 12.36.0, `azure-identity` 1.19.0 and `springdoc-openapi-starter-webmvc-ui` 3.2.0. Runtime uses the connection string; Azure Identity is available but unused. Spring Web MVC and its test starter are included. No database, Spring Security or Actuator is configured. The [deployment pipeline](deployment.md) builds a GraalVM native container, publishes to private GHCR, and deploys through a self-hosted Windows runner into `reference-data-2` behind the Cilium Gateway.
+
+`config/OpenApiConfiguration` supplies the API title, relative server URL and operation-path customizer for Springdoc. Documentation and UI assets live under `/api`; relative Swagger URLs and API paths support the gateway's `/rds` prefix replacement. The Gateway has an exact-match redirect for `/rds/swagger-ui.html` to prevent Springdoc's internal welcome redirect from leaking `/api` to external browsers. See [OpenAPI endpoints](api.md#openapi-and-swagger-ui).
 
 ## Load lifecycle
 

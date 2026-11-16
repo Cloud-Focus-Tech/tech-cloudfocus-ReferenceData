@@ -4,9 +4,29 @@ Prepared 2026-11-14 for `admin@cloudfocus-lab`, Linux amd64 Talos nodes, and nam
 
 The external base URL is **https://api.lab.cloudfocus.tech/rds**. The existing Cilium `default/lab-gateway` owns `10.10.30.81`; DNS resolves to that address. This cluster uses Gateway API rather than an Ingress controller.
 
+## Manual deployment: start here
+
+The first manual rollout completed on 2026-11-15: both replicas in `reference-data-2` are ready and public HTTPS readiness passes. The namespace, Secrets, Service and gateway routes are already configured. A GitHub Actions runner is not required for manual deployment.
+
+From the repository root, publish your image to GHCR first, then run:
+
+```powershell
+./scripts/Deploy.ps1 -Tag latest
+```
+
+This resolves the tag to an immutable digest, applies the namespaced resources, waits for both replicas, and verifies the public endpoint. Running `./scripts/Deploy.ps1` without arguments also uses `latest`. To deploy a specific build, use `-Tag sha-YOUR_COMMIT_SHA`, or use `-Image` with a full digest as shown below. Tag resolution needs the Docker CLI with Buildx and GHCR read access (use `docker login ghcr.io` if needed); the Docker engine does not build anything during deployment. The existing workflow's digest-based `-Image` mode requires only PowerShell and kubectl.
+
+Verify the result:
+
+```powershell
+kubectl get pods -n reference-data-2
+Invoke-RestMethod https://api.lab.cloudfocus.tech/rds/health/ready
+Invoke-RestMethod https://api.lab.cloudfocus.tech/rds/collections
+```
+
 ## Build and release flow
 
-[The workflow](../.github/workflows/native-package.yml) runs on pull requests and pushes to `master`, and supports manual dispatch. It builds a Linux amd64 native image on `ubuntu-24.04`. The Docker build first runs the nine JVM tests, then Spring AOT processing and GraalVM native compilation. `-march=compatibility` avoids requiring the build machine's CPU instruction set on cluster nodes.
+[The workflow](../.github/workflows/native-package.yml) runs on pull requests and pushes to `master`, and supports manual dispatch. It builds a Linux amd64 native image on `ubuntu-24.04`. The Docker build first runs the JVM tests, then Spring AOT processing and GraalVM native compilation. `-march=compatibility` avoids requiring the build machine's CPU instruction set on cluster nodes.
 
 The runtime image is distroless Debian 13 `cc`, runs as UID/GID 65532, and contains the native executable without a JVM or shell. Only build-stage fixtures are copied into the compiler stage. The allowlisted `.dockerignore` excludes `.env`, Git history, Kubernetes credentials, and local build outputs.
 
@@ -43,7 +63,7 @@ The certificate is issued by the lab CA, not a public issuer. The runner and API
 
 ## Register the lab runner
 
-A runner has not been registered automatically: registration needs a short-lived token from the repository's GitHub settings. No package has been published or Deployment started by this setup. The route can return 503 until the first deployment is ready.
+A runner has not been registered automatically: registration needs a short-lived token from the repository's GitHub settings. Runner registration is needed only for automatic Actions deployments; the package is now published and the first manual deployment is running.
 
 1. Open [repository runner settings](https://github.com/CloudFocused/tech-cloudfocus-ReferenceData/settings/actions/runners/new). Select Windows x64 and follow GitHub's download/checksum/extraction commands for the latest runner. Use a separate directory such as `D:\actions-runner\reference-data-2`, outside this repository.
 2. In that directory, use GitHub's one-time registration token with the following configuration. Enter the actual token only on your machine; do not store it in this project:
@@ -79,6 +99,10 @@ Routes use Gateway API [prefix rewriting](https://gateway-api.sigs.k8s.io/guides
 | `https://api.lab.cloudfocus.tech/rds/collections` | `/api/collections` |
 | `https://api.lab.cloudfocus.tech/rds/collection/currencies/items` | `/api/collection/currencies/items` |
 | `https://api.lab.cloudfocus.tech/rds/health/ready` | `/api/health/ready` |
+| `https://api.lab.cloudfocus.tech/rds/swagger-ui/index.html` | `/api/swagger-ui/index.html` |
+| `https://api.lab.cloudfocus.tech/rds/v3/api-docs` | `/api/v3/api-docs` |
+
+Springdoc requires publishing the updated image and deploying it using `Deploy.ps1`, which also applies the updated route manifest. The gateway handles `/rds/swagger-ui.html` with a 302 redirect to `/rds/swagger-ui/index.html`. All Swagger assets use the existing prefix rewrite; the configuration and OpenAPI document use relative URLs so the UI does not escape to internal `/api` paths.
 
 `/rds` is the API base, not an HTML home page; use the paths above. Other paths on this hostname are not claimed by these routes.
 
@@ -94,6 +118,6 @@ Invoke-RestMethod https://api.lab.cloudfocus.tech/rds/health/ready
 
 Use `kubectl describe pod -n reference-data-2 POD_NAME` for `ImagePullBackOff`; verify package visibility and `ghcr-pull` access. For startup failures inspect pod logs and Azure Secret/container settings. Rotate Azure credentials by rerunning bootstrap and restarting the Deployment. ConfigMap environment changes also require a rollout restart. To roll back a deployed revision, use `kubectl rollout undo deployment/reference-data -n reference-data-2` and wait for rollout; the next workflow run reapplies the selected digest.
 
-Validation on 2026-11-14: all nine JVM tests passed inside the Docker build; portable GraalVM native compilation succeeded; the final native smoke test loaded seven fixture collections; a separate native-container check loaded three collections from the current Azure catalog over HTTPS and reported startup in 1.12 seconds. This is one local measurement including Azure loading, not a latency guarantee. Docker reports the uncompressed local image size as 274,126,844 bytes (about 261 MiB). Workflow actionlint and PowerShell/Python syntax checks passed. Both HTTPRoutes are accepted; HTTP redirects to HTTPS, and the new hostname's HTTPS certificate is trusted by this machine. The backend currently returns 503 because no Deployment has been started.
+Validation on 2026-11-14: all nine JVM tests passed inside the Docker build; portable GraalVM native compilation succeeded; the final native smoke test loaded seven fixture collections; a separate native-container check loaded three collections from the current Azure catalog over HTTPS and reported startup in 1.12 seconds. This is one local measurement including Azure loading, not a latency guarantee. Docker reports the uncompressed local image size as 274,126,844 bytes (about 261 MiB). Workflow actionlint and PowerShell/Python syntax checks passed. Both HTTPRoutes are accepted; HTTP redirects to HTTPS, and the new hostname's HTTPS certificate is trusted by this machine. At that stage the backend returned 503 because no Deployment had been started.
 
-Initial GHCR publishing and the first actual cluster rollout remain pending runner registration and pushing the workflow to GitHub. No repository commit or push was performed during setup.
+Update 2026-11-15: the published image in `ghcr.io/cloud-focus-tech/tech-cloudfocus-referencedata` was manually deployed at digest `sha256:2c4e5f1960c13fd255d1f49c0ba3847167b2cfef56861c498e2f8ff8cbf8f7f4`. Both replicas became ready, the private-image pull Secret worked, and public HTTPS readiness passed. The earlier 503 status was resolved. No repository commit or push was performed during this manual deployment.

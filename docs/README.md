@@ -15,6 +15,7 @@ Read [architecture](architecture.md), [API](api.md), [data catalog](data-catalog
 - Failed refreshes retain the last complete snapshot, log a sanitized error, and retry next interval. Startup failure is fatal; background refresh failure is recoverable.
 - Collection summaries, details, and items are real data, not placeholders. Unknown IDs return 404. Readiness requires a loaded snapshot and remains ready while serving the last good snapshot.
 - No application authentication/authorization is implemented. `allowedRoles` is retained in the cached catalog but is not enforced.
+- Springdoc provides Swagger UI at `/api/swagger-ui.html` and OpenAPI JSON/YAML under `/api/v3/api-docs`. The external equivalents use `/rds` after publishing/deploying this change; see [API documentation](api.md#openapi-and-swagger-ui).
 
 ## Source of truth
 
