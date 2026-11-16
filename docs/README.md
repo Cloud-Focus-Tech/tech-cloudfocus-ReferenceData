@@ -10,12 +10,12 @@ For Backstage, use the root [catalog-info.yaml](../catalog-info.yaml) and [regis
 
 - `StorageProvider` is the provider-neutral boundary; `AzureBlobStorageProvider` is the single production adapter.
 - The configured container (default `reference-data`) has `index.json` at its root. Its `blob` paths identify the dataset files relative to that root.
-- Startup loads and validates the entire catalog. Missing configuration, unavailable files, malformed JSON, or invalid catalog/data shapes fail startup.
+- Startup validates the entire catalog and loads enabled datasets. `ENABLED_COLLECTIONS=*` (the default) loads all, a comma-separated list loads chosen index names, and empty enables none. Missing configuration, unavailable enabled files, malformed loaded JSON, or invalid catalog/data shapes fail startup.
 - The repository publishes complete in-memory snapshots. Requests do not access Azure.
 - Polling starts after the first refresh interval (default 300000 milliseconds / five minutes) and repeats with a fixed delay after each check completes.
-- Every poll checks the index and all referenced blobs, including when the index is unchanged. Unchanged ETags reuse cached JSON. Changed blobs are downloaded with `If-Match`.
+- Every poll checks the index and enabled blobs, including when the index is unchanged. Unchanged ETags reuse cached JSON. Changed blobs are downloaded with `If-Match`.
 - Failed refreshes retain the last complete snapshot, log a sanitized error, and retry next interval. Startup failure is fatal; background refresh failure is recoverable.
-- Collection summaries, details, and items are real data, not placeholders. Unknown IDs return 404. Readiness requires a loaded snapshot and remains ready while serving the last good snapshot.
+- `/collections` lists every index entry with `enabled`; disabled entries have `count: null`. Unknown and disabled detail/items IDs return 404. Readiness requires a loaded snapshot and remains ready while serving the last good snapshot, including when no datasets are enabled.
 - No application authentication/authorization is implemented. `allowedRoles` is retained in the cached catalog but is not enforced.
 - Springdoc provides Swagger UI at `/api/swagger-ui.html` and OpenAPI JSON/YAML under `/api/v3/api-docs`. The external equivalents use `/rds` after publishing/deploying this change; see [API documentation](api.md#openapi-and-swagger-ui).
 

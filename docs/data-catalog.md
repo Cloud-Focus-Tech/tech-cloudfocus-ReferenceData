@@ -65,7 +65,7 @@ Each local dataset path is `data/<directory>/v1.json`. `Indexed` means it appear
 | `workflow-priority` | 6 | Object | Yes | `description`, `level`, `sortOrder` |
 | `workflow-status` | 17 | Object | Yes | `category`, `isTerminal`, `sortOrder` |
 
-The 21 unindexed datasets are not discoverable through the sample index. The loader includes all seven indexed datasets, including the three workflow datasets; no hard-coded list remains.
+The 21 unindexed datasets are not discoverable through the sample index. By default the loader includes all seven indexed datasets, including the three workflow datasets. `ENABLED_COLLECTIONS` can select a subset by index name; all indexed names remain discoverable through `/collections` with their enabled status. No hard-coded collection list remains.
 
 ## Record shapes and handling details
 
@@ -100,4 +100,4 @@ Every entry in the three indexed workflow files has `sortOrder`. Sorting by it i
 
 ## Publishing updates
 
-Upload datasets under their catalog paths, and publish `index.json` at the container root. Prefer immutable versioned paths and publish the index last for coordinated releases. Only indexed datasets are loaded. Polling checks both the index and each referenced file's ETag; unchanged files are not downloaded. Invalid initial data fails startup; invalid refreshed data retains the complete previous snapshot and is retried next interval. Root `data/` is not packaged as a production fallback. See [development settings](development.md#local-connection-configuration).
+Upload datasets under their catalog paths, and publish `index.json` at the container root. Prefer immutable versioned paths and publish the index last for coordinated releases. Only enabled indexed datasets are loaded. Polling checks both the index and each enabled file's ETag; unchanged files are not downloaded. Invalid index metadata or enabled initial data fails startup; invalid refreshed data retains the complete previous snapshot and is retried next interval. Disabled payloads are neither read nor validated. Root `data/` is not packaged as a production fallback. See [development settings](development.md#local-connection-configuration).

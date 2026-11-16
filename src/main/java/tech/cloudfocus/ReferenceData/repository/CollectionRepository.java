@@ -5,9 +5,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Repository;
 import tech.cloudfocus.ReferenceData.model.Collection;
@@ -22,18 +27,36 @@ public class CollectionRepository implements InitializingBean {
     private static final String INDEX = "index.json";
     private static final Logger log = LoggerFactory.getLogger(CollectionRepository.class);
     private final StorageProvider storage;
+    private final boolean enableAll;
+    private final Set<String> enabledNames;
     private final JsonMapper mapper = JsonMapper.builder()
             .enable(StreamReadFeature.STRICT_DUPLICATE_DETECTION)
             .enable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS).build();
     private volatile Snapshot snapshot;
 
     private record Document(String etag, JsonNode json) { }
-    private record LoadedCollection(String name, String kind, String version, JsonNode items) {
-        Collection summary() { return new Collection(name, kind, version, items.size()); }
+    private record CatalogCollection(String name, String kind, String version, JsonNode items) {
+        boolean enabled() { return items != null; }
+        Collection summary() {
+            return new Collection(name, kind, version, enabled() ? items.size() : null, enabled());
+        }
     }
-    private record Snapshot(Map<String, Document> documents, List<LoadedCollection> collections) { }
+    private record Snapshot(Map<String, Document> documents, List<CatalogCollection> collections) { }
 
-    public CollectionRepository(StorageProvider storage) { this.storage = storage; }
+    public CollectionRepository(StorageProvider storage) { this(storage, "*"); }
+
+    @Autowired
+    public CollectionRepository(StorageProvider storage,
+            @Value("${app.collections.enabled:*}") String enabledCollections) {
+        this.storage = storage;
+        String selection = enabledCollections.trim();
+        this.enableAll = selection.equals("*");
+        this.enabledNames = selection.isEmpty() || enableAll ? Set.of()
+                : Set.copyOf(Arrays.stream(selection.split(",", -1)).map(String::trim).toList());
+        if (enabledNames.contains("") || enabledNames.contains("*")) {
+            throw new IllegalArgumentException("ENABLED_COLLECTIONS must be *, empty, or comma-separated collection names");
+        }
+    }
 
     @Override
     public void afterPropertiesSet() { reload(); }
@@ -59,7 +82,7 @@ public class CollectionRepository implements InitializingBean {
                 && index.path("schemaVersion").intValue() == 1, "Unsupported index schemaVersion");
         JsonNode entries = index.path("collections");
         require(entries.isArray(), "Index collections must be an array");
-        Map<String, LoadedCollection> collections = new LinkedHashMap<>();
+        Map<String, CatalogCollection> collections = new LinkedHashMap<>();
         for (JsonNode entry : entries) {
             String name = text(entry, "name");
             String kind = text(entry, "kind");
@@ -70,6 +93,10 @@ public class CollectionRepository implements InitializingBean {
                     && !path.equals(INDEX), "Invalid catalog blob path");
             require(!collections.containsKey(name), "Duplicate collection name: " + name);
             require(kind.equals("set") || kind.equals("keyValue"), "Unsupported collection kind: " + kind);
+            if (!enableAll && !enabledNames.contains(name)) {
+                collections.put(name, new CatalogCollection(name, kind, version, null));
+                continue;
+            }
             JsonNode items = load(path, previous, documents);
             if (kind.equals("set")) {
                 require(items.isArray(), "Set data must be an array: " + path);
@@ -85,8 +112,11 @@ public class CollectionRepository implements InitializingBean {
                     }
                 }
             }
-            collections.put(name, new LoadedCollection(name, kind, version, items));
+            collections.put(name, new CatalogCollection(name, kind, version, items));
         }
+        Set<String> missing = new LinkedHashSet<>(enabledNames);
+        missing.removeAll(collections.keySet());
+        require(missing.isEmpty(), "ENABLED_COLLECTIONS names not found in index: " + missing);
         // A concurrent storage update must not publish a partially changed batch.
         for (var document : documents.entrySet()) {
             require(Objects.equals(document.getValue().etag(), storage.getETag(document.getKey())),
@@ -94,7 +124,8 @@ public class CollectionRepository implements InitializingBean {
         }
         if (previous == null || !documents.equals(previous.documents())) {
             snapshot = new Snapshot(Map.copyOf(documents), List.copyOf(collections.values()));
-            log.info("Loaded {} reference data collections", collections.size());
+            log.info("Loaded {} of {} available reference data collections",
+                    collections.values().stream().filter(CatalogCollection::enabled).count(), collections.size());
         }
     }
 
@@ -124,18 +155,18 @@ public class CollectionRepository implements InitializingBean {
 
     public List<Collection> findAll() {
         Snapshot current = snapshot;
-        return current == null ? List.of() : current.collections().stream().map(LoadedCollection::summary).toList();
+        return current == null ? List.of() : current.collections().stream().map(CatalogCollection::summary).toList();
     }
 
-    public Optional<Collection> findByName(String name) { return findLoaded(name).map(LoadedCollection::summary); }
+    public Optional<Collection> findByName(String name) { return findLoaded(name).map(CatalogCollection::summary); }
 
     public Optional<JsonNode> findItems(String name) {
         return findLoaded(name).map(collection -> collection.items().deepCopy());
     }
 
-    private Optional<LoadedCollection> findLoaded(String name) {
+    private Optional<CatalogCollection> findLoaded(String name) {
         Snapshot current = snapshot;
         return current == null ? Optional.empty()
-                : current.collections().stream().filter(c -> c.name().equals(name)).findFirst();
+                : current.collections().stream().filter(c -> c.enabled() && c.name().equals(name)).findFirst();
     }
 }

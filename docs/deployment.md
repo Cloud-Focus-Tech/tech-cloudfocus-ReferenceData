@@ -16,6 +16,8 @@ From the repository root, publish your image to GHCR first, then run:
 
 This resolves the tag to an immutable digest, applies the namespaced resources, waits for both replicas, and verifies the public endpoint. Running `./scripts/Deploy.ps1` without arguments also uses `latest`. To deploy a specific build, use `-Tag sha-YOUR_COMMIT_SHA`, or use `-Image` with a full digest as shown below. Tag resolution needs the Docker CLI with Buildx and GHCR read access (use `docker login ghcr.io` if needed); the Docker engine does not build anything during deployment. The existing workflow's digest-based `-Image` mode requires only PowerShell and kubectl.
 
+The script replaces the service image whether the manifest contains a tag or digest, requires exactly one matching service image, and verifies browser GET and preflight CORS headers for the configured origins after rollout. Avoid applying a mutable `:latest` image directly: an existing `IfNotPresent` pull policy can reuse an older cached image.
+
 Verify the result:
 
 ```powershell
@@ -23,6 +25,21 @@ kubectl get pods -n reference-data-2
 Invoke-RestMethod https://api.lab.cloudfocus.tech/rds/health/ready
 Invoke-RestMethod https://api.lab.cloudfocus.tech/rds/collections
 ```
+
+## Select collections at startup
+
+The ConfigMap defaults `ENABLED_COLLECTIONS` to `"*"`, preserving all currently indexed collections. To load a subset, set that value to comma-separated index names, for example `"countries,currencies"`. Use an explicitly empty string to enable none. Names are case-sensitive and must exist in the index. `/collections` still lists every entry with `enabled`; disabled detail/items routes return 404 and disabled counts are null.
+
+Publish the updated image before deploying this feature. After changing selection, apply the ConfigMap and recreate pods so they read the new environment. If `Deploy.ps1` selects the same image digest as the current Deployment, its ConfigMap apply alone does not restart pods:
+
+```powershell
+kubectl apply -f deploy/kubernetes/configmap.yaml
+kubectl rollout restart deployment/reference-data -n reference-data-2
+kubectl rollout status deployment/reference-data -n reference-data-2 --timeout=600s
+Invoke-RestMethod https://api.lab.cloudfocus.tech/rds/collections
+```
+
+No image rebuild is needed for subsequent selection changes. See [collection selection](api.md#collection-selection) for validation and refresh behavior. The native smoke test runs the same image with all, one, and zero collections enabled.
 
 ## Build and release flow
 
@@ -121,3 +138,5 @@ Use `kubectl describe pod -n reference-data-2 POD_NAME` for `ImagePullBackOff`; 
 Validation on 2026-11-14: all nine JVM tests passed inside the Docker build; portable GraalVM native compilation succeeded; the final native smoke test loaded seven fixture collections; a separate native-container check loaded three collections from the current Azure catalog over HTTPS and reported startup in 1.12 seconds. This is one local measurement including Azure loading, not a latency guarantee. Docker reports the uncompressed local image size as 274,126,844 bytes (about 261 MiB). Workflow actionlint and PowerShell/Python syntax checks passed. Both HTTPRoutes are accepted; HTTP redirects to HTTPS, and the new hostname's HTTPS certificate is trusted by this machine. At that stage the backend returned 503 because no Deployment had been started.
 
 Update 2026-11-15: the published image in `ghcr.io/cloud-focus-tech/tech-cloudfocus-referencedata` was manually deployed at digest `sha256:2c4e5f1960c13fd255d1f49c0ba3847167b2cfef56861c498e2f8ff8cbf8f7f4`. Both replicas became ready, the private-image pull Secret worked, and public HTTPS readiness passed. The earlier 503 status was resolved. No repository commit or push was performed during this manual deployment.
+
+Update 2026-11-16: Backstage browser requests were still reaching cached image `sha256:ea9318f4f9c51701a54e799f14a710f5e15a9a4c6d9391b9e3afc014513efa6a` through pods configured with `:latest` and `IfNotPresent`. After fixing digest substitution in `Deploy.ps1`, published image `sha256:8ab8ca13f46e67aed96feba211b85e922f1014d64414f3704e746cba465fc6c1` (source revision `858c054efc50e99493137c84630aa20153c756b9`) passed the native smoke test including CORS and was deployed. All three replicas became ready on the pinned digest. Public readiness and collection GET responses returned 200 with `Access-Control-Allow-Origin: https://developer.lab.cloudfocus.tech`; OPTIONS also returned 200 and allowed `GET,HEAD`.

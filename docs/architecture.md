@@ -22,8 +22,8 @@ flowchart LR
 | `repository/CollectionRepository` | Startup load, validation, ETag cache, scheduled refresh, atomic publication and queries |
 | `service/CollectionService` | Query delegation and unknown-ID 404 errors |
 | `controller/collections` | Five GET routes under `/api`; class name remains lowercase |
-| `model/Collection` | Summary JavaBean: name, kind, version, count |
-| `application.properties` | Optional `.env` import, Azure connection/container and refresh mappings |
+| `model/Collection` | Summary JavaBean: name, kind, version, nullable count, enabled |
+| `application.properties` | Optional `.env` import, collection selection, Azure connection/container and refresh mappings |
 
 The POM pins Java 25, Spring Boot 4.1.2, `azure-storage-blob` 12.36.0, `azure-identity` 1.19.0 and `springdoc-openapi-starter-webmvc-ui` 3.2.0. Runtime uses the connection string; Azure Identity is available but unused. Spring Web MVC and its test starter are included. No database, Spring Security or Actuator is configured. The [deployment pipeline](deployment.md) builds a GraalVM native container, publishes to private GHCR, and deploys through a self-hosted Windows runner into `reference-data-2` behind the Cilium Gateway.
 
@@ -41,7 +41,9 @@ Loading reads root `index.json` and checks `schemaVersion == 1` and a `collectio
 
 Set datasets are arrays of strings. Key/value datasets are objects whose nonblank keys map to objects with a nonblank `name`. If `hasSortOrder` is true, every record must have integer `sortOrder`. Duplicate JSON object keys and trailing JSON tokens are rejected. Counts come from the actual loaded JSON size. Item identifiers, leading zeroes and Unicode are preserved.
 
-On refresh, the repository checks every referenced document's ETag and downloads only changed documents. Azure downloads use an `If-Match` condition matching the checked ETag. A second metadata pass rejects batches changed during staging. The full new map/list replaces a volatile snapshot in one publication only after all loading and validation succeeds. Removed catalog entries disappear on successful publication. Changed blob paths/versions are honored. Failed batches do not advance cached ETags, so the next poll retries.
+`ENABLED_COLLECTIONS` supplies the startup selection through `app.collections.enabled`: `*` (the default) enables all, a comma-separated list selects exact case-sensitive index names, and an empty value enables none. The repository validates metadata for the entire index but only reads and validates enabled payloads. Disabled entries remain in the snapshot as metadata with no item JSON; summaries expose `enabled: false` and `count: null`. Detail/items lookups only find enabled entries. Invalid selection syntax or names absent from the index reject loading. Selection is fixed until restart; no application rebuild is needed to change it.
+
+On refresh, the repository checks the index and every enabled document's ETag and downloads only changed documents. Azure downloads use an `If-Match` condition matching the checked ETag. A second metadata pass rejects batches changed during staging. The full new map/list replaces a volatile snapshot in one publication only after all loading and validation succeeds. Removed catalog entries disappear on successful publication unless explicitly selected; removal of an explicitly selected name rejects refresh and retains the previous snapshot. Changed blob paths/versions are honored. Failed batches do not advance cached ETags, so the next poll retries.
 
 Reload is synchronized to prevent overlapping batches. Requests keep reading the old snapshot during network I/O. Returned summaries are new JavaBeans and item JSON is deep-copied, protecting the internal cache from callers. Cache reads do not hit storage.
 

@@ -71,4 +71,6 @@ $url = 'https://api.lab.cloudfocus.tech/rds/health/ready'
 
 Both responses must include `Access-Control-Allow-Origin: https://developer.lab.cloudfocus.tech`; the preflight must also allow `GET`. Refresh Backstage and execute the operation again. If the browser still reports **Failed to fetch**, inspect its Network/Console error: verify the request targets `https://api.lab.cloudfocus.tech/rds/...`, the browser can reach that hostname, and the browser trusts the lab CA. Backend CA trust alone does not configure browser trust.
 
+If the headers are still absent after a rollout, compare each pod's `status.containerStatuses[].imageID` with the published image's platform manifest. A pod using `:latest` with `imagePullPolicy: IfNotPresent` can reuse a cached image that predates CORS support. `Deploy.ps1` now replaces the service image with the selected immutable digest even when the local manifest contains `:latest`, and checks public GET and preflight responses before reporting success. The native smoke test also checks CORS with a runtime origin setting.
+
 No Azure credentials or registry tokens belong in the catalog file. No changes to the running Backstage application or catalog registration were made by adding these project files. Publish the new image and use the existing [deployment workflow](deployment.md) before registering the application-hosted URL.

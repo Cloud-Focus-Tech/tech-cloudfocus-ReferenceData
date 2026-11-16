@@ -14,6 +14,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest(properties = {"spring.config.import=", "app.storage.refresh-interval-ms=3600000",
+        "app.collections.enabled=*",
         "app.cors.allowed-origins=https://developer.lab.cloudfocus.tech,http://localhost:3000"})
 @AutoConfigureMockMvc
 class ReferenceDataApplicationTests {
@@ -109,6 +110,12 @@ class ReferenceDataApplicationTests {
                 .andExpect(jsonPath("$.paths['/health/live'].get").exists())
                 .andExpect(jsonPath("$.paths['/health/ready'].get").exists())
                 .andExpect(jsonPath("$.paths['/api/collections']").doesNotExist());
+        mvc.perform(get("/api/v3/api-docs")).andExpect(status().isOk())
+                .andExpect(jsonPath("$.components.schemas.Collection.properties.enabled.type").value("boolean"))
+                .andExpect(jsonPath("$.components.schemas.Collection.properties.count.type")
+                        .value(org.hamcrest.Matchers.containsInAnyOrder("integer", "null")))
+                .andExpect(jsonPath("$.components.schemas.Collection.properties.count.description")
+                        .value("Number of loaded items; null when the collection is disabled"));
         mvc.perform(get("/api/v3/api-docs.yaml")).andExpect(status().isOk())
                 .andExpect(content().string(org.hamcrest.Matchers.containsString("openapi:")));
     }

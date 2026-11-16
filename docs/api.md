@@ -1,6 +1,6 @@
 # Current HTTP API
 
-Updated 2026-11-15. All routes use the `/api` prefix. Collection responses come from the in-memory snapshot, with no per-request Azure calls.
+Updated 2026-11-16. All routes use the `/api` prefix. Collection responses come from the in-memory snapshot, with no per-request Azure calls.
 
 ## OpenAPI and Swagger UI
 
@@ -30,16 +30,16 @@ Backstage ingestion also has `GET /api/catalog-info.yaml` (the canonical root ca
 | --- | --- |
 | `/api/health/live` | 200 with `{"status":"UP"}` |
 | `/api/health/ready` | 200 with `{"status":"UP"}` once a snapshot is loaded; otherwise 503 |
-| `/api/collections` | Array of collection summaries in index order |
-| `/api/collection/{id}` | One collection summary; 404 for an unknown name |
-| `/api/collection/{id}/items` | The dataset JSON object or string array; 404 for an unknown name |
+| `/api/collections` | All indexed collection summaries in index order, including `enabled` |
+| `/api/collection/{id}` | One enabled collection summary; 404 for an unknown or disabled name |
+| `/api/collection/{id}/items` | The enabled dataset JSON object or string array; 404 for an unknown or disabled name |
 
 Names are case-sensitive. The list uses plural `collections`; detail and items use singular `collection`. There are no query filters, paging, version selection, or request bodies.
 
 Example detail for `/api/collection/currencies` with the sample catalog:
 
 ```json
-{"name":"currencies","kind":"set","version":"v1","count":3}
+{"name":"currencies","kind":"set","version":"v1","count":3,"enabled":true}
 ```
 
 Items for the same collection:
@@ -54,7 +54,32 @@ Key/value collections preserve the keyed-object structure, for example:
 {"AK":{"name":"Alaska"}}
 ```
 
-`count` is computed from the actual loaded dataset. The cloud index determines list membership, order, kind and version. The local sample index would produce seven collection summaries.
+`count` is computed from the actual loaded dataset. Disabled collections have `count: null` because their data is not loaded. The cloud index determines list membership, order, kind and version. The local sample index produces seven collection summaries regardless of how many are enabled.
+
+## Collection selection
+
+Set an environment variable before starting the service:
+
+```properties
+ENABLED_COLLECTIONS=countries,currencies
+```
+
+Selection uses the index's case-sensitive `name`, not its blob directory. Whitespace around names is ignored, repeated names are accepted, and index order is preserved. An unset variable defaults to `*` (enable all, including future index additions). An explicitly empty value enables none; the service still loads the index, lists its metadata, and becomes ready. A comma-separated list enables only the specified names. Mixing `*` with names, empty list entries, and names absent from the index are configuration errors that fail startup.
+
+With the example selection, `/api/collections` includes entries like:
+
+```json
+[
+  {"name":"countries","kind":"keyValue","version":"v1","count":249,"enabled":true},
+  {"name":"timezones","kind":"keyValue","version":"v1","count":null,"enabled":false},
+  {"name":"languages","kind":"keyValue","version":"v1","count":null,"enabled":false},
+  {"name":"currencies","kind":"set","version":"v1","count":3,"enabled":true}
+]
+```
+
+The sample index also returns its three workflow entries as disabled. Disabled data blobs are never downloaded, checked for ETag changes, or validated. Metadata for every index entry is still validated. Requests for disabled details or items return 404, just like unknown names.
+
+Restart after changing selection. No configuration mutation endpoint or live environment reload is provided. On refresh, new unselected entries appear as disabled. If a specifically configured name disappears from the index, refresh fails and retains the last complete snapshot, following the existing refresh policy; update selection and restart to intentionally remove it.
 
 Startup fails if initial loading fails. Failed periodic refreshes retain the previous complete snapshot, including its collection list and counts; readiness remains UP while serving that snapshot. Unknown IDs use Spring `ResponseStatusException`; no custom stable error body is defined. No application authentication or role enforcement exists, including for catalog `allowedRoles`.
 
