@@ -45,4 +45,30 @@ Backstage embeds the fetched definition rather than hosting it at its original U
 
 `OPENAPI_PUBLIC_BASE_URL` overrides that server URL for another environment. If moving the service, also update the catalog's definition and metadata links. `BackstageOpenApiController` is hidden from generated operations and is disabled if `springdoc.api-docs.enabled=false`. Normal OpenAPI JSON/YAML and Swagger UI URLs remain unchanged.
 
+## Browser requests from Backstage
+
+Backstage's **Try it out** sends requests from the user's browser to the API. The backend reader allowlist above only enables catalog ingestion; browser requests also require the API's CORS response headers. A direct browser navigation or command-line request can succeed while **Try it out** reports **Failed to fetch**.
+
+Set `CORS_ALLOWED_ORIGINS` to the Backstage origin, including scheme and any nondefault port, without a path or trailing slash:
+
+```properties
+CORS_ALLOWED_ORIGINS=https://developer.lab.cloudfocus.tech
+```
+
+The Kubernetes ConfigMap includes this lab origin. For local Backstage, add `http://localhost:3000` to the comma-separated list. The application defaults to an empty allowlist. Spring MVC applies CORS to `/api/**` after the gateway rewrites `/rds`, permits `GET` and `HEAD` plus their browser preflights, and does not enable credentialed requests. See [Spring MVC CORS configuration](https://docs.spring.io/spring-framework/reference/web/webmvc-cors.html).
+
+Publish an image containing the CORS configuration and deploy it using the [deployment workflow](deployment.md). Applying the ConfigMap alone cannot add CORS support to an older image; changes to its environment variables also require new pods. Once deployed, verify both requests with the exact browser origin:
+
+```powershell
+$origin = 'https://developer.lab.cloudfocus.tech'
+$url = 'https://api.lab.cloudfocus.tech/rds/health/ready'
+(Invoke-WebRequest $url -Headers @{Origin=$origin}).Headers
+(Invoke-WebRequest $url -Method Options -Headers @{
+    Origin=$origin
+    'Access-Control-Request-Method'='GET'
+}).Headers
+```
+
+Both responses must include `Access-Control-Allow-Origin: https://developer.lab.cloudfocus.tech`; the preflight must also allow `GET`. Refresh Backstage and execute the operation again. If the browser still reports **Failed to fetch**, inspect its Network/Console error: verify the request targets `https://api.lab.cloudfocus.tech/rds/...`, the browser can reach that hostname, and the browser trusts the lab CA. Backend CA trust alone does not configure browser trust.
+
 No Azure credentials or registry tokens belong in the catalog file. No changes to the running Backstage application or catalog registration were made by adding these project files. Publish the new image and use the existing [deployment workflow](deployment.md) before registering the application-hosted URL.

@@ -32,7 +32,7 @@ spec:
       containers:
         - name: reference-data
           # Replaced with an immutable GHCR digest by Deploy.ps1.
-          image: ghcr.io/cloud-focus-tech/tech-cloudfocus-referencedata:latest
+          image: ghcr.io/cloud-focus-tech/tech-cloudfocus-referencedata:unconfigured
           ports:
             - name: http
               containerPort: 8080

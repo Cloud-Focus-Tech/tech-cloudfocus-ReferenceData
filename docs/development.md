@@ -17,6 +17,7 @@ Required/runtime settings:
 | `STORAGE_CONNECTION_STRING` | `app.storage.connection-string` | Required Azure Blob Storage connection string |
 | `STORAGE_CONTAINER_NAME` | `app.storage.container-name` | `reference-data` |
 | `STORAGE_REFRESH_INTERVAL_MS` | `app.storage.refresh-interval-ms` | `300000` (five minutes); positive whole milliseconds |
+| `CORS_ALLOWED_ORIGINS` | `app.cors.allowed-origins` | Empty by default; comma-separated browser origins allowed to read `/api/**`. The lab ConfigMap allows `https://developer.lab.cloudfocus.tech`. |
 
 The local `.env` has the nonsecret container/refresh defaults appended if missing; existing credentials are preserved. `STORAGE_ACCOUNT_NAME` and `STORAGE_ACCOUNT_KEY` are not used separately: authentication uses the connection string. Existing `CONNECTION_URL`, `CONNECTION_USERNAME`, and `CONNECTION_PASSWORD` mappings remain reserved for other integrations and are not used by this provider.
 
@@ -57,3 +58,5 @@ Preserve unrelated working-tree changes, keep package case `tech.cloudfocus.Refe
 
 
 Backstage catalog support was verified on 2026-11-15: all 12 JVM tests passed, and the final native smoke test served the canonical root catalog-info.yaml, generated the Backstage definition with an absolute public server URL, and confirmed the normal OpenAPI definition still uses its relative server. The descriptor registers a Component and linked API; see [Backstage setup](backstage.md) for reader allowlisting and lab CA trust. This image was built locally but was not published or deployed as part of the catalog change.
+
+On 2026-11-16, all 16 JVM tests passed after adding configurable CORS for Backstage browser requests. Coverage includes allowed origins, preflights, CORS headers on 404 responses, and rejection of unlisted origins and write preflights. The deployed API was confirmed to return 200 without CORS headers for the lab Backstage origin before this fix. The deployment image placeholder was restored to `:unconfigured` so `Deploy.ps1` can substitute the selected immutable digest. These changes have not been published or deployed; native compilation was not repeated for this change.

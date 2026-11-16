@@ -6,3 +6,4 @@ metadata:
 data:
   STORAGE_CONTAINER_NAME: reference-data
   STORAGE_REFRESH_INTERVAL_MS: "300000"
+  CORS_ALLOWED_ORIGINS: "https://developer.lab.cloudfocus.tech"

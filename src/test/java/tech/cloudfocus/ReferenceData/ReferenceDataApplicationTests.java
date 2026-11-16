@@ -10,9 +10,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.options;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@SpringBootTest(properties = {"spring.config.import=", "app.storage.refresh-interval-ms=3600000"})
+@SpringBootTest(properties = {"spring.config.import=", "app.storage.refresh-interval-ms=3600000",
+        "app.cors.allowed-origins=https://developer.lab.cloudfocus.tech,http://localhost:3000"})
 @AutoConfigureMockMvc
 class ReferenceDataApplicationTests {
 
@@ -26,6 +28,55 @@ class ReferenceDataApplicationTests {
 
     @Autowired
     MockMvc mvc;
+
+    @Test
+    void allowsBrowserReadsFromConfiguredOriginsIncludingErrorResponses() throws Exception {
+        for (String origin : java.util.List.of("https://developer.lab.cloudfocus.tech", "http://localhost:3000")) {
+            mvc.perform(get("/api/collections").header("Origin", origin))
+                    .andExpect(status().isOk())
+                    .andExpect(header().string("Access-Control-Allow-Origin", origin))
+                    .andExpect(header().doesNotExist("Access-Control-Allow-Credentials"));
+            mvc.perform(get("/api/collection/missing").header("Origin", origin))
+                    .andExpect(status().isNotFound())
+                    .andExpect(header().string("Access-Control-Allow-Origin", origin));
+        }
+    }
+
+    @Test
+    void handlesBrowserPreflightForReadRequests() throws Exception {
+        mvc.perform(options("/api/health/ready")
+                .header("Origin", "https://developer.lab.cloudfocus.tech")
+                .header("Access-Control-Request-Method", "GET")
+                .header("Access-Control-Request-Headers", "content-type"))
+                .andExpect(status().isOk())
+                .andExpect(header().string("Access-Control-Allow-Origin", "https://developer.lab.cloudfocus.tech"))
+                .andExpect(header().string("Access-Control-Allow-Methods", "GET,HEAD"))
+                .andExpect(header().string("Access-Control-Allow-Headers", "content-type"))
+                .andExpect(header().string("Access-Control-Max-Age", "3600"))
+                .andExpect(header().doesNotExist("Access-Control-Allow-Credentials"));
+    }
+
+    @Test
+    void rejectsUnlistedBrowserOrigins() throws Exception {
+        for (String origin : java.util.List.of("https://untrusted.example", "http://developer.lab.cloudfocus.tech")) {
+            mvc.perform(get("/api/collections").header("Origin", origin))
+                    .andExpect(status().isForbidden())
+                    .andExpect(header().doesNotExist("Access-Control-Allow-Origin"));
+            mvc.perform(options("/api/collections").header("Origin", origin)
+                    .header("Access-Control-Request-Method", "GET"))
+                    .andExpect(status().isForbidden())
+                    .andExpect(header().doesNotExist("Access-Control-Allow-Origin"));
+        }
+    }
+
+    @Test
+    void rejectsPreflightForWriteRequests() throws Exception {
+        mvc.perform(options("/api/collections")
+                .header("Origin", "https://developer.lab.cloudfocus.tech")
+                .header("Access-Control-Request-Method", "POST"))
+                .andExpect(status().isForbidden())
+                .andExpect(header().doesNotExist("Access-Control-Allow-Origin"));
+    }
 
     @Test
     void servesCanonicalBackstageCatalogAndStandaloneDefinition() throws Exception {
