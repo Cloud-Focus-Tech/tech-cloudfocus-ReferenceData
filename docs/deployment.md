@@ -12,7 +12,7 @@ The runtime image is distroless Debian 13 `cc`, runs as UID/GID 65532, and conta
 
 A smoke test runs the actual native container with a local read-only Blob HTTP fixture and fake credentials. It exercises startup, the Azure SDK, JSON parsing/serialization, readiness, and collection/item endpoints. Real Azure credentials are not available to the build job. See [GraalVM containers](https://github.com/graalvm/container) and [Spring native-image documentation](https://docs.spring.io/spring-boot/reference/packaging/native-image/introducing-graalvm-native-images.html).
 
-After smoke tests pass on `master`, the workflow publishes `ghcr.io/cloudfocused/tech-cloudfocus-referencedata` with `sha-<commit>` and `latest` tags using `GITHUB_TOKEN` and `packages: write`. No registry password is needed in repository secrets. New GHCR packages default to private; confirm private visibility in the package settings, and ensure organization policy allows Actions to create packages. The image source label links the package to this repository. See [GitHub's publishing guide](https://docs.github.com/en/actions/tutorials/publish-packages/publish-docker-images).
+After smoke tests pass on `master`, the workflow publishes `ghcr.io/cloud-focus-tech/tech-cloudfocus-referencedata` with `sha-<commit>` and `latest` tags using `GITHUB_TOKEN` and `packages: write`. No registry password is needed in repository secrets. New GHCR packages default to private; confirm private visibility in the package settings, and ensure organization policy allows Actions to create packages. The image source label links the package to this repository. See [GitHub's publishing guide](https://docs.github.com/en/actions/tutorials/publish-packages/publish-docker-images).
 
 Deployment runs only for `master`, never for pull requests. It requires a **Windows x64 self-hosted runner with label `reference-data-2`** and uses the published immutable image digest. The `lab` GitHub environment can hold deployment protection rules. Manual dispatch with `deploy=false` publishes without deploying. Only one deployment runs at a time.
 
@@ -67,7 +67,7 @@ The Deployment uses two replicas, rolling updates with zero unavailable replicas
 For a manual release, use the published digest:
 
 ```powershell
-./scripts/Deploy.ps1 -Image 'ghcr.io/cloudfocused/tech-cloudfocus-referencedata@sha256:REPLACE_WITH_64_HEX_DIGEST'
+./scripts/Deploy.ps1 -Image 'ghcr.io/cloud-focus-tech/tech-cloudfocus-referencedata@sha256:REPLACE_WITH_64_HEX_DIGEST'
 ```
 
 Do not apply the entire `deploy/kubernetes` directory directly: its Deployment file intentionally contains an `:unconfigured` image placeholder. Use `Deploy.ps1` to supply the exact published digest.

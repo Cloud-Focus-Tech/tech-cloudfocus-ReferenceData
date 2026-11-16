@@ -5,15 +5,15 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $PSNativeCommandUseErrorActionPreference = $true
-if ($Image -notmatch '^ghcr\.io/cloudfocused/tech-cloudfocus-referencedata@sha256:[a-f0-9]{64}$') {
-    throw 'Image must be an immutable digest in ghcr.io/cloudfocused/tech-cloudfocus-referencedata.'
+if ($Image -notmatch '^ghcr\.io/cloud-focus-tech/tech-cloudfocus-referencedata@sha256:[a-f0-9]{64}$') {
+    throw 'Image must be an immutable digest in ghcr.io/cloud-focus-tech/tech-cloudfocus-referencedata.'
 }
 if ((kubectl config current-context) -ne $ExpectedContext) { throw "Select Kubernetes context $ExpectedContext first." }
 $root = Split-Path $PSScriptRoot -Parent
 kubectl get namespace reference-data-2 -o name | Out-Null
 kubectl get secret azure-blob-credentials ghcr-pull -n reference-data-2 -o name | Out-Null
 $manifest = Get-Content (Join-Path $root 'deploy/kubernetes/deployment.yaml') -Raw
-$manifest = $manifest.Replace('ghcr.io/cloudfocused/tech-cloudfocus-referencedata:unconfigured', $Image)
+$manifest = $manifest.Replace('ghcr.io/cloud-focus-tech/tech-cloudfocus-referencedata:unconfigured', $Image)
 kubectl apply -f (Join-Path $root 'deploy/kubernetes/configmap.yaml')
 kubectl apply -f (Join-Path $root 'deploy/kubernetes/service.yaml')
 $manifest | kubectl apply -f -
