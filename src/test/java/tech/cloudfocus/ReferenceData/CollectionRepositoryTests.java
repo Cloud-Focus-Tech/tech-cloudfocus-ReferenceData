@@ -5,8 +5,65 @@ import org.junit.jupiter.api.Test;
 import tech.cloudfocus.ReferenceData.repository.CollectionRepository;
 import tech.cloudfocus.ReferenceData.storage.StorageProvider;
 import tools.jackson.databind.node.ArrayNode;
+import tools.jackson.databind.node.ObjectNode;
 
 class CollectionRepositoryTests {
+    @Test
+    void retrievesIndividualItemsWithoutStorageReadsAndProtectsSnapshot() throws Exception {
+        var storage = FixtureStorage.fromData();
+        var repository = new CollectionRepository(storage);
+        repository.reload();
+        int reads = storage.reads;
+        var country = (ObjectNode) repository.findItem("address-countries", "US").orElseThrow();
+        country.put("name", "Changed by caller");
+        assertEquals("United States", repository.findItem("address-countries", "US").orElseThrow()
+                .path("name").stringValue());
+        assertEquals("USD", repository.findItem("currencies", "USD").orElseThrow().stringValue());
+        assertEquals("Pharmacy", repository.findItem("medical-coding-pos", "01").orElseThrow()
+                .path("name").stringValue());
+        assertTrue(repository.findItem("medical-coding-pos", "1").isEmpty());
+        assertTrue(repository.findItem("currencies", "usd").isEmpty());
+        assertTrue(repository.findItem("currencies", "0").isEmpty());
+        assertTrue(repository.findItem("address-countries", "missing").isEmpty());
+        assertTrue(repository.findItem("missing", "US").isEmpty());
+        assertEquals(reads, storage.reads, "Item retrieval must not access storage");
+        storage.put("currencies/v1.json", "[\"GBP\"]");
+        repository.reload();
+        assertTrue(repository.findItem("currencies", "USD").isEmpty());
+        assertEquals("GBP", repository.findItem("currencies", "GBP").orElseThrow().stringValue());
+        var selected = new CollectionRepository(storage, "address-countries");
+        selected.reload();
+        assertTrue(selected.findItem("currencies", "GBP").isEmpty());
+    }
+
+    @Test
+    void checksItemExistenceFromIndexesAndRefreshesThem() throws Exception {
+        var storage = FixtureStorage.fromData();
+        var repository = new CollectionRepository(storage);
+        repository.reload();
+        int reads = storage.reads;
+        assertTrue(repository.itemExists("address-countries", "US").orElseThrow());
+        assertFalse(repository.itemExists("address-countries", "missing").orElseThrow());
+        assertTrue(repository.itemExists("medical-coding-pos", "01").orElseThrow());
+        assertFalse(repository.itemExists("medical-coding-pos", "1").orElseThrow());
+        assertTrue(repository.itemExists("timezones", "Africa/Abidjan").orElseThrow());
+        assertTrue(repository.itemExists("currencies", "USD").orElseThrow());
+        assertFalse(repository.itemExists("currencies", "usd").orElseThrow());
+        assertFalse(repository.itemExists("currencies", "0").orElseThrow());
+        assertTrue(repository.itemExists("missing", "USD").isEmpty());
+        assertEquals(reads, storage.reads, "Item lookups must not access storage");
+        storage.put("currencies/v1.json", "[\"GBP\"]");
+        repository.reload();
+        assertFalse(repository.itemExists("currencies", "USD").orElseThrow());
+        assertTrue(repository.itemExists("currencies", "GBP").orElseThrow());
+        storage.put("currencies/v1.json", "invalid");
+        repository.refresh();
+        assertTrue(repository.itemExists("currencies", "GBP").orElseThrow());
+        var selected = new CollectionRepository(storage, "address-countries");
+        selected.reload();
+        assertTrue(selected.itemExists("currencies", "GBP").isEmpty());
+    }
+
     @Test
     void loadsRealCatalogAndRefreshesIndividualBlobWithoutIndexChange() throws Exception {
         var storage = FixtureStorage.fromData();

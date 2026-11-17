@@ -8,6 +8,8 @@ import java.util.Optional;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.Collections;
+import java.util.HashSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
@@ -21,6 +23,7 @@ import tools.jackson.core.StreamReadFeature;
 import tools.jackson.databind.DeserializationFeature;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.node.StringNode;
 
 @Repository
 public class CollectionRepository implements InitializingBean {
@@ -35,13 +38,25 @@ public class CollectionRepository implements InitializingBean {
     private volatile Snapshot snapshot;
 
     private record Document(String etag, JsonNode json) { }
-    private record CatalogCollection(String name, String kind, String version, JsonNode items) {
+    private record CatalogCollection(String name, String kind, String version, JsonNode items,
+            Set<String> setItemIds) {
+        CatalogCollection(String name, String kind, String version, JsonNode items) {
+            this(name, kind, version, items, indexSet(items));
+        }
+
+        private static Set<String> indexSet(JsonNode items) {
+            if (items == null || !items.isArray()) { return Set.of(); }
+            Set<String> index = new HashSet<>();
+            for (JsonNode item : items) { index.add(item.stringValue()); }
+            return Set.copyOf(index);
+        }
+
         boolean enabled() { return items != null; }
         Collection summary() {
             return new Collection(name, kind, version, enabled() ? items.size() : null, enabled());
         }
     }
-    private record Snapshot(Map<String, Document> documents, List<CatalogCollection> collections) { }
+    private record Snapshot(Map<String, Document> documents, Map<String, CatalogCollection> collections) { }
 
     public CollectionRepository(StorageProvider storage) { this(storage, "*"); }
 
@@ -123,7 +138,9 @@ public class CollectionRepository implements InitializingBean {
                     "Storage changed during collection loading; retry on next refresh");
         }
         if (previous == null || !documents.equals(previous.documents())) {
-            snapshot = new Snapshot(Map.copyOf(documents), List.copyOf(collections.values()));
+            // Keep index order for discovery while allowing direct lookup by name.
+            snapshot = new Snapshot(Map.copyOf(documents),
+                    Collections.unmodifiableMap(new LinkedHashMap<>(collections)));
             log.info("Loaded {} of {} available reference data collections",
                     collections.values().stream().filter(CatalogCollection::enabled).count(), collections.size());
         }
@@ -155,7 +172,7 @@ public class CollectionRepository implements InitializingBean {
 
     public List<Collection> findAll() {
         Snapshot current = snapshot;
-        return current == null ? List.of() : current.collections().stream().map(CatalogCollection::summary).toList();
+        return current == null ? List.of() : current.collections().values().stream().map(CatalogCollection::summary).toList();
     }
 
     public Optional<Collection> findByName(String name) { return findLoaded(name).map(CatalogCollection::summary); }
@@ -164,9 +181,25 @@ public class CollectionRepository implements InitializingBean {
         return findLoaded(name).map(collection -> collection.items().deepCopy());
     }
 
+    public Optional<Boolean> itemExists(String name, String itemId) {
+        return findLoaded(name)
+                .map(collection -> collection.items().isObject()
+                        ? collection.items().has(itemId) : collection.setItemIds().contains(itemId));
+    }
+
+    public Optional<JsonNode> findItem(String name, String itemId) {
+        return findLoaded(name).flatMap(collection -> {
+            if (collection.items().isObject()) {
+                return Optional.ofNullable(collection.items().get(itemId)).map(JsonNode::deepCopy);
+            }
+            return collection.setItemIds().contains(itemId)
+                    ? Optional.of(StringNode.valueOf(itemId)) : Optional.empty();
+        });
+    }
+
     private Optional<CatalogCollection> findLoaded(String name) {
         Snapshot current = snapshot;
         return current == null ? Optional.empty()
-                : current.collections().stream().filter(c -> c.enabled() && c.name().equals(name)).findFirst();
+                : Optional.ofNullable(current.collections().get(name)).filter(CatalogCollection::enabled);
     }
 }

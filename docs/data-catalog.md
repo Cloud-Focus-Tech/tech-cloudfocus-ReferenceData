@@ -81,7 +81,7 @@ The other 27 files are JSON objects keyed by a string code or identifier. Values
 {"AK":{"name":"Alaska"}}
 ```
 
-Preserve string keys, including leading zeroes in medical codes such as `"01"`, and preserve Unicode text. Some identifiers contain slashes, as in timezone keys such as `Africa/Abidjan`. Item identifiers are not currently exposed as URL path parameters.
+Preserve string keys, including leading zeroes in medical codes such as `"01"`, and preserve Unicode text. Some identifiers contain slashes, as in timezone keys such as `Africa/Abidjan`. For item existence checks, use `/api/collection/timezones/item/exists?itemId=Africa%2FAbidjan`; for retrieval, use `/api/collection/timezones/item?itemId=Africa%2FAbidjan`. Path routes also accept literal slash-separated IDs. See [API examples](api.md#collection-and-health-endpoints).
 
 Additional field types observed in the data:
 

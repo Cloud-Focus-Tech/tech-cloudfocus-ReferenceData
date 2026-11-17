@@ -21,7 +21,7 @@ flowchart LR
 | `storage/StorageConfiguration` | Connection-string/container client construction, required-setting validation, scheduling enablement |
 | `repository/CollectionRepository` | Startup load, validation, ETag cache, scheduled refresh, atomic publication and queries |
 | `service/CollectionService` | Query delegation and unknown-ID 404 errors |
-| `controller/collections` | Five GET routes under `/api`; class name remains lowercase |
+| `controller/collections` | Collection, individual item, and health GET routes under `/api`; class name remains lowercase |
 | `model/Collection` | Summary JavaBean: name, kind, version, nullable count, enabled |
 | `application.properties` | Optional `.env` import, collection selection, Azure connection/container and refresh mappings |
 
@@ -46,6 +46,8 @@ Set datasets are arrays of strings. Key/value datasets are objects whose nonblan
 On refresh, the repository checks the index and every enabled document's ETag and downloads only changed documents. Azure downloads use an `If-Match` condition matching the checked ETag. A second metadata pass rejects batches changed during staging. The full new map/list replaces a volatile snapshot in one publication only after all loading and validation succeeds. Removed catalog entries disappear on successful publication unless explicitly selected; removal of an explicitly selected name rejects refresh and retains the previous snapshot. Changed blob paths/versions are honored. Failed batches do not advance cached ETags, so the next poll retries.
 
 Reload is synchronized to prevent overlapping batches. Requests keep reading the old snapshot during network I/O. Returned summaries are new JavaBeans and item JSON is deep-copied, protecting the internal cache from callers. Cache reads do not hit storage.
+
+Snapshots keep collections in an immutable map preserving catalog order. Individual items are looked up by collection name and then object key, or by a hash set of string values built for set datasets. Existence checks take expected constant time and copy no item JSON. The repository returns an optional boolean: present true/false for an enabled collection, empty for an unknown or disabled collection. The service returns `ItemExistence(itemId, exists)` with HTTP 200 at `/collection/{id}/item/{itemId}/exists`, or HTTP 404 for an empty result. Single-item retrieval at `/collection/{id}/item/{itemId}` returns a deep copy of the selected object or the JSON string for a set member; missing items and unknown/disabled collections return 404. Query-parameter alternatives support reserved characters in IDs, and hidden catch-all handlers support literal slashes. Full-collection copies remain on the plural items endpoint.
 
 Polling uses Spring `@Scheduled` fixed delay, with the same interval for initial delay. Changing `.env` requires restart. Refresh errors retain the last successful snapshot and log only the exception type; raw SDK messages/connection details are not logged by the refresh handler. Readiness means a complete snapshot exists, not that the most recent Azure check succeeded.
 

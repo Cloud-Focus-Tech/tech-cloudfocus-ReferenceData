@@ -33,6 +33,10 @@ Backstage ingestion also has `GET /api/catalog-info.yaml` (the canonical root ca
 | `/api/collections` | All indexed collection summaries in index order, including `enabled` |
 | `/api/collection/{id}` | One enabled collection summary; 404 for an unknown or disabled name |
 | `/api/collection/{id}/items` | The enabled dataset JSON object or string array; 404 for an unknown or disabled name |
+| `/api/collection/{id}/item/{itemId}` | One stored item: an object for key/value collections or a JSON string for sets; 404 for a missing item or unknown/disabled collection |
+| `/api/collection/{id}/item/{itemId}/exists` | 200 with `{"itemId":"...","exists":true/false}`; 404 for an unknown or disabled collection; `/Item/{itemId}/exists` is also accepted |
+| `/api/collection/{id}/item?itemId=...` | Single-item retrieval using a query parameter, including IDs containing slashes |
+| `/api/collection/{id}/item/exists?itemId=...` | Existence check using a query parameter, including IDs containing slashes |
 
 Names are case-sensitive. The list uses plural `collections`; detail and items use singular `collection`. There are no query filters, paging, version selection, or request bodies.
 
@@ -47,6 +51,26 @@ Items for the same collection:
 ```json
 ["USD","CAD","EUR"]
 ```
+
+Individual item lookups use the exact, case-sensitive object key or set value, never an array position. For example, `/api/collection/address-countries/item/US` returns `{"name":"United States"}`, and `/api/collection/currencies/item/USD` returns the JSON string `"USD"`. Missing items and unknown or disabled collections return 404. Leading zeroes are preserved (`01` differs from `1`).
+
+Item existence checks append `/exists`: `/api/collection/currencies/item/USD/exists` returns `{"itemId":"USD","exists":true}`, while `/api/collection/currencies/item/missing/exists` returns `{"itemId":"missing","exists":false}`. Both return 200 for an enabled collection. Unknown or disabled collections return 404. The response contains only `itemId` and `exists`, with no item payload. The former `/items/{itemId}` existence route has been removed; `/items` still returns the entire dataset.
+
+Use the query-parameter route in Swagger/Backstage and clients when IDs include slashes or other reserved URL characters:
+
+```http
+GET /api/collection/timezones/item/exists?itemId=Africa%2FAbidjan
+```
+
+The external equivalent is `https://api.lab.cloudfocus.tech/rds/collection/timezones/item/exists?itemId=Africa%2FAbidjan`, returning:
+
+```json
+{"itemId":"Africa/Abidjan","exists":true}
+```
+
+Enter the raw value `Africa/Abidjan` in Swagger's `itemId` query field; clients should URL-encode it once. Encode literal plus signs as `%2B`, for example `Etc%2FGMT%2B1`. Missing or empty `itemId` query parameters return 400. Path routes also support literal slashes, for example `/api/collection/timezones/item/Africa/Abidjan` for retrieval and `/api/collection/timezones/item/Africa/Abidjan/exists` for existence, including IDs with multiple slashes. Catch-all handlers and the capitalized `/Item` existence alias are hidden from OpenAPI; the normal single-segment operations remain available. The path suffix `/exists` is reserved for checks; use the retrieval query route for an ID equal to `exists` or ending in `/exists`. Use the query routes for encoded IDs: Tomcat may reject `%2F` in a path before it reaches the controller. See [Tomcat's encoded slash handling](https://tomcat.apache.org/tomcat-11.0-doc/config/http.html).
+
+Collection names use an in-memory map; keyed datasets look up their existing JSON object keys, and string sets have a hash set built during loading. Existence checks do not scan collections, copy any item JSON, or contact storage. Retrieval copies only the selected object, protecting cached data. Indexes refresh atomically with the rest of the snapshot.
 
 Key/value collections preserve the keyed-object structure, for example:
 

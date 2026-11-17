@@ -45,6 +45,18 @@ class CollectionSelectionApplicationTests {
         for (String name : java.util.List.of("languages", "timezones", "missing")) {
             mvc.perform(get("/api/collection/" + name)).andExpect(status().isNotFound());
             mvc.perform(get("/api/collection/" + name + "/items")).andExpect(status().isNotFound());
+            mvc.perform(get("/api/collection/" + name + "/item/US")).andExpect(status().isNotFound());
+            mvc.perform(get("/api/collection/" + name + "/item/US/exists")).andExpect(status().isNotFound());
+            mvc.perform(get("/api/collection/" + name + "/item").param("itemId", "Africa/Abidjan"))
+                    .andExpect(status().isNotFound());
+            mvc.perform(get("/api/collection/" + name + "/item/exists").param("itemId", "Africa/Abidjan"))
+                    .andExpect(status().isNotFound());
+            mvc.perform(get("/api/collection/" + name + "/item/Africa/Abidjan"))
+                    .andExpect(status().isNotFound());
+            mvc.perform(get("/api/collection/" + name + "/item/Africa/Abidjan/exists"))
+                    .andExpect(status().isNotFound());
+            mvc.perform(get("/api/collection/" + name + "/Item/Africa/Abidjan/exists"))
+                    .andExpect(status().isNotFound());
         }
         mvc.perform(get("/api/health/ready")).andExpect(status().isOk());
     }
