@@ -14,12 +14,12 @@ class CollectionApiTests {
         var repository = new CollectionRepository(FixtureStorage.fromData());
         repository.reload();
         var mvc = MockMvcBuilders.standaloneSetup(new collections(new CollectionService(repository))).build();
-        mvc.perform(get("/api/collections")).andExpect(status().isOk()).andExpect(jsonPath("$.length()").value(7));
+        mvc.perform(get("/api/collections")).andExpect(status().isOk()).andExpect(jsonPath("$.length()").value(28));
         mvc.perform(get("/api/collection/currencies")).andExpect(status().isOk())
                 .andExpect(jsonPath("$.count").value(3));
         mvc.perform(get("/api/collection/currencies/items")).andExpect(status().isOk())
                 .andExpect(content().json("[\"USD\",\"CAD\",\"EUR\"]"));
-        mvc.perform(get("/api/collection/countries/items")).andExpect(status().isOk())
+        mvc.perform(get("/api/collection/address-countries/items")).andExpect(status().isOk())
                 .andExpect(jsonPath("$.US.name").value("United States"));
         mvc.perform(get("/api/collection/missing")).andExpect(status().isNotFound());
         mvc.perform(get("/api/collection/missing/items")).andExpect(status().isNotFound());

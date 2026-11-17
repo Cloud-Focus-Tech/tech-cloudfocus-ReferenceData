@@ -1,14 +1,14 @@
 # Reference-data files and catalog
 
-All counts and shapes below were obtained by parsing the checked-in JSON on 2026-11-13. The directory contains **28 `v1.json` dataset files plus `index.json`**. These are local fixtures; production loads the same format from Azure, and tests load these files through an in-memory provider.
+All counts and shapes below were obtained by parsing the checked-in JSON on 2026-11-13; index coverage was updated on 2026-11-16. The directory contains **28 `v1.json` dataset files plus `index.json`**. These are local fixtures; production loads the same format from Azure, and tests load these files through an in-memory provider.
 
 ## Catalog format
 
-[data/index.json](../data/index.json) contains a numeric `schemaVersion` of `1` and a `collections` array of seven metadata records. For example:
+[data/index.json](../data/index.json) contains a numeric `schemaVersion` of `1` and a `collections` array of 28 metadata records. For example:
 
 ```json
 {
-  "name": "countries",
+  "name": "address-countries",
   "kind": "keyValue",
   "version": "v1",
   "blob": "address-countries/v1.json",
@@ -20,52 +20,52 @@ All counts and shapes below were obtained by parsing the checked-in JSON on 2026
 | Field | Observed use |
 | --- | --- |
 | `name` | Logical collection name; can differ from the directory name |
-| `kind` | `set` for currencies; `keyValue` for the other six indexed collections |
+| `kind` | `set` for currencies; `keyValue` for the other 27 indexed collections |
 | `version` | `v1` for every entry |
 | `blob` | Container-relative path in production; relative to `data/` for local fixtures |
 | `allowedRoles` | Always `["ReferenceData.Reader"]`; unused by the application |
-| `hasSortOrder` | True for the three workflow collections; false for the other four |
+| `hasSortOrder` | True for the three workflow collections; false for the other 25 |
 
-The indexed names, in index order, are `countries`, `timezones`, `languages`, `currencies`, `workflow-priority`, `workflow-status`, and `workflow-doc-type`. All seven referenced files exist. There is no `count` field in the index.
+All 28 dataset files are indexed using their subfolder names as collection names. The first three existing entries remain `address-countries`, `address-type`, and `timezones`; the remaining entries follow in alphabetical path order. All referenced files exist. There is no `count` field in the index.
 
 The Azure provider reads root `index.json` and follows each `blob` path. The loader validates schema version, unique names, supported kinds, paths, and payload shapes, then publishes a complete in-memory snapshot. Role metadata is not enforced. See [architecture](architecture.md) for ETag-based polling and refresh failure behavior.
 
 ## Dataset inventory
 
-Each local dataset path is `data/<directory>/v1.json`. `Indexed` means it appears in the sample index; those seven datasets would be served if that catalog is uploaded to the configured container. Production membership is determined by the cloud index. Counts are top-level object keys or array elements. All object datasets have a `name` field in their records; the last column lists additional observed fields.
+Each local dataset path is `data/<directory>/v1.json`. `Indexed` means it appears in the sample index; all 28 datasets would be available if that catalog is uploaded to the configured container. Production membership is determined by the cloud index. Counts are top-level object keys or array elements. All object datasets have a `name` field in their records; the last column lists additional observed fields.
 
 | Directory | Entries | Shape | Indexed | Additional fields |
 | --- | ---: | --- | --- | --- |
-| `address-countries` | 249 | Object | Yes, as `countries` | None |
-| `address-delivery-type` | 6 | Object | No | None |
-| `address-directionals` | 8 | Object | No | None |
-| `address-military-regions` | 3 | Object | No | None |
-| `address-states` | 51 | Object | No | None |
-| `address-street-suffix` | 202 | Object | No | `aliases` |
-| `address-territory` | 5 | Object | No | None |
-| `address-type` | 6 | Object | No | None |
-| `address-unit` | 24 | Object | No | `requiresIdentifier` |
+| `address-countries` | 249 | Object | Yes | None |
+| `address-delivery-type` | 6 | Object | Yes | None |
+| `address-directionals` | 8 | Object | Yes | None |
+| `address-military-regions` | 3 | Object | Yes | None |
+| `address-states` | 51 | Object | Yes | None |
+| `address-street-suffix` | 202 | Object | Yes | `aliases` |
+| `address-territory` | 5 | Object | Yes | None |
+| `address-type` | 6 | Object | Yes | None |
+| `address-unit` | 24 | Object | Yes | `requiresIdentifier` |
 | `currencies` | 3 | Array | Yes | String elements |
-| `demographic-education` | 10 | Object | No | None |
-| `demographic-employment` | 10 | Object | No | None |
-| `demographic-living` | 8 | Object | No | None |
-| `demographic-marital-status` | 5 | Object | No | None |
-| `demographic-race` | 7 | Object | No | None |
-| `demographic-response-status` | 5 | Object | No | None |
+| `demographic-education` | 10 | Object | Yes | None |
+| `demographic-employment` | 10 | Object | Yes | None |
+| `demographic-living` | 8 | Object | Yes | None |
+| `demographic-marital-status` | 5 | Object | Yes | None |
+| `demographic-race` | 7 | Object | Yes | None |
+| `demographic-response-status` | 5 | Object | Yes | None |
 | `languages` | 7927 | Object | Yes | None |
-| `medical-claim-status` | 12 | Object | No | None |
-| `medical-coding-pos` | 52 | Object | No | None |
-| `medical-coding-service` | 44 | Object | No | None |
-| `medical-coverage` | 8 | Object | No | None |
-| `medical-plantypes` | 5 | Object | No | None |
-| `medical-relationship` | 15 | Object | No | None |
-| `medical-specialty` | 65 | Object | No | None |
+| `medical-claim-status` | 12 | Object | Yes | None |
+| `medical-coding-pos` | 52 | Object | Yes | None |
+| `medical-coding-service` | 44 | Object | Yes | None |
+| `medical-coverage` | 8 | Object | Yes | None |
+| `medical-plantypes` | 5 | Object | Yes | None |
+| `medical-relationship` | 15 | Object | Yes | None |
+| `medical-specialty` | 65 | Object | Yes | None |
 | `timezones` | 597 | Object | Yes | `utcOffset`, `utcOffsetAsOf` |
 | `workflow-doc-type` | 34 | Object | Yes | `category`, `description`, `sortOrder` |
 | `workflow-priority` | 6 | Object | Yes | `description`, `level`, `sortOrder` |
 | `workflow-status` | 17 | Object | Yes | `category`, `isTerminal`, `sortOrder` |
 
-The 21 unindexed datasets are not discoverable through the sample index. By default the loader includes all seven indexed datasets, including the three workflow datasets. `ENABLED_COLLECTIONS` can select a subset by index name; all indexed names remain discoverable through `/collections` with their enabled status. No hard-coded collection list remains.
+Every dataset is discoverable through the sample index. By default the loader includes all 28 indexed datasets, including the three workflow datasets. `ENABLED_COLLECTIONS` can select a subset by index name; all indexed names remain discoverable through `/collections` with their enabled status. No hard-coded collection list remains.
 
 ## Record shapes and handling details
 

@@ -132,7 +132,7 @@ class ReferenceDataApplicationTests {
 
 	@Test
 	void contextLoads() {
-		assertEquals(7, repository.findAll().size());
+		assertEquals(28, repository.findAll().size());
 	}
 
 }

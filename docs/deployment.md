@@ -28,7 +28,7 @@ Invoke-RestMethod https://api.lab.cloudfocus.tech/rds/collections
 
 ## Select collections at startup
 
-The ConfigMap defaults `ENABLED_COLLECTIONS` to `"*"`, preserving all currently indexed collections. To load a subset, set that value to comma-separated index names, for example `"countries,currencies"`. Use an explicitly empty string to enable none. Names are case-sensitive and must exist in the index. `/collections` still lists every entry with `enabled`; disabled detail/items routes return 404 and disabled counts are null.
+The ConfigMap defaults `ENABLED_COLLECTIONS` to `"*"`, preserving all currently indexed collections. To load a subset, set that value to comma-separated index names, for example `"address-countries,currencies"`. Use an explicitly empty string to enable none. Names are case-sensitive and must exist in the index. `/collections` still lists every entry with `enabled`; disabled detail/items routes return 404 and disabled counts are null.
 
 Publish the updated image before deploying this feature. After changing selection, apply the ConfigMap and recreate pods so they read the new environment. If `Deploy.ps1` selects the same image digest as the current Deployment, its ConfigMap apply alone does not restart pods:
 

@@ -11,7 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import tech.cloudfocus.ReferenceData.storage.StorageProvider;
 
 @SpringBootTest(properties = {"spring.config.import=", "app.storage.refresh-interval-ms=3600000",
-        "ENABLED_COLLECTIONS=currencies,countries"})
+        "ENABLED_COLLECTIONS=currencies,address-countries"})
 @AutoConfigureMockMvc
 class CollectionSelectionApplicationTests {
     @TestBean(methodName = "fixtureProvider")
@@ -30,11 +30,11 @@ class CollectionSelectionApplicationTests {
     @Test
     void environmentSelectionListsAllMetadataAndServesOnlyEnabledCollections() throws Exception {
         mvc.perform(get("/api/collections")).andExpect(status().isOk())
-                .andExpect(jsonPath("$.length()").value(7))
-                .andExpect(jsonPath("$[0].name").value("countries"))
+                .andExpect(jsonPath("$.length()").value(28))
+                .andExpect(jsonPath("$[0].name").value("address-countries"))
                 .andExpect(jsonPath("$[0].enabled").value(true))
                 .andExpect(jsonPath("$[0].count").value(249))
-                .andExpect(jsonPath("$[2].name").value("languages"))
+                .andExpect(jsonPath("$[2].name").value("timezones"))
                 .andExpect(jsonPath("$[2].enabled").value(false))
                 .andExpect(jsonPath("$[2].count").value(org.hamcrest.Matchers.nullValue()));
         mvc.perform(get("/api/collection/currencies")).andExpect(status().isOk())

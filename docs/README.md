@@ -23,6 +23,6 @@ For Backstage, use the root [catalog-info.yaml](../catalog-info.yaml) and [regis
 
 Start with [StorageProvider](../src/main/java/tech/cloudfocus/ReferenceData/storage/StorageProvider.java), [Azure adapter](../src/main/java/tech/cloudfocus/ReferenceData/storage/AzureBlobStorageProvider.java), [repository/loader](../src/main/java/tech/cloudfocus/ReferenceData/repository/CollectionRepository.java), [controller](../src/main/java/tech/cloudfocus/ReferenceData/controller/collections.java), and [properties](../src/main/resources/application.properties).
 
-`data/` contains local reference fixtures: 28 datasets, seven indexed collections. Production reads the cloud catalog, not these local files. `countries` maps to `address-countries/v1.json` in the sample index. The old four-entry hard-coded list has been removed.
+`data/` contains local reference fixtures: 28 datasets, all 28 indexed. Production reads the cloud catalog, not these local files. `address-countries` maps to `address-countries/v1.json` in the sample index. The old four-entry hard-coded list has been removed.
 
 Local secrets belong in the ignored `.env`; only the blank [.env.example](../.env.example) is tracked. Existing `target/` builds and generated `HELP.md` are ignored and may be stale. Keep these notes current when behavior changes.

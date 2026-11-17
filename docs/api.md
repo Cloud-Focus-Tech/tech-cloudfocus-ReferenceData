@@ -54,14 +54,14 @@ Key/value collections preserve the keyed-object structure, for example:
 {"AK":{"name":"Alaska"}}
 ```
 
-`count` is computed from the actual loaded dataset. Disabled collections have `count: null` because their data is not loaded. The cloud index determines list membership, order, kind and version. The local sample index produces seven collection summaries regardless of how many are enabled.
+`count` is computed from the actual loaded dataset. Disabled collections have `count: null` because their data is not loaded. The cloud index determines list membership, order, kind and version. The local sample index produces 28 collection summaries regardless of how many are enabled.
 
 ## Collection selection
 
 Set an environment variable before starting the service:
 
 ```properties
-ENABLED_COLLECTIONS=countries,currencies
+ENABLED_COLLECTIONS=address-countries,currencies
 ```
 
 Selection uses the index's case-sensitive `name`, not its blob directory. Whitespace around names is ignored, repeated names are accepted, and index order is preserved. An unset variable defaults to `*` (enable all, including future index additions). An explicitly empty value enables none; the service still loads the index, lists its metadata, and becomes ready. A comma-separated list enables only the specified names. Mixing `*` with names, empty list entries, and names absent from the index are configuration errors that fail startup.
@@ -70,14 +70,14 @@ With the example selection, `/api/collections` includes entries like:
 
 ```json
 [
-  {"name":"countries","kind":"keyValue","version":"v1","count":249,"enabled":true},
+  {"name":"address-countries","kind":"keyValue","version":"v1","count":249,"enabled":true},
   {"name":"timezones","kind":"keyValue","version":"v1","count":null,"enabled":false},
-  {"name":"languages","kind":"keyValue","version":"v1","count":null,"enabled":false},
-  {"name":"currencies","kind":"set","version":"v1","count":3,"enabled":true}
+  {"name":"currencies","kind":"set","version":"v1","count":3,"enabled":true},
+  {"name":"languages","kind":"keyValue","version":"v1","count":null,"enabled":false}
 ]
 ```
 
-The sample index also returns its three workflow entries as disabled. Disabled data blobs are never downloaded, checked for ETag changes, or validated. Metadata for every index entry is still validated. Requests for disabled details or items return 404, just like unknown names.
+The sample index also returns the other 24 entries as disabled, including all three workflow datasets. Disabled data blobs are never downloaded, checked for ETag changes, or validated. Metadata for every index entry is still validated. Requests for disabled details or items return 404, just like unknown names.
 
 Restart after changing selection. No configuration mutation endpoint or live environment reload is provided. On refresh, new unselected entries appear as disabled. If a specifically configured name disappears from the index, refresh fails and retains the last complete snapshot, following the existing refresh policy; update selection and restart to intentionally remove it.
 

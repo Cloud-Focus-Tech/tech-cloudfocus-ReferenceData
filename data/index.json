@@ -2,14 +2,22 @@
     "schemaVersion": 1,
     "collections": [
         {
-            "name": "countries",
+            "name": "address-countries",
             "kind": "keyValue",
             "version": "v1",
             "blob": "address-countries/v1.json",
             "allowedRoles": [
                 "ReferenceData.Reader"
-            ],
-            "hasSortOrder": false
+            ]
+        },
+        {
+            "name": "address-type",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "address-type/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
         },
         {
             "name": "timezones",
@@ -18,18 +26,70 @@
             "blob": "timezones/v1.json",
             "allowedRoles": [
                 "ReferenceData.Reader"
-            ],
-            "hasSortOrder": false
+            ]
         },
         {
-            "name": "languages",
+            "name": "address-delivery-type",
             "kind": "keyValue",
             "version": "v1",
-            "blob": "languages/v1.json",
+            "blob": "address-delivery-type/v1.json",
             "allowedRoles": [
                 "ReferenceData.Reader"
-            ],
-            "hasSortOrder": false
+            ]
+        },
+        {
+            "name": "address-directionals",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "address-directionals/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "address-military-regions",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "address-military-regions/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "address-states",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "address-states/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "address-street-suffix",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "address-street-suffix/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "address-territory",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "address-territory/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "address-unit",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "address-unit/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
         },
         {
             "name": "currencies",
@@ -38,28 +98,133 @@
             "blob": "currencies/v1.json",
             "allowedRoles": [
                 "ReferenceData.Reader"
-            ],
-            "hasSortOrder": false
+            ]
         },
         {
-            "name": "workflow-priority",
+            "name": "demographic-education",
             "kind": "keyValue",
             "version": "v1",
-            "blob": "workflow-priority/v1.json",
+            "blob": "demographic-education/v1.json",
             "allowedRoles": [
                 "ReferenceData.Reader"
-            ],
-            "hasSortOrder": true
+            ]
         },
         {
-            "name": "workflow-status",
+            "name": "demographic-employment",
             "kind": "keyValue",
             "version": "v1",
-            "blob": "workflow-status/v1.json",
+            "blob": "demographic-employment/v1.json",
             "allowedRoles": [
                 "ReferenceData.Reader"
-            ],
-            "hasSortOrder": true
+            ]
+        },
+        {
+            "name": "demographic-living",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "demographic-living/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "demographic-marital-status",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "demographic-marital-status/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "demographic-race",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "demographic-race/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "demographic-response-status",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "demographic-response-status/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "languages",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "languages/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "medical-claim-status",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "medical-claim-status/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "medical-coding-pos",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "medical-coding-pos/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "medical-coding-service",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "medical-coding-service/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "medical-coverage",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "medical-coverage/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "medical-plantypes",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "medical-plantypes/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "medical-relationship",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "medical-relationship/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "medical-specialty",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "medical-specialty/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
         },
         {
             "name": "workflow-doc-type",
@@ -68,8 +233,25 @@
             "blob": "workflow-doc-type/v1.json",
             "allowedRoles": [
                 "ReferenceData.Reader"
-            ],
-            "hasSortOrder": true
+            ]
+        },
+        {
+            "name": "workflow-priority",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "workflow-priority/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
+        },
+        {
+            "name": "workflow-status",
+            "kind": "keyValue",
+            "version": "v1",
+            "blob": "workflow-status/v1.json",
+            "allowedRoles": [
+                "ReferenceData.Reader"
+            ]
         }
     ]
 }

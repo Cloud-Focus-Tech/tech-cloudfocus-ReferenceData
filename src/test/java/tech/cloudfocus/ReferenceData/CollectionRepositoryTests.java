@@ -12,16 +12,16 @@ class CollectionRepositoryTests {
         var storage = FixtureStorage.fromData();
         var repository = new CollectionRepository(storage);
         repository.afterPropertiesSet();
-        assertEquals(7, repository.findAll().size());
+        assertEquals(28, repository.findAll().size());
         assertTrue(repository.findAll().stream().allMatch(c -> c.isEnabled()));
-        assertEquals("countries", repository.findAll().getFirst().getName());
+        assertEquals("address-countries", repository.findAll().getFirst().getName());
         assertEquals(7927, repository.findByName("languages").orElseThrow().getCount());
-        assertEquals(8, storage.reads);
+        assertEquals(29, storage.reads);
         repository.reload();
-        assertEquals(8, storage.reads, "Unchanged ETags must avoid content downloads");
+        assertEquals(29, storage.reads, "Unchanged ETags must avoid content downloads");
         storage.put("currencies/v1.json", "[\"USD\",\"GBP\"]");
         repository.reload();
-        assertEquals(9, storage.reads, "Only the changed blob should be downloaded");
+        assertEquals(30, storage.reads, "Only the changed blob should be downloaded");
         assertEquals(2, repository.findByName("currencies").orElseThrow().getCount());
         ((ArrayNode) repository.findItems("currencies").orElseThrow()).removeAll();
         repository.findByName("currencies").orElseThrow().setCount(999);
@@ -44,12 +44,12 @@ class CollectionRepositoryTests {
         };
         var repository = new CollectionRepository(selectedOnly, " currencies, currencies ");
         repository.reload();
-        assertEquals(7, repository.findAll().size());
-        assertEquals("countries", repository.findAll().getFirst().getName());
+        assertEquals(28, repository.findAll().size());
+        assertEquals("address-countries", repository.findAll().getFirst().getName());
         assertFalse(repository.findAll().getFirst().isEnabled());
         assertNull(repository.findAll().getFirst().getCount());
-        assertTrue(repository.findByName("countries").isEmpty());
-        assertTrue(repository.findItems("countries").isEmpty());
+        assertTrue(repository.findByName("address-countries").isEmpty());
+        assertTrue(repository.findItems("address-countries").isEmpty());
         assertEquals(3, repository.findByName("currencies").orElseThrow().getCount());
         assertEquals(2, fixture.reads);
         repository.reload();
@@ -67,7 +67,7 @@ class CollectionRepositoryTests {
         var repository = new CollectionRepository(storage, "  ");
         repository.reload();
         assertTrue(repository.isLoaded());
-        assertEquals(7, repository.findAll().size());
+        assertEquals(28, repository.findAll().size());
         assertTrue(repository.findAll().stream().noneMatch(c -> c.isEnabled()));
         assertTrue(repository.findAll().stream().allMatch(c -> c.getCount() == null));
         assertTrue(repository.findItems("currencies").isEmpty());
@@ -121,7 +121,7 @@ class CollectionRepositoryTests {
         repository.reload();
         storage.put("index.json", "{\"schemaVersion\":1,\"collections\":[]}");
         repository.refresh();
-        assertEquals(7, repository.findAll().size());
+        assertEquals(28, repository.findAll().size());
         assertEquals(3, repository.findByName("currencies").orElseThrow().getCount());
         assertTrue(repository.isLoaded());
     }
